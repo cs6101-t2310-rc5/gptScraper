@@ -40,20 +40,41 @@ def scrape(url: str) -> str:
         return ""
 
 
-def get_relevant_snippets(html_source: str, prompt: str, max_snippets: int = 10) -> list:
+def strip_scripts_and_styles(html_source: str) -> str:
     """
-    Generates up to 'max_snippets' relevant snippets from the HTML source.
+    Removes all script and style tags from the HTML source.
+    """
+    soup = BeautifulSoup(html_source, 'html.parser')
+    [s.decompose() for s in soup('script')]
+    [s.decompose() for s in soup('style')]
+    return str(soup)
+
+
+def get_relevant_snippets(html_source: str, prompt: str, max_snippets: int = 5) -> list:
+    """
+    Generates up to 'max_snippets' relevant snippets from the HTML source,
+    after removing <script> and <style> tags, and only considering 2000 character long snippets.
     """
     relevant_snippets = []
-    max_start_index = len(html_source)//2 - 2000
     attempts = 0
 
-    while len(relevant_snippets) < max_snippets and attempts < max_snippets * 5:
-        if max_start_index <= 0:
-            snippet = html_source
-        else:
-            start_index = random.randint(0, max_start_index)
-            snippet = html_source[start_index:start_index + 2000]
+    # Clean the HTML source by stripping <script> and <style> tags
+    clean_html_source = strip_scripts_and_styles(html_source)
+    # log the clean html source
+    # logger.info(f"Clean HTML Source:\n{clean_html_source}")
+
+    while len(relevant_snippets) < max_snippets and attempts < max_snippets * 2:
+        logger.info(
+            f"Attempts: {attempts}, Found snippets: {len(relevant_snippets)}")
+        # If the remaining text is shorter than 2000 characters, break
+        if len(clean_html_source) <= 2000:
+            break
+
+        # Randomly select a start index for the snippet
+        start_index = random.randint(0, len(clean_html_source) - 2000)
+        snippet = clean_html_source[start_index:start_index + 2000]
+
+        logger.info(f"Snippet (Attempt {attempts + 1}):\n{snippet}")
 
         if is_relevant_snippet(snippet, prompt):
             relevant_snippets.append(snippet)
@@ -72,7 +93,8 @@ def is_relevant_snippet(snippet: str, prompt: str) -> bool:
     """
     relevance_prompt = (
         f"Determine if the following HTML snippet is relevant to scraping "
-        f"the given prompt.\nPrompt: {prompt}\nHTML Snippet:\n{snippet}"
+        f"If it contains information that is relevant to a LLM trying to generate code to scrape for the given prompt, then it is relevant. Reply \"YES\" or \"NO\" accordingly, and explain why."
+        f".\nPrompt: {prompt}\nHTML Snippet:\n{snippet}"
     )
     response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct", prompt=relevance_prompt, max_tokens=100
