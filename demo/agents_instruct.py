@@ -4,6 +4,8 @@ import logging
 import time
 import os
 import re
+import io
+import sys
 from typing import Tuple
 from bs4 import BeautifulSoup
 
@@ -38,56 +40,84 @@ def scrape(url: str) -> str:
 
 
 def generate_code(debugging_info: str, prompt: str, html_source: str) -> str:
-    instruct_prompt = f"Given the debugging info:\n{debugging_info}\nPlease provide Python code to scrape the website and extract: {prompt}\nBased on the following HTML snippet: {html_source[:5000]}... Generate only the code, enclosing your answers in markdown."
+    instruct_prompt = f"Given the debugging info:\n{debugging_info}\nPlease provide Python code to scrape the website and extract: {prompt}\nBased on the following HTML snippet: {html_source[:3000]}. The code should take in the website link, and print out the requested data. Generate only the code, enclosing your answers in markdown."
     response = openai.Completion.create(
-        model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=2000)
-    # Extract content between backticks from the model's response
+        model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=2500)
+
+    # Log raw response
+    logger.info(f"Raw response:\n{response}")
+
     # Extract content between backticks from the model's response
     content_match = re.search(
         r'```(.*?)```', response.choices[0].text, re.DOTALL)
-    code = content_match.group(1).strip(
-    ) if content_match else response.choices[0].text.strip()
+
+    if content_match:
+        code = content_match.group(1).strip()
+    else:
+        code = response.choices[0].text.strip()
+
+    # Check if the code starts with 'python\n' and remove it if necessary
+    if code.startswith('python\n'):
+        code = code[len('python\n'):]
 
     return code
 
 
-def runner(code: str) -> Tuple[str, str]:
+def runner(code: str, url: str) -> Tuple[str, str]:
     """
-    Runs the Python code and returns the output or error.
+    Runs the Python code with the given website URL and captures the printed output.
+    Returns a tuple containing the output and error messages, if any.
     """
-    output = None
+    # Create a StringIO object to capture stdout
+    captured_output = io.StringIO()
+    error_message = ""
+
+    # Save the current stdout so that we can restore it later
+    current_stdout = sys.stdout
+    sys.stdout = captured_output
+
     try:
-        local_vars = {}
+        # Prepare the local variables with the URL included
+        local_vars = {'url': url}
+        # Execute the code within the local scope
         exec(code, {}, local_vars)
-        output = local_vars.get('result', "")
-        return output, ""
     except Exception as e:
-        logger.error(f"Error while running code: {str(e)}")
-        return "", str(e)
+        # Capture the error message
+        error_message = str(e)
+        logger.error(
+            f"Error while running code with URL {url}: {error_message}")
+    finally:
+        # Get the contents of the StringIO buffer
+        output = captured_output.getvalue()
+        # Restore stdout to its original state
+        sys.stdout = current_stdout
+        captured_output.close()
+
+    return output, error_message
 
 
 def verifier(output: str, prompt: str) -> Tuple[bool, str]:
-    instruct_prompt = f"Review the output:\n{output}\nDoes it align with the required data format specified by: {prompt}\nIf not, can you explain why?"
+    instruct_prompt = f"Review the output:\n{output}\ nDoes it align with the required data format specified by: {prompt}\n Output either \"YES\" or \"NO\", enclosed in a markdown block, and explain your decision."
     response = openai.Completion.create(
-        model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=300)
-    answer_text = response.choices[0].text.strip().lower()
+        model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=1500)
+    answer_text = response.choices[0].text
+    # log the answer text
+    logger.info(f"Verifier response:\n{answer_text}")
 
-    if "yes" in answer_text:
-        return True, "Output matches the constraints of the prompt."
-    else:
+    if "YES" in answer_text:
+        return True, answer_text
+    elif "NO" in answer_text:
         return False, answer_text
+    else:
+        return False, "Invalid response."
 
 
 def debugger(code: str, error: str) -> str:
     instruct_prompt = f"Given the code:\n{code}\nIdentify the issues and provide debugging insights based on the error: {error}."
-    messages = [
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": instruct_prompt}
-    ]
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo", messages=messages, max_tokens=300)
-    debugging_info = response.choices[0].message['content'].strip()
-    return debugging_info
+    response = openai.Completion.create(
+        model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=2000)
+    answer_text = response.choices[0].text
+    return answer_text
 
 
 def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = False, output: str = "json", api_key: str = None, model_id: str = "gpt-3.5-turbo", log: str = None) -> str:
@@ -100,7 +130,7 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
         code = generate_code(debugging_info, prompt, html_source)
         logger.info(f"Generated code (Attempt {i + 1}):\n{code}")
 
-        result, error = runner(code)
+        result, error = runner(code, website)
         # log results and errors
         logger.info(f"Result (Attempt {i + 1}):\n{result}")
         logger.info(f"Error (Attempt {i + 1}):\n{error}")
@@ -125,7 +155,7 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
         if verified:
             logger.info("Successfully generated a valid scraper.")
             logger.info(f"Generated result (Attempt {i + 1}):\n{result}")
-            return result
+            return code
         else:
             logger.warning(
                 f"Output didn't match the prompt. Verifier Message (Attempt {i + 1}): {verifier_message}")
