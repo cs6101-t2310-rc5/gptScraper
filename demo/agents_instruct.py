@@ -6,6 +6,7 @@ import os
 import re
 import io
 import sys
+import random
 from typing import Tuple
 from bs4 import BeautifulSoup
 
@@ -39,8 +40,66 @@ def scrape(url: str) -> str:
         return ""
 
 
-def generate_code(debugging_info: str, prompt: str, html_source: str) -> str:
-    instruct_prompt = f"Given the debugging info:\n{debugging_info}\nPlease provide Python code to scrape the website and extract: {prompt}\nBased on the following HTML snippet: {html_source[:3000]}. The code should take in the website link, and print out the requested data. Generate only the code, enclosing your answers in markdown."
+def get_relevant_snippets(html_source: str, prompt: str, max_snippets: int = 10) -> list:
+    """
+    Generates up to 'max_snippets' relevant snippets from the HTML source.
+    """
+    relevant_snippets = []
+    max_start_index = len(html_source)//2 - 2000
+    attempts = 0
+
+    while len(relevant_snippets) < max_snippets and attempts < max_snippets * 5:
+        if max_start_index <= 0:
+            snippet = html_source
+        else:
+            start_index = random.randint(0, max_start_index)
+            snippet = html_source[start_index:start_index + 2000]
+
+        if is_relevant_snippet(snippet, prompt):
+            relevant_snippets.append(snippet)
+
+        attempts += 1
+
+    if not relevant_snippets:
+        logger.error("No relevant HTML snippets found after maximum attempts.")
+
+    return relevant_snippets
+
+
+def is_relevant_snippet(snippet: str, prompt: str) -> bool:
+    """
+    Check if a HTML snippet is relevant to the scraping prompt.
+    """
+    relevance_prompt = (
+        f"Determine if the following HTML snippet is relevant to scraping "
+        f"the given prompt.\nPrompt: {prompt}\nHTML Snippet:\n{snippet}"
+    )
+    response = openai.Completion.create(
+        model="gpt-3.5-turbo-instruct", prompt=relevance_prompt, max_tokens=100
+    )
+    relevance_text = response.choices[0].text.strip()
+
+    logger.info(f"Relevance check response:\n{relevance_text}")
+
+    return "YES" in relevance_text
+
+
+def generate_code(debugging_info: str, prompt: str, website: str, relevant_snippets: list) -> str:
+    if not relevant_snippets:
+        return "No relevant HTML snippets were provided."
+
+    # Randomly choose one of the relevant snippets
+    relevant_snippet = random.choice(relevant_snippets)
+    logger.info(f"Using Relevant Snippet:\n{relevant_snippet}")
+
+    # Proceed with code generation using the relevant snippet
+    instruct_prompt = (
+        f"Given the debugging info:\n{debugging_info}\n"
+        f"Please provide Python code to scrape the website and extract: {prompt}\n"
+        f"Based on the following relevant HTML snippet from somewhere in the webpage: {relevant_snippet}."
+        f"The code should take in this link {website} and print out the requested data. "
+        f"Generate only the code, enclosing your answers in markdown."
+    )
     response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=2500)
 
@@ -97,7 +156,7 @@ def runner(code: str, url: str) -> Tuple[str, str]:
 
 
 def verifier(output: str, prompt: str) -> Tuple[bool, str]:
-    instruct_prompt = f"Review the output:\n{output}\ nDoes it align with the required data format specified by: {prompt}\n Output either \"YES\" or \"NO\", enclosed in a markdown block, and explain your decision."
+    instruct_prompt = f"Review the output:\n{output}\nDoes it match with what was specified by: {prompt}\n It shouldn't be empty list, by the way. Output either \"YES\" or \"NO\", enclosed in a markdown block, and explain your decision."
     response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=1500)
     answer_text = response.choices[0].text
@@ -126,8 +185,10 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
     """
     html_source = scrape(website)
     debugging_info = ""
+    relevant_snippets = get_relevant_snippets(html_source, prompt)
+
     for i in range(retry):
-        code = generate_code(debugging_info, prompt, html_source)
+        code = generate_code(debugging_info, prompt, website, html_source)
         logger.info(f"Generated code (Attempt {i + 1}):\n{code}")
 
         result, error = runner(code, website)
@@ -167,9 +228,9 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
 
 
 def main():
-    prompt = "books data in json format"
-    website = "http://books.toscrape.com/"
-    result = generate_scraper(prompt, website, verbose=True)
+    prompt = "job listings in JSON format"
+    website = "https://jobs.lever.co/h1"
+    result = generate_scraper(prompt, website, verbose=True, retry=10)
     print(result)
 
 
