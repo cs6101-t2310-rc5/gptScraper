@@ -7,6 +7,8 @@ import re
 import io
 import sys
 import random
+import traceback
+
 from typing import Tuple
 from bs4 import BeautifulSoup
 
@@ -161,12 +163,12 @@ def runner(code: str, url: str) -> Tuple[str, str]:
         # Prepare the local variables with the URL included
         local_vars = {'url': url}
         # Execute the code within the local scope
-        exec(code, {}, local_vars)
-    except Exception as e:
-        # Capture the error message
-        error_message = str(e)
+        exec(code, globals(), local_vars)
+    except Exception:
+        # Use traceback to get a detailed stack trace
+        error_message = traceback.format_exc()
         logger.error(
-            f"Error while running code with URL {url}: {error_message}")
+            f"Error while running code with URL {url}:\n{error_message}")
     finally:
         # Get the contents of the StringIO buffer
         output = captured_output.getvalue()
@@ -178,7 +180,12 @@ def runner(code: str, url: str) -> Tuple[str, str]:
 
 
 def verifier(output: str, prompt: str) -> Tuple[bool, str]:
-    instruct_prompt = f"Review the output:\n{output}\nDoes it match with what was specified by: {prompt}\n It shouldn't be empty list, by the way. Output either \"YES\" or \"NO\", enclosed in a markdown block, and explain your decision."
+    instruct_prompt = (
+        f"Please verify if the following output:\n```\n{output}\n```\n"
+        f"accurately fulfills the requirements based on the prompt:\n```\n{prompt}\n```\n"
+        "A valid output should not be an empty list and must conform to the structure and content described by the prompt. "
+        "Respond with either \"YES\" or \"NO\" in a markdown code block, followed by a brief explanation of your assessment."
+    )
     response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=1500)
     answer_text = response.choices[0].text
