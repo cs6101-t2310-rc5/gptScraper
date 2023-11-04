@@ -108,42 +108,44 @@ def is_relevant_snippet(snippet: str, prompt: str) -> bool:
     return "YES" in relevance_text
 
 
-def generate_code(debugging_info: str, prompt: str, website: str, relevant_snippets: list) -> str:
+def generate_code(debugging_info: str, prompt: str, website: str, relevant_snippets) -> str:
     if not relevant_snippets:
+        logger.error("No relevant HTML snippets were provided.")
         return "No relevant HTML snippets were provided."
 
     # Randomly choose one of the relevant snippets
     relevant_snippet = random.choice(relevant_snippets)
-    logger.info(f"Using Relevant Snippet:\n{relevant_snippet}")
+    logger.info(f"Using Relevant Snippet:\n{str(relevant_snippet)}")
 
     # Proceed with code generation using the relevant snippet
     instruct_prompt = (
         f"Given the debugging info:\n{debugging_info}\n"
         f"Please provide Python code to scrape the website and extract: {prompt}\n"
-        f"Based on the following relevant HTML snippet from somewhere in the webpage: {relevant_snippet}."
+        f"Based on the following relevant HTML snippet from somewhere in the webpage:\n{relevant_snippet}\n"
         f"The code should take in this link {website} and print out the requested data. "
-        f"Generate only the code, enclosing your answers in markdown."
+        f"Generate only the code, enclose your answer in triple backticks."
     )
     response = openai.Completion.create(
-        model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=2500)
+        model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=2500
+    )
 
     # Log raw response
     logger.info(f"Raw response:\n{response}")
 
     # Extract content between backticks from the model's response
     content_match = re.search(
-        r'```(.*?)```', response.choices[0].text, re.DOTALL)
+        r'```python\n(.*?)```', response.choices[0].text, re.DOTALL)
 
     if content_match:
         code = content_match.group(1).strip()
+        # Log the extracted code
+        logger.info(f"Extracted Code:\n{code}")
+        return code
     else:
-        code = response.choices[0].text.strip()
-
-    # Check if the code starts with 'python\n' and remove it if necessary
-    if code.startswith('python\n'):
-        code = code[len('python\n'):]
-
-    return code
+        # If no code block is found, log the full response for manual inspection
+        logger.error(
+            f"Code block not found in response:\n{response.choices[0].text}")
+        return "Failed to extract code from the AI's response."
 
 
 def runner(code: str, url: str) -> Tuple[str, str]:
@@ -217,7 +219,8 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
     relevant_snippets = get_relevant_snippets(html_source, prompt)
 
     for i in range(retry):
-        code = generate_code(debugging_info, prompt, website, html_source)
+        code = generate_code(debugging_info, prompt,
+                             website, relevant_snippets)
         logger.info(f"Generated code (Attempt {i + 1}):\n{code}")
 
         result, error = runner(code, website)
