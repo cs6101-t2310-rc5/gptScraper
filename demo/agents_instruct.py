@@ -8,6 +8,7 @@ import io
 import sys
 import random
 import traceback
+import json
 
 from typing import Tuple
 from bs4 import BeautifulSoup
@@ -52,7 +53,7 @@ def strip_scripts_and_styles(html_source: str) -> str:
     return str(soup)
 
 
-def get_relevant_snippets(html_source: str, prompt: str, max_snippets: int = 5) -> list:
+def get_relevant_snippets(html_source: str, prompt: str, max_snippets: int = 3) -> list:
     """
     Generates up to 'max_snippets' relevant snippets from the HTML source,
     after removing <script> and <style> tags, and only considering 2000 character long snippets.
@@ -65,7 +66,7 @@ def get_relevant_snippets(html_source: str, prompt: str, max_snippets: int = 5) 
     # log the clean html source
     # logger.info(f"Clean HTML Source:\n{clean_html_source}")
 
-    while len(relevant_snippets) < max_snippets and attempts < max_snippets * 2:
+    while len(relevant_snippets) < max_snippets and attempts < max_snippets * 5:
         logger.info(
             f"Attempts: {attempts}, Found snippets: {len(relevant_snippets)}")
         # If the remaining text is shorter than 2000 characters, break
@@ -94,9 +95,9 @@ def is_relevant_snippet(snippet: str, prompt: str) -> bool:
     Check if a HTML snippet is relevant to the scraping prompt.
     """
     relevance_prompt = (
-        f"Determine if the following HTML snippet is relevant to scraping "
-        f"If it contains information that is relevant to a LLM trying to generate code to scrape for the given prompt, then it is relevant. Reply \"YES\" or \"NO\" accordingly, and explain why."
-        f".\nPrompt: {prompt}\nHTML Snippet:\n{snippet}"
+        f"Determine if the following HTML snippet is relevant to the prompt: {prompt}\n "
+        f"Reply \"YES\" or \"NO\" accordingly, and explain why."
+        f"\nHTML Snippet:\n{snippet}"
     )
     response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct", prompt=relevance_prompt, max_tokens=100
@@ -120,10 +121,10 @@ def generate_code(debugging_info: str, prompt: str, website: str, relevant_snipp
     # Proceed with code generation using the relevant snippet
     instruct_prompt = (
         f"Given the debugging info:\n{debugging_info}\n"
-        f"Please provide Python code to scrape the website and extract: {prompt}\n"
+        f"Please provide Python code to scrape the website and extract: {prompt} as a JSON file.\n"
         f"Based on the following relevant HTML snippet from somewhere in the webpage:\n{relevant_snippet}\n"
         f"The code should take in this link {website} and print out the requested data. "
-        f"Generate only the code, enclose your answer in triple backticks."
+        f"Generate only the code, you MUST wrap your answer in a markdown code block."
     )
     response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=2500
@@ -136,57 +137,89 @@ def generate_code(debugging_info: str, prompt: str, website: str, relevant_snipp
     content_match = re.search(
         r'```python\n(.*?)```', response.choices[0].text, re.DOTALL)
 
+    if not content_match:
+        logger.info("Code block not found. Trying without python syntax.")
+        content_match = re.search(
+            r'```python\n(.*?)$', response.choices[0].text, re.DOTALL)
+
+    if not content_match:
+        logger.info("Code block not found. Trying without python syntax.")
+        content_match = re.search(
+            r'```\n(.*?)```', response.choices[0].text, re.DOTALL)
+
+    if not content_match:
+        logger.info(
+            "Code block not found. Trying without both ended backticks.")
+        content_match = re.search(
+            r'```\n(.*?)$', response.choices[0].text, re.DOTALL)
+
     if content_match:
         code = content_match.group(1).strip()
         # Log the extracted code
         logger.info(f"Extracted Code:\n{code}")
-        return code
+
     else:
-        # If no code block is found, log the full response for manual inspection
-        logger.error(
-            f"Code block not found in response:\n{response.choices[0].text}")
-        return "Failed to extract code from the AI's response."
+        logger.info(
+            "Code block not found. Giving raw response.")
+        code = response.choices[0].text
+
+        logger.info(f"Extracted Code:\n{code}")
+
+    return code
+    # else:
+    #     # If no code block is found, log the full response for manual inspection
+    #     logger.error(
+    #         f"Code block not found in response:\n{response.choices[0].text}")
+    #     return "Failed to extract code from the AI's response."
 
 
 def runner(code: str, url: str) -> Tuple[str, str]:
     """
     Runs the Python code with the given website URL and captures the printed output.
-    Returns a tuple containing the output and error messages, if any.
+    Returns a tuple containing the output and the complete error stack trace, if any.
     """
     # Create a StringIO object to capture stdout
     captured_output = io.StringIO()
+    # Initialize the error_message variable to capture stderr
     error_message = ""
 
-    # Save the current stdout so that we can restore it later
+    # Save the current stdout
     current_stdout = sys.stdout
     sys.stdout = captured_output
 
     try:
-        # Prepare the local variables with the URL included
-        local_vars = {'url': url}
         # Execute the code within the local scope
-        exec(code, globals(), local_vars)
-    except Exception:
-        # Use traceback to get a detailed stack trace
+        exec(code, globals())
+    except Exception as e:
+        # Format the complete stack trace including the error within the executed code
         error_message = traceback.format_exc()
-        logger.error(
-            f"Error while running code with URL {url}:\n{error_message}")
     finally:
-        # Get the contents of the StringIO buffer
-        output = captured_output.getvalue()
         # Restore stdout to its original state
         sys.stdout = current_stdout
+
+        # Get the contents of the StringIO buffer
+        output = captured_output.getvalue()
+        # Close the StringIO buffer
         captured_output.close()
 
+    # Return the output and the error message
+    if output == "":
+        return "NO OUTPUT GIVEN!!", error_message
+    # if output is empty list
+    if output == "[]" or output == "[]\n":
+        return "Empty list! No data returned!", "Empty list! No data returned, why?"
+    if output == "\{\}" or output == "\{\}\n":
+        return "Empty list! No data returned!", "Empty list! No data returned, why?"
     return output, error_message
 
 
 def verifier(output: str, prompt: str) -> Tuple[bool, str]:
     instruct_prompt = (
-        f"Please verify if the following output:\n```\n{output}\n```\n"
+        f"Please verify if the following output snippet:\n```\n{output[:1000]}\n```\n"
         f"accurately fulfills the requirements based on the prompt:\n```\n{prompt}\n```\n"
-        "A valid output should not be an empty list and must conform to the structure and content described by the prompt. "
-        "Respond with either \"YES\" or \"NO\" in a markdown code block, followed by a brief explanation of your assessment."
+        "A valid output should be roughly JSON (not including braces is okay), and MUST NOT be an empty list and should have the content described by the prompt!"
+        "It must not be an empty list!"
+        "Respond with a brief explanation of your assessment, and then write either \"YES\" or \"NO\" in a markdown code block."
     )
     response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=1500)
@@ -203,7 +236,7 @@ def verifier(output: str, prompt: str) -> Tuple[bool, str]:
 
 
 def debugger(code: str, error: str) -> str:
-    instruct_prompt = f"Given the code:\n{code}\nIdentify the issues and provide debugging insights based on the error: {error}."
+    instruct_prompt = f"Given the code:\n{code}\nIdentify the issues and provide give one best guess for why this error occurs: {error}."
     response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=2000)
     answer_text = response.choices[0].text
@@ -217,6 +250,10 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
     html_source = scrape(website)
     debugging_info = ""
     relevant_snippets = get_relevant_snippets(html_source, prompt)
+
+    if not relevant_snippets:
+        logger.error("No relevant HTML snippets were found.")
+        return "No relevant HTML snippets were found."
 
     for i in range(retry):
         code = generate_code(debugging_info, prompt,
@@ -260,8 +297,8 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
 
 
 def main():
-    prompt = "job listings in JSON format"
-    website = "https://jobs.lever.co/h1"
+    prompt = "job listings on this page"
+    website = "https://jobs.lever.co/abridge"
     result = generate_scraper(prompt, website, verbose=True, retry=10)
     print(result)
 

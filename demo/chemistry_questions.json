@@ -1,0 +1,420 @@
+[
+    {
+        "title": "\nWhy do Sc+3 form d2sp3 complexes and not d5s?\n",
+        "description": "\n                The electronic configuration of Scandium (Sc) is [Ar] 4s2 3d1\nThe electronic configuration of Sc+3 ion is [Ar] 4s0 3d0\nSince five d orbitals are empty, shouldn't the ligand \"fill them\" all ...\n            ",
+        "tags": [
+            "bond",
+            "coordination-compounds",
+            "valence-bond-theory",
+            "crystal-field-theory"
+        ]
+    },
+    {
+        "title": "\nClassify the following as what resonance effect and write its different resonance structure [closed]\n",
+        "description": "\n                Classify the following as what resonance effect and draw its resonance structure\n            ",
+        "tags": [
+            "aromatic-compounds",
+            "resonance"
+        ]
+    },
+    {
+        "title": "\nWhat happens to the ions after dissociation in an aqueous solution?\n",
+        "description": "\n                I'm in high school studying about Buffer Solutions. We had an example of a solution made up of Ammonium Hydroxide and Ammonium Chloride for a Basic Buffer.\nNH4OH \u21cc NH4 (+)  +  OH(-)\nNH4Cl \u21cc NH4 (+)  + ...\n            ",
+        "tags": [
+            "physical-chemistry",
+            "equilibrium",
+            "buffer"
+        ]
+    },
+    {
+        "title": "\nIdeal Gas Equation [closed]\n",
+        "description": "\n                At 0\u00b0C and a pressure of 1000 mm, a given weight of nitrogen occupies a volume of 1L. At -100\u00b0 C,the same weight of gas under the same pressure occupies a volume of 0.6L. What is the value of absolute ...\n            ",
+        "tags": [
+            "physical-chemistry"
+        ]
+    },
+    {
+        "title": "\nComplications of elimination reactions with cyclobutane derivatives\n",
+        "description": "\n                I have been doing some research with diene derivatives concerning the Diels-Alder reaction. To make dienes, I am doing an electrocyclic reaction with some cyclobutene derivatives, which in turn are ...\n            ",
+        "tags": [
+            "organic-chemistry",
+            "experimental-chemistry"
+        ]
+    },
+    {
+        "title": "\nStorage of air and temperature sensitive reagents\n",
+        "description": "\n                What's your method for storing air/moisture and temperature sensitive reagents? For example:\n\nA solid. Should I just blow some argon, screw the lid, put parafilm and put it in the fridge? Can a ...\n            ",
+        "tags": [
+            "experimental-chemistry",
+            "temperature",
+            "purification"
+        ]
+    },
+    {
+        "title": "\nSolubility of amlodipine besylate\n",
+        "description": "\n                In European Pharmacopoeia, the drug amlodipine besylate is characterised as slightly soluble in water and freely soluble in methanol (additionally, sparingly soluble in anhydrous ethanol and slightly ...\n            ",
+        "tags": [
+            "drugs"
+        ]
+    },
+    {
+        "title": "\nShould I warm both the sodium thiosulphate and hcl solutions, if my research question is to investage the effect of temperature on reaction rate?\n",
+        "description": "\n                So I've seen many experiments of the effect of temperature on reaction rate with sodium thiosulphate and hcl and they always heat up only the sodium thiosulphate to the temperatures they are testing, ...\n            ",
+        "tags": [
+            "equilibrium",
+            "kinetics"
+        ]
+    },
+    {
+        "title": "\nHow do two half-reactions occur simultaneously when each occurs at a different potential?\n",
+        "description": "\n                I realize I'm missing something fundamental. Let me lay out my point of confusion.\nThermodynamically, water oxidation occurs at 1.23V. We will have oxygen evolution and hydrogen evolution beyond this ...\n            ",
+        "tags": [
+            "electrochemistry",
+            "redox"
+        ]
+    },
+    {
+        "title": "\nSodium hypochlorite bleach and chromium mop handle\n",
+        "description": "\n                I have been using sodium hypochlorite bleach as a cleaning method in my house. During a two week period when I was at home I left the mop handle in the bucket with bleach in it. I did not know it was ...\n            ",
+        "tags": [
+            "everyday-chemistry",
+            "cleaning"
+        ]
+    },
+    {
+        "title": "\nHow to calculate unknown empirical formula with total molecular mass [closed]\n",
+        "description": "\n                How to answer this question for god's sake ? I'm totally lost in my brain\n            ",
+        "tags": [
+            "concentration",
+            "chemical-formula"
+        ]
+    },
+    {
+        "title": "\nWhich type of function is Heat capacity? [closed]\n",
+        "description": "\n                I am really confused on whether Heat capacity is state function or path function? I have searched it on internet, and I have found many websites saying it is a state functions and others claiming it ...\n            ",
+        "tags": [
+            "thermodynamics"
+        ]
+    },
+    {
+        "title": "\nAre there LCMS compatible buffer systems available for the high pH range 12-14?\n",
+        "description": "\n                I want to perform chemical stability studies for different pH Values. To achieve pH Values from 1 to 6 I can prepare solutions with trifluoric acid and formic acid and ammonium formate and acetate. I ...\n            ",
+        "tags": [
+            "acid-base",
+            "ph",
+            "stability",
+            "chromatography",
+            "mass-spectrometry"
+        ]
+    },
+    {
+        "title": "\nIs mass of a gas taken into consideration while describing ideal gas law\n",
+        "description": "\n                According to Avogadro's law equal volume of all gases at constant temperature and pressure contain equal number of molecules.\nBut how is this possible ??\nImagine helium and radon gas.\nIn this case is $...\n            ",
+        "tags": [
+            "physical-chemistry"
+        ]
+    },
+    {
+        "title": "\nwhy does molality of a solution(containing reactants which can dissociate or associate) does not depends on the temperature of the solution?\n",
+        "description": "\n                molality depends on the no of moles of solute as\nmolality=((no of moles of solute )/mass of solvent in grams)*1000\nfurther dissociation or association constant of the reactant depends on the ...\n            ",
+        "tags": [
+            "physical-chemistry",
+            "concentration"
+        ]
+    },
+    {
+        "title": "\nNeed credible source on proof that Van der Waals equation coefficient b if 4 times of the sum of molecular volume [duplicate]\n",
+        "description": "\n                Van der Waals equation coefficient b is approximately 4 times of the sum of the molecular volume. There are different kind of proofs for this. What I am interested in is a very simple one: the centers ...\n            ",
+        "tags": [
+            "physical-chemistry",
+            "gas-laws",
+            "equation-of-state"
+        ]
+    },
+    {
+        "title": "\nIs carbon atom a metal or nonmetal [closed]\n",
+        "description": "\n                We know that a metal is donator and non metal is acceptor of electrons so carbon atom neither a acceptor not donator\n            ",
+        "tags": [
+            "organic-chemistry"
+        ]
+    },
+    {
+        "title": "\nBrouwer diagram from pressure vs. conductivity graph?\n",
+        "description": "\n                I'm struggling to see the relationship between O2 pressure vs. conductivity and the point defects at low, mid, and high O2 pressure. For example, this is a graph of the O2 pressure vs. conductivity of ...\n            ",
+        "tags": [
+            "crystal-structure",
+            "surface-chemistry"
+        ]
+    },
+    {
+        "title": "\nUsage of certain metals as electrodes in a Galvanic cell\n",
+        "description": "\n                I know in a Galvanic cell when a wire is used to connect the anode to the cathode, electrons start flowing from the anode to the cathode owing to the oxidation and reduction reactions occurring at the ...\n            ",
+        "tags": [
+            "physical-chemistry",
+            "electrochemistry"
+        ]
+    },
+    {
+        "title": "\nWhy basic character and nucleophilicity order are opposite for hydrides of group 15?\n",
+        "description": "\n                From what I understand basicity is tendency to donate lone pair to $\\ce{H+}$ and nucleophilicity is tendency to donate lone pair to any general atom.\n$\\ce{NH3 > PH3 > AsH3 > SbH3}$ (basicity)\n...\n            ",
+        "tags": [
+            "nucleophilicity",
+            "pnictogen",
+            "hydrides"
+        ]
+    },
+    {
+        "title": "\nCan Acid halides be reduced by Unpoisoned Catalytic Hydrogenation\n",
+        "description": "\n                I've studied that in non extreme conditions, aldehydes and Ketones may be reduced into their respective alcohols with Pt/H2, and that lindlar catalyst on acid halides converts it into aldehydes ...\n            ",
+        "tags": [
+            "organic-chemistry",
+            "hydrogen"
+        ]
+    },
+    {
+        "title": "\nWhat would be the best food safe electrodes for electrolysis food cleaning? [closed]\n",
+        "description": "\n                Inspired by some products on the market, I wonder what would be the best food-safe electrodes to use in creating hydroxyl ions in order to clean food. I simply do not trust the cheap commercial ...\n            ",
+        "tags": [
+            "electrochemistry",
+            "electrolysis",
+            "food-chemistry",
+            "elements"
+        ]
+    },
+    {
+        "title": "\nWhat is the formula for a hydrate that consists of 21.8 g Nickel (II) bromide and 7.21 g water? [closed]\n",
+        "description": "\n                I am confused and don't know how to solve this problem\n            ",
+        "tags": [
+            "water"
+        ]
+    },
+    {
+        "title": "\nNumber of Isomers in this Square Planar Metal Complex (Does arrangement in square planar matters)?\n",
+        "description": "\n                I tried to work this out:\nI understood that $NO_2$ and SCN are ambidentate ligands and they can be attached differently which was what I tried. I only could find and draw out 8 isomers, but there are ...\n            ",
+        "tags": [
+            "coordination-compounds",
+            "isomers"
+        ]
+    },
+    {
+        "title": "\nUnits of Activation Energy\n",
+        "description": "\n                Consider the reaction\n$$\\ce{aA + bB -> cC + dD}$$ whose reactants are given by A and B and the products are C and D.\nSay the activation energy of this reaction is some $x$ joules/mole, But moles of ...\n            ",
+        "tags": [
+            "kinetics",
+            "concentration",
+            "energy"
+        ]
+    },
+    {
+        "title": "\nSolubility of raspberry ketone in paraffin oil\n",
+        "description": "\n                I want to dissolve raspberry ketones (RK) in paraffin oil, but I'm not sure about its solubility in it. I want to use this mixture for the fruit fly's behavioral study. Is it possible to dissolve the ...\n            ",
+        "tags": [
+            "solubility"
+        ]
+    },
+    {
+        "title": "\nWhat is the difference between combination reaction and addition reaction [closed]\n",
+        "description": "\n                In my textbook,two definitions were given separately\n\nCombination: Two or more substances react to form one product.\r\nAddition: Something is added to a chemical substance without elemination.\n\nWhat is ...\n            ",
+        "tags": [
+            "redox"
+        ]
+    },
+    {
+        "title": "\nWhy is the boiling point of acetone and dimethyl ether different?\n",
+        "description": "\n                I know that the oxygen in acetone is only bonded to one carbon and is therefore more polar than in dimethyl ether.\nIs the difference in boiling temperature also due to the fact that in the ether the ...\n            ",
+        "tags": [
+            "organic-chemistry",
+            "intermolecular-forces",
+            "boiling-point",
+            "polarity"
+        ]
+    },
+    {
+        "title": "\nReduction of di-N-substituted imidazole to imidazoline to remove counterion?\n",
+        "description": "\n                I would like to synthesize a di-N-substituted imidazole (compound 4) in its free base form or reduce it to generate an imidazoline (compound 5) to remove the bromide counterion to the imidazole ring.\n\n...\n            ",
+        "tags": [
+            "organic-chemistry",
+            "redox",
+            "ionic-compounds",
+            "organic-reduction"
+        ]
+    },
+    {
+        "title": "\nTheoretical Voltage Across Graphite and Lead in CH3-COOH [closed]\n",
+        "description": "\n                Could somebody help me calculate what the theoretical voltage may be across a graphite bar and lead in a CH3-COOH solution (concentration unknown)The voltage we measured in the lab was 0.8 Volt\nI can'...\n            ",
+        "tags": [
+            "electrochemistry"
+        ]
+    },
+    {
+        "title": "\nWhat is expected vmax for this enzyme? [closed]\n",
+        "description": "\n                What do you expect for vmax (\u03bcmol substrate /mL/min) for the enzyme used in this example? The analytical wavelength for absorption measurement is 390 nm; pH 8.8 buffer was used to dilute standard ...\n            ",
+        "tags": [
+            "physical-chemistry",
+            "analytical-chemistry"
+        ]
+    },
+    {
+        "title": "\nWhy is there a yellow solution formed upon reaction of silicon tetrachloride with water?\n",
+        "description": "\n                I've read somewhere that reacting the two will give a white solid and a yellow solution. I'm assuming the white solid is the silicon dioxide, but what is the chemical origins of the yellow colour of ...\n            ",
+        "tags": [
+            "inorganic-chemistry",
+            "analytical-chemistry"
+        ]
+    },
+    {
+        "title": "\nBoiling point of pentanol isomers\n",
+        "description": "\n                Arrange the following alchohols and alkanes in increasing order of boiling point:\n3-pentanol, n-pentane, 2,2-dimethylpropanol, n-pentanol\n\nI understand that n-pentane would have the lowest boiling ...\n            ",
+        "tags": [
+            "organic-chemistry",
+            "alcohols",
+            "boiling-point"
+        ]
+    },
+    {
+        "title": "\nVolume of Ion Particle (Ca2+ and OH-)\n",
+        "description": "\n                After doing some research, I realized that ion size is commonly characterized by its ionic radius and not the ionic volume. Then, what about the volume of the ion particle?\nWe know that ions tend to ...\n            ",
+        "tags": [
+            "electrochemistry",
+            "aqueous-solution",
+            "ions"
+        ]
+    },
+    {
+        "title": "\nWhat is the order of decreasing stability of the following compounds? [closed]\n",
+        "description": "\n                My teacher told me that +ve charge is very unstable on a hybridised orbital, provided it has decent amount of s-character in it, as amount of s-character corresponds to the orbital's electronegativity....\n            ",
+        "tags": [
+            "organic-chemistry",
+            "aromatic-compounds",
+            "orbitals"
+        ]
+    },
+    {
+        "title": "\nWhy Michaelis Menten Assumption of equilibrium is necessary to integrate rate of ES production\n",
+        "description": "\n                I read in my textbook that the assumptions of equilibrium and of steady state used by Michaelis and Menten were simplifying assumptions intended to make the following equation one that can be ...\n            ",
+        "tags": [
+            "equilibrium",
+            "kinetics",
+            "enzymes",
+            "rate-equation"
+        ]
+    },
+    {
+        "title": "\nCrystallography - unit cells [duplicate]\n",
+        "description": "\n                According to what I've read, in 2 dimensions, a unit cell is a parallelogram whose vertices are all one of the lattice points. In addition we define the conventional cell as the unit cell which ...\n            ",
+        "tags": [
+            "crystallography"
+        ]
+    },
+    {
+        "title": "\nWhy do ethers and ketones have such different boiling temperatures? [duplicate]\n",
+        "description": "\n                Ketones usually have higher boiling temperatures than ethers. I would like to know whether this is due, among other things, to the fact that in ethers the polarized C atoms are covered with hydrogens. ...\n            ",
+        "tags": [
+            "organic-chemistry",
+            "intermolecular-forces",
+            "boiling-point",
+            "polarity",
+            "steric-effects"
+        ]
+    },
+    {
+        "title": "\nFriedel-Crafts alkylation of fluorochloropropane\n",
+        "description": "\n                Consider benzene reacting with 1-chloro-3-fluoropropane, with $\\ce{AlCl3}$ as the Lewis acid. My question is, is this reaction feasible? If so, what is the product formed and do cationic ...\n            ",
+        "tags": [
+            "organic-chemistry",
+            "aromatic-compounds",
+            "electrophilic-substitution"
+        ]
+    },
+    {
+        "title": "\nWhy carbon monoxide is less soluble in water? [closed]\n",
+        "description": "\n                Only 25 gm of carbon monoxide can be soluble in 1 litre of water at 25 \u2022C\n            ",
+        "tags": [
+            "organic-chemistry"
+        ]
+    },
+    {
+        "title": "\nCan copper sulphate be made by membrane electrolysis of sodium sulphate? [closed]\n",
+        "description": "\n                I heard that electrolysis of an aqueous solution of sodium sulphate in two containers separated by a salt bridge using copper electrodes will give copper sulphate solution in one of the containers. Is ...\n            ",
+        "tags": [
+            "electrolysis"
+        ]
+    },
+    {
+        "title": "\nwhat causes water sample results to be different at sampling points even when the source is the same [closed]\n",
+        "description": "\n                we treated 51cubic of water then we took samples to be tested, the results came back, with a positive feed back then we took another samples to be tested but this time at the end points of the pipes, ...\n            ",
+        "tags": [
+            "water",
+            "biochemistry"
+        ]
+    },
+    {
+        "title": "\nDo PH3F2 and XeS2 exist (in the light of hybridisation and Valence Bond Theory)? [Doubt in JEE question]\n",
+        "description": "\n                Do $\\ce{PH3F2}$ and $\\ce{XeS2}$ exist, in accordance with Valence Bond Theory?\nAccording to Drago's Rule, if the central atom of a compound is an element of the third period, and the attached atom has ...\n            ",
+        "tags": [
+            "bond",
+            "hybridization",
+            "valence-bond-theory"
+        ]
+    },
+    {
+        "title": "\nPrepare 10% sucrose containing 0.15 mM CaCl2 and 0.5 mM MgCl2 [closed]\n",
+        "description": "\n                I want to prepare 100ml of 10% sucrose solution containing 0.15 mM CaCl2 and 0.5 mM MgCl2.\nI have these materials:\n\nsucrose powder\nMgCl2.6H2O powder\nCaCl2 25mM solution\n\nPlease help me.\n            ",
+        "tags": [
+            "experimental-chemistry"
+        ]
+    },
+    {
+        "title": "\nReduction of benzylic alcohol and halide using H2 and Pd\n",
+        "description": "\n                I am studying drug synthesis, and I found some examples that uses $\\ce{H_2}$ and Pd/C or Pd/$\\ce{BaSO_4}$ as catalytic hydrogenation reagents for reduction of alcohol or halide in benzylic position. ...\n            ",
+        "tags": [
+            "synthesis",
+            "hydrogen",
+            "catalysis",
+            "organic-reduction",
+            "drugs"
+        ]
+    },
+    {
+        "title": "\nRadius of Ag+ and K+\n",
+        "description": "\n                According to the database of ionic radius\nDatabase of ionic radius\nThe ionic radius of silver(I) cation is totally smaller than potassium(I), regardless of their coordination number.\nIt seems quite ...\n            ",
+        "tags": [
+            "electronic-configuration"
+        ]
+    },
+    {
+        "title": "\nWhy do vinylic carbocations have an empty sp2 orbital instead of an empty p orbital?\n",
+        "description": "\n                Assume a tetrahedral carbon with a leaving group reacts via the SN1 mechanism. This carbon is initially sp3 hybridized, and after the departure of the leaving group, the resulting tertiary carbocation ...\n            ",
+        "tags": [
+            "organic-chemistry",
+            "carbocation"
+        ]
+    },
+    {
+        "title": "\nDeriving population of $t_{2g}$ orbitals in transition metal oxides\n",
+        "description": "\n                I have recently studied ligand field theory but there is one thing I do not understand.\nConsider an octaedral geometry of ligands around a transition metal with a $t_{2g}$ - $e_g$ splitting of atomic $...\n            ",
+        "tags": [
+            "coordination-compounds",
+            "transition-metals",
+            "crystal-field-theory",
+            "ligand-field-theory"
+        ]
+    },
+    {
+        "title": "\nAnode and cathode clarification [duplicate]\n",
+        "description": "\n                Anodes and cathodes are proving to be rather confusing. When considering ions, the cation refers to a positvely charged ion while an anion refers to a negatively charged one. However, considering an ...\n            ",
+        "tags": [
+            "electrochemistry",
+            "electrons",
+            "electrolysis"
+        ]
+    },
+    {
+        "title": "\nFrom chemfig to .mol file/SMILES\n",
+        "description": "\n                I usually draw molecules using the markup language known as LaTeX. In particular, I use the chemfig package. I much prefer this method over WYSIWYG apps because it ...\n            ",
+        "tags": [
+            "molecular-structure",
+            "structural-formula"
+        ]
+    }
+]
