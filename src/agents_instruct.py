@@ -40,6 +40,115 @@ logging.getLogger("").addHandler(console)
 logger = logging.getLogger(__name__)
 
 
+def get_relevant_snippets_interactive(html_source: str, prompt: str, max_snippets: int = 3, max_attempts: int = 50) -> list:
+    total_characters = len(html_source)
+    log = []
+    relevant_snippets = []
+    attempts = 0
+    snippet_length = 2000  # Define the length of each snippet
+
+    # Initial start index
+    current_start_index = 0
+
+    while len(relevant_snippets) < max_snippets and attempts < max_attempts:
+        current_end_index = min(current_start_index +
+                                snippet_length, total_characters)
+        snippet = html_source[current_start_index:current_end_index]
+        logger.info(
+            f"Analyzing snippet from index {current_start_index} to {current_end_index}.")
+        # log the nsippet
+        logger.info(f"Snippet:\n{snippet}")
+
+        # GPT-3 prompt for checking relevance
+        relevance_prompt = f"Does the following HTML snippet contain content directly relevant to the prompt: '{prompt}'? Please respond with 'YES' or 'NO' and provide a brief explanation.\nSnippet:\n{snippet}\n"
+
+        response = openai.Completion.create(
+            model=OPENAI_MODEL_NAME,
+            prompt=relevance_prompt,
+            max_tokens=150
+        )
+
+        output = response.choices[0].text.strip()
+        logger.info(f"GPT-3 response to relevance: {output}")
+
+        if "YES" in output:
+            logger.info("GPT-3 determined the snippet is relevant.")
+            relevant_snippets.append((current_start_index, snippet))
+
+        relevance = "YES" if "YES" in output else "NO"
+        # append to log regardless
+        log.append({
+            "start_index": current_start_index,
+            "end_index": current_end_index,
+            "relevance": relevance,
+            "explanation": output
+        })
+
+        # format the log in lines
+        log_str = ""
+        for entry in log:
+            log_str += f"Start index: {entry['start_index']}, End index: {entry['end_index']}, Relevance: {entry['relevance']}, Explanation: {entry['explanation']}\n"
+
+        # If not enough relevant snippets found, ask for the next start index
+        if len(relevant_snippets) < max_snippets:
+            find_next_prompt = (
+                f"Considering the HTML content and the prompt: '{prompt}', what should be the start index for the next snippet to examine?"
+                f"For context, this is what you've found so far:\n"
+                f"{log_str}\n"
+                f"Try to explore the HTML, rather than going sequentially.\n"
+                f"Try to avoid CSS & style tags, and focus on the content.\n"
+                f"Please provide the next start index wrapped in backticks like so: `58`\n"
+            )
+
+            # log the find next prompt
+            logger.info(f"Find next prompt:\n{find_next_prompt}")
+
+            next_response = openai.Completion.create(
+                model=OPENAI_MODEL_NAME,
+                prompt=find_next_prompt,
+                max_tokens=150
+            )
+
+            next_output = next_response.choices[0].text.strip()
+            logger.info(f"GPT-3 response for the next index: {next_output}")
+
+            # Extracting the start index using regex
+            index_match = re.search(r"`(\d+)`", next_output)
+            if index_match:
+                suggested_start_index = int(index_match.group(1))
+                if 0 <= suggested_start_index < total_characters - snippet_length:
+                    current_start_index = suggested_start_index
+                    logger.info(
+                        f"Next start index suggested by GPT-3: {suggested_start_index}.")
+                else:
+                    logger.error(
+                        "GPT-3 suggested an invalid start index. Choosing a random index.")
+                    current_start_index = generate_random_start_index(
+                        total_characters, snippet_length)
+            else:
+                logger.error(
+                    "GPT-3 did not suggest a valid start index. Choosing a random index.")
+                current_start_index = generate_random_start_index(
+                    total_characters, snippet_length)
+
+        attempts += 1
+
+    if not relevant_snippets:
+        logger.warning(
+            "No relevant snippets found after the maximum number of attempts.")
+    else:
+        logger.info(f"Found {len(relevant_snippets)} relevant snippets.")
+
+    return relevant_snippets
+
+
+def generate_random_start_index(total_characters: int, snippet_length: int) -> int:
+    """
+    Generates a random start index for the snippet.
+    """
+    return random.randint(0, total_characters - snippet_length)
+
+
 async def scrape_with_playwright(url: str) -> str:
     """
     Scrapes a website using Playwright and returns the HTML.
@@ -296,7 +405,8 @@ def generate_scraper(
     # log original html source
     logger.info(f"Original HTML Source:\n{html_source}")
     debugging_info = ""
-    relevant_snippets = get_relevant_snippets(html_source, prompt)
+    # relevant_snippets = get_relevant_snippets(html_source, prompt)
+    relevant_snippets = get_relevant_snippets_interactive(html_source, prompt)
 
     if not relevant_snippets:
         logger.error("No relevant HTML snippets were found.")
@@ -355,8 +465,8 @@ def generate_scraper(
 
 
 def main():
-    prompt = "job listings on this page"
-    website = "https://jobs.lever.co/abridge"
+    prompt = "listing information on this page"
+    website = "https://shopee.sg/CORSAIR-Vengeance-RGB-PRO-SL-16GB-(2-x-8GB)-DDR4-3200MHz-C16-DIMM-Desktop-Memory-Kit-White-CMH16GX4M2E3200C16W-i.287857235.9031119578?sp_atk=ad7440df-95ba-4df6-a396-162bf5cf2556&xptdk=ad7440df-95ba-4df6-a396-162bf5cf2556"
     output_dir = "output/lever"
     result = generate_scraper(
         prompt, website, output_dir, verbose=True, retry=10)
