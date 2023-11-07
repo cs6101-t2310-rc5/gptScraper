@@ -55,6 +55,7 @@ def strip_scripts_and_styles(html_source: str) -> str:
     soup = BeautifulSoup(html_source, "html.parser")
     [s.decompose() for s in soup("script")]
     [s.decompose() for s in soup("style")]
+    logger.info(f"Cleaned HTML Source:\n{cleaned_html}\n")
     return str(soup)
 
 
@@ -267,6 +268,8 @@ def generate_scraper(
     Generates a web scraper using OpenAI's models.
     """
     html_source = scrape(website)
+    # log original html source
+    logger.info(f"Original HTML Source:\n{html_source}")
     debugging_info = ""
     relevant_snippets = get_relevant_snippets(html_source, prompt)
 
