@@ -72,14 +72,15 @@ def get_relevant_snippets(html_source: str, prompt: str, max_snippets: int = 3) 
     # logger.info(f"Clean HTML Source:\n{clean_html_source}")
 
     while len(relevant_snippets) < max_snippets and attempts < max_snippets * 5:
-        logger.info(f"Attempts: {attempts}, Found snippets: {len(relevant_snippets)}")
+        logger.info(
+            f"Attempts: {attempts}, Found snippets: {len(relevant_snippets)}")
         # If the remaining text is shorter than 2000 characters, break
         if len(clean_html_source) <= 2000:
             break
 
         # Randomly select a start index for the snippet
         start_index = random.randint(0, len(clean_html_source) - 2000)
-        snippet = clean_html_source[start_index : start_index + 2000]
+        snippet = clean_html_source[start_index: start_index + 2000]
 
         logger.info(f"Snippet (Attempt {attempts + 1}):\n{snippet}")
 
@@ -152,11 +153,14 @@ def generate_code(
 
     if not content_match:
         logger.info("Code block not found. Trying without python syntax.")
-        content_match = re.search(r"```\n(.*?)```", response.choices[0].text, re.DOTALL)
+        content_match = re.search(
+            r"```\n(.*?)```", response.choices[0].text, re.DOTALL)
 
     if not content_match:
-        logger.info("Code block not found. Trying without both ended backticks.")
-        content_match = re.search(r"```\n(.*?)$", response.choices[0].text, re.DOTALL)
+        logger.info(
+            "Code block not found. Trying without both ended backticks.")
+        content_match = re.search(
+            r"```\n(.*?)$", response.choices[0].text, re.DOTALL)
 
     if content_match:
         code = content_match.group(1).strip()
@@ -221,9 +225,9 @@ def verifier(output: str, prompt: str) -> Tuple[bool, str]:
     instruct_prompt = (
         f"Please verify if the following output snippet:\n```\n{output[:1000]}\n```\n"
         f"accurately fulfills the requirements based on the prompt:\n```\n{prompt}\n```\n"
-        "A valid output should be roughly JSON (not including braces is okay), and MUST NOT be an empty list and should have the content described by the prompt!"
-        "It must not be an empty list!"
-        'Respond with a brief explanation of your assessment, and then write either "YES" or "NO" in a markdown code block.'
+        f"A valid output should be roughly JSON (not including braces is okay), and MUST NOT be an empty list and should have the content described by the prompt!"
+        f"It must not be an empty list!"
+        f'Respond with a brief explanation of your assessment, and then write either "YES" or "NO" in a markdown code block.'
     )
     response = openai.Completion.create(
         model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=1500
@@ -271,7 +275,8 @@ def generate_scraper(
         return "No relevant HTML snippets were found."
 
     for i in range(retry):
-        code = generate_code(debugging_info, prompt, website, relevant_snippets)
+        code = generate_code(debugging_info, prompt,
+                             website, relevant_snippets)
         logger.info(f"Generated code (Attempt {i + 1}):\n{code}")
 
         result, error = runner(code, website)
@@ -282,9 +287,11 @@ def generate_scraper(
             # Passing the generated code and error to the debugger
             debugging_info = debugger(code, error)
             logger.error(f"Attempt {i + 1} failed. Error: {error}")
-            logger.error(f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
+            logger.error(
+                f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
             if verbose:
-                print(f"Attempt {i + 1} failed. Debugging info: {debugging_info}")
+                print(
+                    f"Attempt {i + 1} failed. Debugging info: {debugging_info}")
 
             # Delay before the next retry
             if i < retry - 1:
@@ -313,7 +320,8 @@ def generate_scraper(
             debugging_info = (
                 f"Output didn't match the prompt. Expected: {prompt}. Got: {result}"
             )
-            logger.error(f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
+            logger.error(
+                f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
     logger.error("Failed to generate a valid scraper after max retries.")
     return "Failed to generate a valid scraper after max retries."
 
@@ -322,7 +330,8 @@ def main():
     prompt = "job listings on this page"
     website = "https://jobs.lever.co/abridge"
     output_dir = "output/lever"
-    result = generate_scraper(prompt, website, output_dir, verbose=True, retry=10)
+    result = generate_scraper(
+        prompt, website, output_dir, verbose=True, retry=10)
     print(result)
 
 
