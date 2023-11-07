@@ -1,30 +1,35 @@
+import io
+import json
+import logging
+import os
+import random
+import re
+import sys
+import time
+import traceback
+from typing import Tuple
+
 import openai
 import requests
-import logging
-import time
-import os
-import re
-import io
-import sys
-import random
-import traceback
-import json
-
-from typing import Tuple
 from bs4 import BeautifulSoup
 
 # Initialize the OpenAI API
 # APIKEY IS SET VIA ENVIRONEMNT
-openai.api_key = os.environ.get('OPENAI_API_KEY')
+openai.api_key = os.environ.get("OPENAI_API_KEY")
+OPENAI_MODEL_NAME = "gpt-3.5-turbo-instruct"
 
 # Logging Configuration
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
-                    filename='web_scraper.log', filemode='a')
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    filename="web_scraper.log",
+    filemode="a",
+)
 console = logging.StreamHandler()
 console.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 console.setFormatter(formatter)
-logging.getLogger('').addHandler(console)
+logging.getLogger("").addHandler(console)
 
 # Define a logger for this script
 logger = logging.getLogger(__name__)
@@ -47,9 +52,9 @@ def strip_scripts_and_styles(html_source: str) -> str:
     """
     Removes all script and style tags from the HTML source.
     """
-    soup = BeautifulSoup(html_source, 'html.parser')
-    [s.decompose() for s in soup('script')]
-    [s.decompose() for s in soup('style')]
+    soup = BeautifulSoup(html_source, "html.parser")
+    [s.decompose() for s in soup("script")]
+    [s.decompose() for s in soup("style")]
     return str(soup)
 
 
@@ -67,15 +72,14 @@ def get_relevant_snippets(html_source: str, prompt: str, max_snippets: int = 3) 
     # logger.info(f"Clean HTML Source:\n{clean_html_source}")
 
     while len(relevant_snippets) < max_snippets and attempts < max_snippets * 5:
-        logger.info(
-            f"Attempts: {attempts}, Found snippets: {len(relevant_snippets)}")
+        logger.info(f"Attempts: {attempts}, Found snippets: {len(relevant_snippets)}")
         # If the remaining text is shorter than 2000 characters, break
         if len(clean_html_source) <= 2000:
             break
 
         # Randomly select a start index for the snippet
         start_index = random.randint(0, len(clean_html_source) - 2000)
-        snippet = clean_html_source[start_index:start_index + 2000]
+        snippet = clean_html_source[start_index : start_index + 2000]
 
         logger.info(f"Snippet (Attempt {attempts + 1}):\n{snippet}")
 
@@ -96,11 +100,11 @@ def is_relevant_snippet(snippet: str, prompt: str) -> bool:
     """
     relevance_prompt = (
         f"Determine if the following HTML snippet is relevant to the prompt: {prompt}\n "
-        f"Reply \"YES\" or \"NO\" accordingly, and explain why."
+        f'Reply "YES" or "NO" accordingly, and explain why.'
         f"\nHTML Snippet:\n{snippet}"
     )
     response = openai.Completion.create(
-        model="gpt-3.5-turbo-instruct", prompt=relevance_prompt, max_tokens=100
+        model=OPENAI_MODEL_NAME, prompt=relevance_prompt, max_tokens=100
     )
     relevance_text = response.choices[0].text.strip()
 
@@ -109,7 +113,9 @@ def is_relevant_snippet(snippet: str, prompt: str) -> bool:
     return "YES" in relevance_text
 
 
-def generate_code(debugging_info: str, prompt: str, website: str, relevant_snippets) -> str:
+def generate_code(
+    debugging_info: str, prompt: str, website: str, relevant_snippets
+) -> str:
     if not relevant_snippets:
         logger.error("No relevant HTML snippets were provided.")
         return "No relevant HTML snippets were provided."
@@ -127,7 +133,7 @@ def generate_code(debugging_info: str, prompt: str, website: str, relevant_snipp
         f"Generate only the code, you MUST wrap your answer in a markdown code block."
     )
     response = openai.Completion.create(
-        model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=2500
+        model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=2500
     )
 
     # Log raw response
@@ -135,23 +141,22 @@ def generate_code(debugging_info: str, prompt: str, website: str, relevant_snipp
 
     # Extract content between backticks from the model's response
     content_match = re.search(
-        r'```python\n(.*?)```', response.choices[0].text, re.DOTALL)
+        r"```python\n(.*?)```", response.choices[0].text, re.DOTALL
+    )
 
     if not content_match:
         logger.info("Code block not found. Trying without python syntax.")
         content_match = re.search(
-            r'```python\n(.*?)$', response.choices[0].text, re.DOTALL)
+            r"```python\n(.*?)$", response.choices[0].text, re.DOTALL
+        )
 
     if not content_match:
         logger.info("Code block not found. Trying without python syntax.")
-        content_match = re.search(
-            r'```\n(.*?)```', response.choices[0].text, re.DOTALL)
+        content_match = re.search(r"```\n(.*?)```", response.choices[0].text, re.DOTALL)
 
     if not content_match:
-        logger.info(
-            "Code block not found. Trying without both ended backticks.")
-        content_match = re.search(
-            r'```\n(.*?)$', response.choices[0].text, re.DOTALL)
+        logger.info("Code block not found. Trying without both ended backticks.")
+        content_match = re.search(r"```\n(.*?)$", response.choices[0].text, re.DOTALL)
 
     if content_match:
         code = content_match.group(1).strip()
@@ -159,8 +164,7 @@ def generate_code(debugging_info: str, prompt: str, website: str, relevant_snipp
         logger.info(f"Extracted Code:\n{code}")
 
     else:
-        logger.info(
-            "Code block not found. Giving raw response.")
+        logger.info("Code block not found. Giving raw response.")
         code = response.choices[0].text
 
         logger.info(f"Extracted Code:\n{code}")
@@ -219,10 +223,11 @@ def verifier(output: str, prompt: str) -> Tuple[bool, str]:
         f"accurately fulfills the requirements based on the prompt:\n```\n{prompt}\n```\n"
         "A valid output should be roughly JSON (not including braces is okay), and MUST NOT be an empty list and should have the content described by the prompt!"
         "It must not be an empty list!"
-        "Respond with a brief explanation of your assessment, and then write either \"YES\" or \"NO\" in a markdown code block."
+        'Respond with a brief explanation of your assessment, and then write either "YES" or "NO" in a markdown code block.'
     )
     response = openai.Completion.create(
-        model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=1500)
+        model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=1500
+    )
     answer_text = response.choices[0].text
     # log the answer text
     logger.info(f"Verifier response:\n{answer_text}")
@@ -238,7 +243,8 @@ def verifier(output: str, prompt: str) -> Tuple[bool, str]:
 def debugger(code: str, error: str) -> str:
     instruct_prompt = f"Given the code:\n{code}\nIdentify the issues and provide give one best guess for why this error occurs: {error}."
     response = openai.Completion.create(
-        model="gpt-3.5-turbo-instruct", prompt=instruct_prompt, max_tokens=2000)
+        model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=2000
+    )
     answer_text = response.choices[0].text
     return answer_text
 
@@ -256,8 +262,7 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
         return "No relevant HTML snippets were found."
 
     for i in range(retry):
-        code = generate_code(debugging_info, prompt,
-                             website, relevant_snippets)
+        code = generate_code(debugging_info, prompt, website, relevant_snippets)
         logger.info(f"Generated code (Attempt {i + 1}):\n{code}")
 
         result, error = runner(code, website)
@@ -268,11 +273,9 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
             # Passing the generated code and error to the debugger
             debugging_info = debugger(code, error)
             logger.error(f"Attempt {i + 1} failed. Error: {error}")
-            logger.error(
-                f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
+            logger.error(f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
             if verbose:
-                print(
-                    f"Attempt {i + 1} failed. Debugging info: {debugging_info}")
+                print(f"Attempt {i + 1} failed. Debugging info: {debugging_info}")
 
             # Delay before the next retry
             if i < retry - 1:
@@ -288,10 +291,12 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
             return code
         else:
             logger.warning(
-                f"Output didn't match the prompt. Verifier Message (Attempt {i + 1}): {verifier_message}")
-            debugging_info = f"Output didn't match the prompt. Expected: {prompt}. Got: {result}"
-            logger.error(
-                f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
+                f"Output didn't match the prompt. Verifier Message (Attempt {i + 1}): {verifier_message}"
+            )
+            debugging_info = (
+                f"Output didn't match the prompt. Expected: {prompt}. Got: {result}"
+            )
+            logger.error(f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
     logger.error("Failed to generate a valid scraper after max retries.")
     return "Failed to generate a valid scraper after max retries."
 
