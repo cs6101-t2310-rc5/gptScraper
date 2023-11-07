@@ -12,6 +12,11 @@ from typing import Tuple
 import openai
 import requests
 from bs4 import BeautifulSoup
+import asyncio
+import os
+import logging
+import openai
+from playwright.async_api import async_playwright
 
 # Initialize the OpenAI API
 # APIKEY IS SET VIA ENVIRONEMNT
@@ -35,6 +40,23 @@ logging.getLogger("").addHandler(console)
 logger = logging.getLogger(__name__)
 
 
+async def scrape_with_playwright(url: str) -> str:
+    """
+    Scrapes a website using Playwright and returns the HTML.
+    This function is asynchronous and should be run within an asyncio event loop.
+    """
+    async with async_playwright() as p:
+        # Launch the browser in headless mode
+        browser = await p.chromium.launch(headless=True)
+        page = await browser.new_page()
+        await page.goto(url)
+        # Wait for the network to be idle (all resources loaded)
+        await page.wait_for_load_state('networkidle')
+        content = await page.content()  # Get the page content
+        await browser.close()
+        return content
+
+
 def scrape(url: str) -> str:
     """
     Scrapes a website and returns the HTML.
@@ -55,7 +77,7 @@ def strip_scripts_and_styles(html_source: str) -> str:
     soup = BeautifulSoup(html_source, "html.parser")
     [s.decompose() for s in soup("script")]
     [s.decompose() for s in soup("style")]
-    logger.info(f"Cleaned HTML Source:\n{cleaned_html}\n")
+    logger.info(f"Cleaned HTML Source:\n{str(soup)}\n")
     return str(soup)
 
 
@@ -132,6 +154,7 @@ def generate_code(
         f"Please provide Python code to scrape the website and extract: {prompt} as a JSON file.\n"
         f"Based on the following relevant HTML snippet from somewhere in the webpage:\n{relevant_snippet}\n"
         f"The code should take in this link {website} and print out the requested data. "
+        f"The website may be dynamically loaded, so use Playwright to wait for the page to load before scraping.\n"
         f"Generate only the code, you MUST wrap your answer in a markdown code block."
     )
     response = openai.Completion.create(
@@ -267,7 +290,9 @@ def generate_scraper(
     """
     Generates a web scraper using OpenAI's models.
     """
-    html_source = scrape(website)
+    # html_source = scrape(website)
+    html_source = asyncio.run(scrape_with_playwright(website))
+
     # log original html source
     logger.info(f"Original HTML Source:\n{html_source}")
     debugging_info = ""
