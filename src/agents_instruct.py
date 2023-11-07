@@ -132,6 +132,8 @@ def generate_code(
         f"Based on the following relevant HTML snippet from somewhere in the webpage:\n{relevant_snippet}\n"
         f"The code should take in this link {website} and PRINT out the requested data."
         f"Generate only the code, you MUST wrap your answer in a markdown code block.\n"
+        f"Generate it in this format.\n"
+        f"```python\n# imports\nimport bs4 \n\ndef scraper(url: str) -> str:\n  # scraper logic goes here\n  pass\n\nif __name__ == '__main__':\n  url = \"<DUMMY URL, REPLACE WITH ACTUAL URL>\"\n  scraper(url)\n"
         f"START CONTEXT\n"
         f"This is the debugging info:\n```{debugging_info}```\n"
         f"This is your previous error:\n```{previous_error}```\n"
