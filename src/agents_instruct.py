@@ -55,7 +55,7 @@ def strip_scripts_and_styles(html_source: str) -> str:
     soup = BeautifulSoup(html_source, "html.parser")
     [s.decompose() for s in soup("script")]
     [s.decompose() for s in soup("style")]
-    logger.info(f"Cleaned HTML Source:\n{cleaned_html}\n")
+    logger.info(f"Cleaned HTML Source:\n{html_source}\n")
     return str(soup)
 
 
@@ -115,9 +115,7 @@ def is_relevant_snippet(snippet: str, prompt: str) -> bool:
     return "YES" in relevance_text
 
 
-def generate_code(
-    debugging_info: str, prompt: str, website: str, relevant_snippets
-) -> str:
+def generate_code(debugging_info: str, previous_code: str, prompt: str, website: str, relevant_snippets: list) -> str:
     if not relevant_snippets:
         logger.error("No relevant HTML snippets were provided.")
         return "No relevant HTML snippets were provided."
@@ -127,64 +125,70 @@ def generate_code(
     logger.info(f"Using Relevant Snippet:\n{str(relevant_snippet)}")
 
     # Proceed with code generation using the relevant snippet
+    # instruct_prompt = (
+    #     f"Please provide a Python function to scrape the website and extract: {prompt} as a JSON file.\n"
+    #     f"The function should take in this HTML source as a string and print out the requested data in JSON format.\n"
+    #     f"Generate only the process_source(html_source) function, and ensure the function declaration is included in your response.\n"
+    #     f"**IMPORTANT**: You *MUST* wrap your code in a markdown code block. Like so: ```def blahblah```\n"
+    #     f"You are provided the following relevant HTML snippet from somewhere in the webpage:\n{relevant_snippet}\n"
+    #     f"**DO NOT** include example usages or outputs, I should only see the function definition.\n"
+    #     f"This was the previous iteration of the code:\n{previous_code}\n"
+    #     f"This is the debugging info as to why it didn't work:\n{debugging_info}\n"
+    #     f"WRAP YOUR ANSWER IN A MARKDOWN CODE BLOCK!!\n"
+    #     # f"Your code should *only* include the process_source function!\n"
+    # )
     instruct_prompt = (
-        f"Given the debugging info:\n{debugging_info}\n"
-        f"Please provide Python code to scrape the website and extract: {prompt} as a JSON file.\n"
-        f"Based on the following relevant HTML snippet from somewhere in the webpage:\n{relevant_snippet}\n"
-        f"The code should take in this link {website} and print out the requested data. "
-        f"Generate only the code, you MUST wrap your answer in a markdown code block."
+        f"Given the HTML snippet:\n{relevant_snippet}\n"
+        f"and the debugging information:\n{debugging_info}\n"
+        f"revise the previous code:\n{previous_code}\n"
+        f"to define a Python function `process_source(html_source: str)` that processes the HTML source to extract {prompt}, "
+        f"and prints the result as JSON."
+        f"Reply in a Python markdown code block."
     )
+    # log the prompt
+    logger.info(f"Generation prompt:\n{instruct_prompt}")
     response = openai.Completion.create(
-        model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=2500
+        model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=2000
     )
 
     # Log raw response
     logger.info(f"Raw response:\n{response}")
 
-    # Extract content between backticks from the model's response
-    content_match = re.search(
-        r"```python\n(.*?)```", response.choices[0].text, re.DOTALL
-    )
+    stripped_response = response.choices[0].text.strip()
+    # log the stripped response
+    logger.info(f"Stripped response:\n{stripped_response}")
 
-    if not content_match:
-        logger.info("Code block not found. Trying without python syntax.")
-        content_match = re.search(
-            r"```python\n(.*?)$", response.choices[0].text, re.DOTALL
-        )
+    patterns = [
+        r"```python\n(.*?)```",  # Standard fenced code block
+        r"```python\n(.*?)$",    # Code block without ending fence
+        r"```\n(.*?)```",        # Fenced block without language specifier
+        # Fenced block without ending fence or language specifier
+        r"```\n(.*?)$"
+        r"```(.*?)```",        # Fenced block without language specifier
+        # Fenced block without ending fence or language specifier
+        r"```(.*?)$"
+    ]
 
-    if not content_match:
-        logger.info("Code block not found. Trying without python syntax.")
-        content_match = re.search(
-            r"```\n(.*?)```", response.choices[0].text, re.DOTALL)
+    code = None
+    for pattern in patterns:
+        content_match = re.search(pattern, stripped_response, re.DOTALL)
+        if content_match:
+            code = content_match.group(1).strip()
+            break
 
-    if not content_match:
-        logger.info(
-            "Code block not found. Trying without both ended backticks.")
-        content_match = re.search(
-            r"```\n(.*?)$", response.choices[0].text, re.DOTALL)
-
-    if content_match:
-        code = content_match.group(1).strip()
+    if code:
         # Log the extracted code
         logger.info(f"Extracted Code:\n{code}")
-
+        return code
     else:
-        logger.info("Code block not found. Giving raw response.")
-        code = response.choices[0].text
-
-        logger.info(f"Extracted Code:\n{code}")
-
-    return code
-    # else:
-    #     # If no code block is found, log the full response for manual inspection
-    #     logger.error(
-    #         f"Code block not found in response:\n{response.choices[0].text}")
-    #     return "Failed to extract code from the AI's response."
+        # If no code block is found, log the full response for manual inspection
+        logger.error("Code block not found in response.")
+        return "Failed to extract code from the AI's response."
 
 
-def runner(code: str, url: str) -> Tuple[str, str]:
+def runner(process_source_code: str, html_source: str) -> Tuple[str, str]:
     """
-    Runs the Python code with the given website URL and captures the printed output.
+    Runs the process_source function with the given HTML source and captures the printed output.
     Returns a tuple containing the output and the complete error stack trace, if any.
     """
     # Create a StringIO object to capture stdout
@@ -197,11 +201,20 @@ def runner(code: str, url: str) -> Tuple[str, str]:
     sys.stdout = captured_output
 
     try:
-        # Execute the code within the local scope
-        exec(code, globals())
+        # Define the scope where the process_source function will be executed
+        local_scope = {}
+        # Execute the generated code to define process_source in the local scope
+        exec(process_source_code, globals(), local_scope)
+        # Run the process_source function with the provided HTML source
+        if 'process_source' in local_scope:
+            local_scope['process_source'](html_source)
+        else:
+            raise Exception(
+                "The process_source function is not defined in the generated code.")
     except Exception as e:
-        # Format the complete stack trace including the error within the executed code
+        # Capture any errors that occur during the execution of the process_source function
         error_message = traceback.format_exc()
+        logger.error(f"Error during execution of process_source: {str(e)}")
     finally:
         # Restore stdout to its original state
         sys.stdout = current_stdout
@@ -211,14 +224,12 @@ def runner(code: str, url: str) -> Tuple[str, str]:
         # Close the StringIO buffer
         captured_output.close()
 
+    # Check if the output is an empty list or an empty dictionary
+    if output.strip() in ["[]", "{}", ""]:
+        error_message = "Empty list or dictionary! No data returned, why?"
+        output = "Empty list or dictionary! No data returned!"
+
     # Return the output and the error message
-    if output == "":
-        return "NO OUTPUT GIVEN!!", error_message
-    # if output is empty list
-    if output == "[]" or output == "[]\n":
-        return "Empty list! No data returned!", "Empty list! No data returned, why?"
-    if output == "\{\}" or output == "\{\}\n":
-        return "Empty list! No data returned!", "Empty list! No data returned, why?"
     return output, error_message
 
 
@@ -270,19 +281,21 @@ def generate_scraper(
     html_source = scrape(website)
     # log original html source
     logger.info(f"Original HTML Source:\n{html_source}")
-    debugging_info = ""
+    debugging_info = "No debugging info."
     relevant_snippets = get_relevant_snippets(html_source, prompt)
 
     if not relevant_snippets:
         logger.error("No relevant HTML snippets were found.")
         return "No relevant HTML snippets were found."
 
+    previous_code = "No previous code."
     for i in range(retry):
-        code = generate_code(debugging_info, prompt,
+        code = generate_code(debugging_info, previous_code, prompt,
                              website, relevant_snippets)
+        previous_code = code
         logger.info(f"Generated code (Attempt {i + 1}):\n{code}")
 
-        result, error = runner(code, website)
+        result, error = runner(code, html_source)
         # log results and errors
         logger.info(f"Result (Attempt {i + 1}):\n{result}")
         logger.info(f"Error (Attempt {i + 1}):\n{error}")
@@ -296,11 +309,11 @@ def generate_scraper(
                 print(
                     f"Attempt {i + 1} failed. Debugging info: {debugging_info}")
 
-            # Delay before the next retry
-            if i < retry - 1:
-                delay = (i + 1) * 1  # increasing delay with each retry
-                logger.info(f"Waiting for {delay} seconds before retrying...")
-                time.sleep(delay)
+            # # Delay before the next retry
+            # if i < retry - 1:
+            #     delay = (i + 1) * 1  # increasing delay with each retry
+            #     logger.info(f"Waiting for {delay} seconds before retrying...")
+            #     time.sleep(delay)
             continue
 
         verified, verifier_message = verifier(result, prompt)
