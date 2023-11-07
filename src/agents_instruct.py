@@ -55,7 +55,7 @@ def strip_scripts_and_styles(html_source: str) -> str:
     soup = BeautifulSoup(html_source, "html.parser")
     [s.decompose() for s in soup("script")]
     [s.decompose() for s in soup("style")]
-    logger.info(f"Cleaned HTML Source:\n{cleaned_html}\n")
+    logger.info(f"Cleaned HTML Source:\n{str(soup)}\n")
     return str(soup)
 
 
@@ -116,7 +116,7 @@ def is_relevant_snippet(snippet: str, prompt: str) -> bool:
 
 
 def generate_code(
-    debugging_info: str, prompt: str, website: str, relevant_snippets
+    debugging_info: str, previous_code: str, prompt: str, website: str, relevant_snippets
 ) -> str:
     if not relevant_snippets:
         logger.error("No relevant HTML snippets were provided.")
@@ -128,12 +128,16 @@ def generate_code(
 
     # Proceed with code generation using the relevant snippet
     instruct_prompt = (
-        f"Given the debugging info:\n{debugging_info}\n"
-        f"Please provide Python code to scrape the website and extract: {prompt} as a JSON file.\n"
+        f"Please provide Python code to scrape the website and PRINT OUT: {prompt} as JSON.\n"
         f"Based on the following relevant HTML snippet from somewhere in the webpage:\n{relevant_snippet}\n"
-        f"The code should take in this link {website} and print out the requested data. "
-        f"Generate only the code, you MUST wrap your answer in a markdown code block."
+        f"The code should take in this link {website} and PRINT out the requested data."
+        f"Generate only the code, you MUST wrap your answer in a markdown code block.\n"
+        f"START CONTEXT\n"
+        f"This is the debugging info:\n```{debugging_info}```\n"
+        f"This is your previous code:\n```python{previous_code}```\n"
+        f"END CONTEXT\n"
     )
+    logger.info(f"Generation Prompt:\n{instruct_prompt}")
     response = openai.Completion.create(
         model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=2500
     )
@@ -275,7 +279,8 @@ def generate_scraper(
     html_source = scrape(website)
     # log original html source
     logger.info(f"Original HTML Source:\n{html_source}")
-    debugging_info = ""
+    debugging_info = "There is no debugging info."
+    previous_code = "There is no previous code."
     relevant_snippets = get_relevant_snippets(html_source, prompt)
 
     if not relevant_snippets:
@@ -283,8 +288,9 @@ def generate_scraper(
         return "No relevant HTML snippets were found."
 
     for i in range(retry):
-        code = generate_code(debugging_info, prompt,
+        code = generate_code(debugging_info, previous_code, prompt,
                              website, relevant_snippets)
+        previous_code = code
         logger.info(f"Generated code (Attempt {i + 1}):\n{code}")
 
         result, error = runner(code, website)
