@@ -116,7 +116,7 @@ def is_relevant_snippet(snippet: str, prompt: str) -> bool:
 
 
 def generate_code(
-    debugging_info: str, previous_code: str, prompt: str, website: str, relevant_snippets
+    debugging_info: str, previous_error: str, previous_code: str, prompt: str, website: str, relevant_snippets
 ) -> str:
     if not relevant_snippets:
         logger.error("No relevant HTML snippets were provided.")
@@ -134,6 +134,7 @@ def generate_code(
         f"Generate only the code, you MUST wrap your answer in a markdown code block.\n"
         f"START CONTEXT\n"
         f"This is the debugging info:\n```{debugging_info}```\n"
+        f"This is your previous error:\n```{previous_error}```\n"
         f"This is your previous code:\n```python{previous_code}```\n"
         f"END CONTEXT\n"
     )
@@ -186,46 +187,6 @@ def generate_code(
     #     return "Failed to extract code from the AI's response."
 
 
-def runner(code: str, url: str) -> Tuple[str, str]:
-    """
-    Runs the Python code with the given website URL and captures the printed output.
-    Returns a tuple containing the output and the complete error stack trace, if any.
-    """
-    # Create a StringIO object to capture stdout
-    captured_output = io.StringIO()
-    # Initialize the error_message variable to capture stderr
-    error_message = ""
-
-    # Save the current stdout
-    current_stdout = sys.stdout
-    sys.stdout = captured_output
-
-    try:
-        # Execute the code within the local scope
-        exec(code, globals())
-    except Exception as e:
-        # Format the complete stack trace including the error within the executed code
-        error_message = traceback.format_exc()
-    finally:
-        # Restore stdout to its original state
-        sys.stdout = current_stdout
-
-        # Get the contents of the StringIO buffer
-        output = captured_output.getvalue()
-        # Close the StringIO buffer
-        captured_output.close()
-
-    # Return the output and the error message
-    if output == "":
-        return "NO OUTPUT GIVEN!!", error_message
-    # if output is empty list
-    if output == "[]" or output == "[]\n":
-        return "Empty list! No data returned!", "Empty list! No data returned, why?"
-    if output == "\{\}" or output == "\{\}\n":
-        return "Empty list! No data returned!", "Empty list! No data returned, why?"
-    return output, error_message
-
-
 def verifier(output: str, prompt: str) -> Tuple[bool, str]:
     instruct_prompt = (
         f"Please verify if the following output snippet:\n```\n{output[:1000]}\n```\n"
@@ -247,6 +208,51 @@ def verifier(output: str, prompt: str) -> Tuple[bool, str]:
         return False, answer_text
     else:
         return False, "Invalid response."
+
+
+def runner(code: str, url: str) -> Tuple[str, str]:
+    """
+    Runs the Python code with the given website URL and captures the printed output.
+    Returns a tuple containing the output and the specific line of code that caused the error, if any.
+    """
+    # Create a StringIO object to capture stdout
+    captured_output = io.StringIO()
+    # Initialize the error_message variable to capture stderr
+    error_message = ""
+
+    # Split the code into lines for later reference
+    code_lines = code.splitlines()
+
+    # Save the current stdout
+    current_stdout = sys.stdout
+    sys.stdout = captured_output
+
+    try:
+        # Execute the code within the local scope
+        exec(code, globals())
+    except Exception as e:
+        # Get the last exception information
+        exc_type, exc_value, exc_traceback = sys.exc_info()
+        # Extract the line number from the traceback
+        tb_info = traceback.extract_tb(exc_traceback)
+        # Get the last traceback object in the list
+        last_call = tb_info[-1]
+        error_line_number = last_call.lineno
+        # Retrieve the offending line of code using the line number
+        # -1 because list indices start at 0
+        error_line_code = code_lines[error_line_number - 1]
+        error_message = f"Error on line {error_line_number}: {error_line_code}\n{exc_type.__name__}: {exc_value}"
+    finally:
+        # Restore stdout to its original state
+        sys.stdout = current_stdout
+
+        # Get the contents of the StringIO buffer
+        output = captured_output.getvalue()
+        # Close the StringIO buffer
+        captured_output.close()
+
+    # Return the output and the error message
+    return output.strip() or "NO OUTPUT GIVEN!!", error_message.strip()
 
 
 def debugger(code: str, error: str) -> str:
@@ -279,8 +285,9 @@ def generate_scraper(
     html_source = scrape(website)
     # log original html source
     logger.info(f"Original HTML Source:\n{html_source}")
-    debugging_info = "There is no debugging info."
     previous_code = "There is no previous code."
+    previous_error = "There is no previous error."
+    debugging_info = "There is no debugging info."
     relevant_snippets = get_relevant_snippets(html_source, prompt)
 
     if not relevant_snippets:
@@ -288,7 +295,7 @@ def generate_scraper(
         return "No relevant HTML snippets were found."
 
     for i in range(retry):
-        code = generate_code(debugging_info, previous_code, prompt,
+        code = generate_code(debugging_info, previous_error, previous_code, prompt,
                              website, relevant_snippets)
         previous_code = code
         logger.info(f"Generated code (Attempt {i + 1}):\n{code}")
@@ -298,6 +305,7 @@ def generate_scraper(
         logger.info(f"Result (Attempt {i + 1}):\n{result}")
         logger.info(f"Error (Attempt {i + 1}):\n{error}")
         if error:
+            previous_error = error
             # Passing the generated code and error to the debugger
             debugging_info = debugger(code, error)
             logger.error(f"Attempt {i + 1} failed. Error: {error}")
@@ -307,12 +315,12 @@ def generate_scraper(
                 print(
                     f"Attempt {i + 1} failed. Debugging info: {debugging_info}")
 
-            # Delay before the next retry
-            if i < retry - 1:
-                delay = (i + 1) * 1  # increasing delay with each retry
-                logger.info(f"Waiting for {delay} seconds before retrying...")
-                time.sleep(delay)
-            continue
+            # # Delay before the next retry
+            # if i < retry - 1:
+            #     delay = (i + 1) * 1  # increasing delay with each retry
+            #     logger.info(f"Waiting for {delay} seconds before retrying...")
+            #     time.sleep(delay)
+            # continue
 
         verified, verifier_message = verifier(result, prompt)
         if verified:
