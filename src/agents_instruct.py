@@ -249,7 +249,16 @@ def debugger(code: str, error: str) -> str:
     return answer_text
 
 
-def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = False, output: str = "json", api_key: str = None, model_id: str = "gpt-3.5-turbo", log: str = None) -> str:
+def generate_scraper(
+    prompt: str,
+    website: str,
+    output_dir: str,
+    retry: int = 3,
+    verbose: bool = False,
+    output: str = "json",
+    api_key: str = None,
+    log: str = None,
+) -> str:
     """
     Generates a web scraper using OpenAI's models.
     """
@@ -288,7 +297,15 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
         if verified:
             logger.info("Successfully generated a valid scraper.")
             logger.info(f"Generated result (Attempt {i + 1}):\n{result}")
-            return code
+
+            os.makedirs(output_dir, exist_ok=True)
+            filename = os.path.join(output_dir, "scraper.py")
+            with open(filename, "w+") as f:
+                f.write(code)
+
+            return (
+                f"Successfully generated a valid scraper in `{output_dir}/scraper.py`."
+            )
         else:
             logger.warning(
                 f"Output didn't match the prompt. Verifier Message (Attempt {i + 1}): {verifier_message}"
@@ -304,7 +321,8 @@ def generate_scraper(prompt: str, website: str, retry: int = 3, verbose: bool = 
 def main():
     prompt = "job listings on this page"
     website = "https://jobs.lever.co/abridge"
-    result = generate_scraper(prompt, website, verbose=True, retry=10)
+    output_dir = "output/lever"
+    result = generate_scraper(prompt, website, output_dir, verbose=True, retry=10)
     print(result)
 
 
