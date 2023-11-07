@@ -263,9 +263,14 @@ def generate_scraper(
     output: str = "json",
     api_key: str = None,
     log: str = None,
-) -> str:
+) -> (bool, int):
     """
     Generates a web scraper using OpenAI's models.
+
+    Returns:
+    - whether a scraper was successfully generated
+    - number of tries required to successfuly generate a model
+      (if failed, will always be equal to the `retry` parameter)
     """
     html_source = scrape(website)
     # log original html source
@@ -313,9 +318,7 @@ def generate_scraper(
             with open(filename, "w+") as f:
                 f.write(code)
 
-            return (
-                f"Successfully generated a valid scraper in `{output_dir}/scraper.py`."
-            )
+            return (True, i+1)
         else:
             logger.warning(
                 f"Output didn't match the prompt. Verifier Message (Attempt {i + 1}): {verifier_message}"
@@ -326,16 +329,19 @@ def generate_scraper(
             logger.error(
                 f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
     logger.error("Failed to generate a valid scraper after max retries.")
-    return "Failed to generate a valid scraper after max retries."
+    return (False, retry)
 
 
 def main():
     prompt = "job listings on this page"
     website = "https://jobs.lever.co/abridge"
     output_dir = "output/lever"
-    result = generate_scraper(
+    success, n_tries = generate_scraper(
         prompt, website, output_dir, verbose=True, retry=10)
-    print(result)
+    if success:
+        print(f'Successfully generated a scraper in {n_tries} tries.')
+    else:
+        print(f'Could not generate a scraper after {n_tries} tries.')
 
 
 if __name__ == "__main__":
