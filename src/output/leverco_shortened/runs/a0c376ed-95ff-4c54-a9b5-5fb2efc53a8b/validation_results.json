@@ -1,0 +1,58 @@
+{
+    "https://jobs.lever.co/jupiter": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was found.\n",
+        "verifier_response": "\n\nNO - This output snippet does not accurately fulfill the requirements based on the prompt. It is an error message indicating that no job listings were found, and it does not include the needed information of title, tag, and apply_link."
+    },
+    "https://jobs.lever.co/DoraHacks": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was found.\n",
+        "verifier_response": "\n\nThis output snippet does not fulfill the requirements based on the prompt because it only contains the phrase \"No data was found.\" It is neither in the format of JSON nor does it contain any of the required information such as title, tag, or apply_link. Therefore, it does not accurately fulfill the requirements. \n\nNO"
+    },
+    "https://jobs.lever.co/Sprinto": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "No data was found.\n",
+        "verifier_response": "\nYES"
+    },
+    "https://jobs.lever.co/zenyum": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was found.\n",
+        "verifier_response": "\n\nNO\n\nExplanation: This output does not include any title, tag, or apply_link information. It is also an empty list, which does not fulfill the requirement of having content. "
+    },
+    "https://jobs.lever.co/HQxyz": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was found.\n",
+        "verifier_response": "\n\nExplanation: \nThe output snippet does not fulfill the requirements based on the prompt because there is no title, tag or apply_link included.\n\nNO"
+    },
+    "https://jobs.lever.co/nium": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was found.\n",
+        "verifier_response": "\n\nNO"
+    },
+    "https://jobs.lever.co/hypebeast": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was found.\n",
+        "verifier_response": "\nNO"
+    },
+    "https://jobs.lever.co/paytm": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was found.\n",
+        "verifier_response": "\n\nNO\n\nExplanation: \nThe output snippet only contains \"No data was found.\" and does not contain any titles, tags, or apply links for job listings. Therefore, it does not fulfill the requirements of this prompt."
+    }
+}

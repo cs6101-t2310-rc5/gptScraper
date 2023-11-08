@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco_shortened",
+    "run": "2d3d21f2-e830-442c-9bb6-367fb5d61adb",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 3,
+    "final_scraper_code": "# imports\nimport requests\nfrom bs4 import BeautifulSoup\nimport json \n\ndef scraper(url: str) -> str:\n    # get page content\n    page = requests.get(url)\n    \n    # parse HTML with BeautifulSoup\n    soup = BeautifulSoup(page.content, 'html.parser')\n    \n    # find all job listings\n    job_listings = soup.find_all('div', class_='posting')\n    \n    # loop through each job listing\n    for listing in job_listings:\n        # check if listing has title h5 tag\n        if listing.find('h5', class_='posting-title') is not None:\n            # extract title from h5 tag\n            title = listing.find('h5', class_='posting-title').text\n        else:\n            # if no title, set to N/A\n            title = \"N/A\"\n        \n        # check if listing has tag div tag\n        if listing.find('div', class_='sort-by-time posting-category small-category-label') is not None:\n            # extract tag from div tag\n            tag = listing.find('div', class_='sort-by-time posting-category small-category-label').text.strip()\n        else:\n            # if no tag, set to N/A\n            tag = \"N/A\"\n        \n        # check if listing has apply link a tag\n        if listing.find('a', class_='apply') is not None:\n            # extract apply link from a tag\n            apply_link = f\"https://jobs.lever.co{listing.find('a', class_='apply').get('href')}\"\n        else:\n            # if no apply link, set to N/A\n            apply_link = \"N/A\"\n        \n        # create job dictionary\n        job = {'title': title, 'tag': tag, 'apply_link': apply_link}\n        \n        # print job data as JSON\n        print(json.dumps(job))\n\n\nif __name__ == '__main__':\n    url = \"https://jobs.lever.co/appboxo\"\n    scraper(url)",
+    "test_count": 8,
+    "test_succ_count": 5
+}

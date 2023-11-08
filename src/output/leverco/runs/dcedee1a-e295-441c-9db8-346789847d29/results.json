@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco",
+    "run": "dcedee1a-e295-441c-9db8-346789847d29",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 4,
+    "final_scraper_code": "import requests\nimport bs4 \n\ndef scraper(url: str) -> str:\n  # get webpage content\n  response = requests.get(url)\n  # parse webpage content\n  webpage = bs4.BeautifulSoup(response.content, 'html.parser')\n  \n  # extract job listings \n  job_listings = webpage.find_all(\"div\", class_=\"posting\")\n\n  # initialize list to store extracted data as dictionaries\n  extracted_data = []\n  # loop through job listings\n  for listing in job_listings:\n    # extract job title\n    title = listing.find(\"h5\", attrs={\"data-qa\": \"posting-name\"}).get_text()\n    # extract workplace type\n    workplace_type = listing.find(\"span\", class_=\"workplaceTypes\").get_text()\n    # extract commitment\n    commitment = listing.find(\"span\", class_=\"commitment\").get_text()\n    # extract location\n    location = listing.find(\"span\", class_=\"location\").get_text()\n    # extract application link\n    apply_link = listing.find(\"a\", class_=\"posting-btn-submit\").get(\"href\")\n\n    # create dictionary to store extracted data\n    job_data = {\"title\": title,\n                \"workplace_type\": workplace_type,\n                \"commitment\": commitment,\n                \"location\": location,\n                \"apply_link\": apply_link}\n    \n    # append dictionary to list\n    extracted_data.append(job_data)\n\n  # print extracted data as JSON\n  print(json.dumps(extracted_data))\n  \n  return \"Successfully scraped and printed data in JSON format!\"\n\nif __name__ == '__main__':\n  url = \"https://jobs.lever.co/appboxo\"\n  scraper(url)",
+    "test_count": 8,
+    "test_succ_count": 5
+}

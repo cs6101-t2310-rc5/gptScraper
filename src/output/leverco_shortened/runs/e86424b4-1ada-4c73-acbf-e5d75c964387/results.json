@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco_shortened",
+    "run": "e86424b4-1ada-4c73-acbf-e5d75c964387",
+    "source": "",
+    "snippets_used": 2,
+    "attempts": 1,
+    "final_scraper_code": "# imports\nimport bs4 \nimport requests\nimport json\n\ndef scraper(url: str) -> str:\n    # make a GET request to the url\n    response = requests.get(url)\n\n    # check if the GET request was successful\n    if response.status_code == 200:\n        # use BeautifulSoup to parse the html\n        soup = bs4.BeautifulSoup(response.content, 'html.parser')\n\n        # find all the job listings by looking for the 'posting' class\n        job_listings = soup.find_all('div', class_='posting')\n\n        # create an empty list to store data\n        results = []\n\n        # loop through each job listing\n        for job in job_listings:\n            # extract the title by finding the 'posting-name' data-qa attribute\n            title = job.find('h5', attrs={'data-qa':'posting-name'}).text\n\n            # extract the tag by finding the 'posting-categories' class\n            # and get the text of the first span element\n            tag = job.find('span', class_='small-category-label').text\n\n            # extract the apply_link by finding the 'posting-apply' class\n            # and get the href attribute of the first 'a' element\n            apply_link = job.find('div', class_='posting-apply').find('a')['href']\n\n            # create a dictionary for each job listing\n            job_dict = {\n                'title': title,\n                'tag': tag,\n                'apply_link': apply_link\n            }\n\n            # append the dictionary to the results list\n            results.append(job_dict)\n        \n        # convert the results list to JSON format and print it\n        print(json.dumps(results))\n\n    else:\n        print('GET request was unsuccessful')\n\nif __name__ == '__main__':\n    url = \"https://jobs.lever.co/appboxo\"\n    scraper(url)",
+    "test_count": 8,
+    "test_succ_count": 8
+}
