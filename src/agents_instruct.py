@@ -335,7 +335,7 @@ def generate_scraper(
     debugging_info = "There is no debugging info."
     relevant_snippets = get_relevant_snippets(html_source, prompt, results)
     results['relevant_snippets'] = relevant_snippets
-    results['source'] = html_source
+    results['source'] = ""
 
     attempts_taken = 0
 
@@ -461,7 +461,7 @@ def validate_scraper_on_websites(scraper_code, websites, prompt, results):
             validation_results[website] = {
                 'success': False,
                 'error': error,
-                'html_source': html_source,
+                'html_source': "redacted",
                 'scraper_output': result,
                 'verifier_response': 'N/A'  # If there's an error, the verifier isn't run
             }
@@ -472,7 +472,7 @@ def validate_scraper_on_websites(scraper_code, websites, prompt, results):
         validation_results[website] = {
             'success': verified,
             'error': None if verified else 'Output did not match the prompt',
-            'html_source': html_source,
+            'html_source': "redacted",
             'scraper_output': result,
             'verifier_response': verifier_response
         }
@@ -480,7 +480,7 @@ def validate_scraper_on_websites(scraper_code, websites, prompt, results):
             succ_count += 1
         # log the validation results
         logger.info(f"Validation results:\n{validation_results[website]}")
-    results["test_results"] = validation_results
+    # results["test_results"] = validation_results
     results["test_count"] = count
     results["test_succ_count"] = succ_count
     return validation_results
@@ -522,7 +522,8 @@ def main():
         'dataset': dataset_name,
         'run': str(run_id),
         'source': "",
-        'max_snippet_length': Config.MAX_RELEVANT_SNIPPETS,
+        'snippets_used': -1,
+        'attempts': -1,
         'snippets_tried': [],
         'relevant_snippets': [],  # This will be populated during snippet generation
         'generated_code_tries': [],
@@ -535,6 +536,19 @@ def main():
     # Generate the scraper using the first website
     n_tries, success, generated_code = generate_scraper(
         prompt, website_to_generate, output_dir, results, verbose=True, retry=10)
+
+    results['attempts'] = n_tries
+    results['snippets_used'] = len(results['relevant_snippets'])
+
+    # save snippets_tried, relevant_snippets, generated_code_tries, test_results into accessory json file
+    with open(f"{output_dir}/runs/{run_id}/accessory.json", 'w', encoding='utf-8') as file:
+        json.dump(results, file, indent=4)
+
+    # delete snippets_tried, relevant_snippets, generated_code_tries, test_results from dictinoary
+    del results['snippets_tried']
+    del results['relevant_snippets']
+    del results['generated_code_tries']
+    del results['test_results']
 
     if success:
         logger.info(f'Successfully generated a scraper in {n_tries} tries.')
