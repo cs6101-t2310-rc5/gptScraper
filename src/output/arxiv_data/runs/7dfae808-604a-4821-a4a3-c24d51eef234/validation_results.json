@@ -1,0 +1,142 @@
+{
+    "https://arxiv.org/abs/2311.01398": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Server-side Rescoring of Spoken Entity-centric Knowledge Queries...\", \"authors\": [\"\", \"\", \"\", \"\"], \"abstract\": \"On-device Virtual Assistants (VAs) powered by Automatic Speech Recognition (ASR) require effective knowledge integration for the challenging entity-rich query recognition. In this paper, we...\"}\n",
+        "verifier_response": "\n\nThe output snippet accurately fulfills the requirements based on the prompt. It includes all three requested elements (paper_title, authors, and abstract) and the format is roughly JSON. The empty string values for authors may be considered an irregularity, as it would be more appropriate to either list actual author names or include null values for the authors. The abstract also cuts off with \"we...\", but this is likely due to the character limit set for the output. Overall, the snippet is valid and fulfills the requirements. \n\nYES"
+    },
+    "https://arxiv.org/abs/2311.01386": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Can Language Models Be Tricked by Language Illusions? Easier with...\", \"authors\": [\"\", \"\", \"\"], \"abstract\": \"Language models (LMs) have been argued to overlap substantially with human beings in grammaticality judgment tasks. But when humans systematically make errors in language processing, should we...\"}\n",
+        "verifier_response": "\n\nYES"
+    },
+    "https://arxiv.org/abs/2311.01326": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Better Together: Enhancing Generative Knowledge Graph Completion...\", \"authors\": [\"\", \"\", \"\", \"\"], \"abstract\": \"Real-world Knowledge Graphs (KGs) often suffer from incompleteness, which limits their potential performance. Knowledge Graph Completion (KGC) techniques aim to address this issue. However,...\"}\n",
+        "verifier_response": "\n\nYES\n\nThe output accurately fulfills the requirements as it includes the paper title, authors, and abstract information. The abstract is truncated with an ellipsis, but this is not considered an irregularity as this is a common practice in displaying abstracts."
+    },
+    "https://arxiv.org/abs/2311.01307": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"The Effect of Scaling, Retrieval Augmentation and Form on the...\", \"authors\": [\"\", \"\", \"\", \"\", \"\"], \"abstract\": \"Large Language Models (LLMs) make natural interfaces to factual knowledge, but their usefulness is limited by their tendency to deliver inconsistent answers to semantically equivalent questions....\"}\n",
+        "verifier_response": "\n\nYES\n\nExplanation: The output snippet contains the paper title, authors, and abstract information in the correct format. The authors list may appear to be empty, but the output may vary depending on the research paper. The output appears to fulfill all the requirements."
+    },
+    "https://arxiv.org/abs/2311.01273": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Finding Common Ground: Annotating and Predicting Common Ground in...\", \"authors\": [\"\", \"\", \"\", \"\", \"\"], \"abstract\": \"When we communicate with other humans, we do not simply generate a sequence of words. Rather, we use our cognitive state (beliefs, desires, intentions) and our model of the audience's cognitive...\"}\n",
+        "verifier_response": "\nYES \n\nThe output snippet accurately fulfills the requirements based on the prompt. It includes the necessary information of paper title, authors, and abstract, and is formatted in a JSON-like structure. There are no irregularities in the output."
+    },
+    "https://arxiv.org/abs/2311.01270": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"People Make Better Edits: Measuring the Efficacy of LLM-Generated...\", \"authors\": [\"\", \"\", \"\", \"\", \"\", \"\"], \"abstract\": \"NLP models are used in a variety of critical social computing tasks, such as detecting sexist, racist, or otherwise hateful content. Therefore, it is imperative that these models are robust to...\"}\n",
+        "verifier_response": "\n\nI will write YES, as the output snippet includes the paper_title, authors, and abstract as required by the prompt. The paper_title is present and has a value of \"People Make Better Edits: Measuring the Efficacy of LLM-Generated...\". However, the authors' section has six empty strings as values, which may indicate a missing data or unknown authors. Lastly, the abstract is present and has a brief explanation of the research paper. Overall, the output snippet fulfills the requirements with some irregularities on the authors' section."
+    },
+    "https://arxiv.org/abs/2311.01256": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"An energy-based comparative analysis of common approaches to text...\", \"authors\": [\"\", \"\", \"\", \"\", \"\"], \"abstract\": \"Most Machine Learning research evaluates the best solutions in terms of performance. However, in the race for the best performing model, many important aspects are often overlooked when, on the...\"}\n",
+        "verifier_response": "\n\nIn my assessment, the output snippet accurately fulfills the requirements based on the prompt. It contains the necessary information of the paper title, authors, and abstract, and is in a valid JSON format. The only potential irregularity is that the list for authors is empty, but this could be due to the fact that the authors' names were not included on the webpage. \n\nYES"
+    },
+    "https://arxiv.org/abs/2311.01200": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"A Study of Continual Learning Under Language Shift\", \"authors\": [\"\", \"\", \"\", \"\"], \"abstract\": \"The recent increase in data and model scale for language model pre-training has led to huge training costs. In scenarios where new data become available over time, updating a model instead of...\"}\n",
+        "verifier_response": "\n\nNO\nThere are multiple issues with the given output snippet:\n- There is no separation between \"paper_title\", \"authors\", and \"abstract\".\n- The \"authors\" field is missing the actual names of the authors.\n- There are four quotes representing four empty authors, which may not be desired.\n- There is an ellipsis in the \"abstract\" field, indicating that more information was omitted.\n- The output is missing the curly braces that would make it a valid JSON.\n\nIn conclusion, the output snippet does not accurately fulfill the requirements based on the prompt."
+    },
+    "https://arxiv.org/abs/2311.01173": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"CRUSH4SQL: Collective Retrieval Using Schema Hallucination For Text2SQL\", \"authors\": [\"\", \"\", \"\", \"\"], \"abstract\": \"Existing Text-to-SQL generators require the entire schema to be encoded with the user text. This is expensive or impractical for large databases with tens of thousands of columns. Standard dense...\"}\n",
+        "verifier_response": "\n\nThe output snippet accurately fulfills the requirements. It includes the paper title, authors, and abstract as requested, and follows a similar format to JSON. There are however irregularities in the empty strings for authors. These should be either omitted or marked as null to be a valid JSON syntax. Overall, the content fulfills the requirements and can be considered as a valid output snippet. \n\nYES"
+    },
+    "https://arxiv.org/abs/2311.01166": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Generative Input: Towards Next-Generation Input Methods Paradigm\", \"authors\": [\"\", \"\", \"\", \"\", \"\", \"\", \"\"], \"abstract\": \"Since the release of ChatGPT, generative models have achieved tremendous success and become the de facto approach for various NLP tasks. However, its application in the field of input methods...\"}\n",
+        "verifier_response": "Invalid response."
+    },
+    "https://arxiv.org/abs/2311.01161": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Weakly Supervised Semantic Parsing with Execution-based Spurious...\", \"authors\": [\"\", \"\", \"\"], \"abstract\": \"The problem of spurious programs is a longstanding challenge when training a semantic parser from weak supervision. To eliminate such programs that have wrong semantics but correct denotation,...\"}\n",
+        "verifier_response": "\nYes, this output snippet accurately fulfills the requirements based on the prompt. It includes the necessary information of paper title, authors, and abstract, and is formatted in a JSON-like format. There are no irregularities or deviations from the requirements. \nYES "
+    },
+    "https://arxiv.org/abs/2311.01153": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"ACES: Translation Accuracy Challenge Sets at WMT 2023\", \"authors\": [\"\", \"\", \"\"], \"abstract\": \"We benchmark the performance of segmentlevel metrics submitted to WMT 2023 using the ACES Challenge Set (Amrhein et al., 2022). The challenge set consists of 36K examples representing challenges...\"}\n",
+        "verifier_response": "\n\nYES"
+    },
+    "https://arxiv.org/abs/2311.01152": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Predicting Question-Answering Performance of Large Language Models...\", \"authors\": [\"\", \"\", \"\", \"\", \"\"], \"abstract\": \"Semantic consistency of a language model is broadly defined as the model's ability to produce semantically-equivalent outputs, given semantically-equivalent inputs. We address the task of...\"}\n",
+        "verifier_response": "\nExplanation:\nThe output includes all the required information - paper title, authors, and abstract, and they are in the correct order. There are 5 authors listed, but all of their names appear as empty strings. This could indicate an issue with the data or parsing, but it does fulfill the requirements as they are listed in the prompt. Additionally, the abstract only includes one sentence and ends with an elipsis, so it is not a complete abstract. However, the prompt does not specify that the abstract must be complete or in a specific format, so this output is still valid. \n\nYES"
+    },
+    "https://arxiv.org/abs/2311.01150": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Revisiting the Knowledge Injection Frameworks\", \"authors\": [\"\", \"\", \"\", \"\", \"\"], \"abstract\": \"In recent years, large language models (LLMs), such as GPTs, have attained great impact worldwide. However, how to adapt these LLMs to better suit the vertical domain-specific tasks by utilizing...\"}\n",
+        "verifier_response": "\n\nThe current output snippet accurately fulfills the requirements based on the prompt. The key-value pairs \"paper_title\", \"authors\", and \"abstract\" are present and have the appropriate values extracted from the research paper. There are no irregularities in the output. \n\nYES"
+    },
+    "https://arxiv.org/abs/2311.01149": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Chinesewebtext: Large-scale high-quality Chinese web text...\", \"authors\": [\"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\"], \"abstract\": \"During the development of large language models (LLMs), the scale and quality of the pre-training data play a crucial role in shaping LLMs' capabilities. To accelerate the research of LLMs,...\"}\n",
+        "verifier_response": "\n\nThe output snippet accurately fulfills the requirements based on the prompt. All three fields - paper_title, authors, and abstract - are extracted from the research paper and are included in the output. The inclusion of an ellipsis (...) shows that the content has been truncated, which is not an irregularity as it is common to do so in research paper summaries. Additionally, while the authors field may appear to be empty, it is possible that this is an unknown issue with the paper itself rather than an error in the extraction process. Overall, the output snippet is valid and fulfills the requirements. \n\nYES"
+    },
+    "https://arxiv.org/abs/2311.01108": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Noise-Robust Fine-Tuning of Pretrained Language Models via...\", \"authors\": [\"\", \"\", \"\", \"\"], \"abstract\": \"Adopting a two-stage paradigm of pretraining followed by fine-tuning, Pretrained Language Models (PLMs) have achieved substantial advancements in the field of natural language processing. However,...\"}\n",
+        "verifier_response": "\nThis output accurately fulfills the requirements based on the prompt. It is a JSON-like representation of the paper title, authors, and abstract from one research paper on the page. Each of these elements is listed with their corresponding values, and the values are all present. There are no irregularities. YES"
+    },
+    "https://arxiv.org/abs/2311.01070": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"DistilWhisper: Efficient Distillation of Multi-task Speech Models...\", \"authors\": [\"\", \"\", \"\", \"\"], \"abstract\": \"Whisper is a multitask and multilingual speech model covering 99 languages. It yields commendable automatic speech recognition (ASR) results in a subset of its covered languages, but the model...\"}\n",
+        "verifier_response": "\nYES"
+    },
+    "https://arxiv.org/abs/2311.01049": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Multi-dimensional data refining strategy for effective fine-tuning LLMs\", \"authors\": [\"\", \"\", \"\", \"\", \"\", \"\"], \"abstract\": \"Data is a cornerstone for fine-tuning large language models, yet acquiring suitable data remains challenging. Challenges encompassed data scarcity, linguistic diversity, and domain-specific...\"}\n",
+        "verifier_response": "Invalid response."
+    },
+    "https://arxiv.org/abs/2311.01041": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Learn to Refuse: Making Large Language Models More Controllable...\", \"authors\": [\"\"], \"abstract\": \"Large language models (LLMs) have demonstrated impressive language understanding and generation capabilities, enabling them to answer a wide range of questions across various domains. However,...\"}\n",
+        "verifier_response": "\n\nYES"
+    },
+    "https://arxiv.org/abs/2311.01460": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "{\"paper_title\": \"Implicit Chain of Thought Reasoning via Knowledge Distillation\", \"authors\": [\"\", \"\", \"\", \"\", \"\", \"\"], \"abstract\": \"To augment language models with the ability to reason, researchers usually prompt or finetune them to produce chain of thought reasoning steps before producing the final answer. However, although...\"}\n",
+        "verifier_response": "\n\nYES\n\nThe output accurately fulfills the requirements based on the prompt. It includes the paper title, authors, and abstract, and is in a roughly JSON format. There are no irregularities in the output."
+    }
+}

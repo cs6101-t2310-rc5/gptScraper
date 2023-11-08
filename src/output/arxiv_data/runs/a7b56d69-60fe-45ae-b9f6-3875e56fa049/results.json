@@ -1,0 +1,10 @@
+{
+    "dataset": "../output/arxiv_data",
+    "run": "a7b56d69-60fe-45ae-b9f6-3875e56fa049",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 2,
+    "final_scraper_code": "# imports\nimport bs4 \nimport requests\n\ndef print_json(title, authors, abstract):\n    json = {\n        \"title\": title,\n        \"authors\": authors,\n        \"abstract\": abstract\n    }\n    print(json)\n\ndef scraper(url: str) -> None:\n    # Get webpage\n    res = requests.get(url)\n    soup = bs4.BeautifulSoup(res.text, 'html.parser')\n\n    # Extract title\n    titleTag = soup.find(\"meta\", {\"name\": \"citation_title\"})\n    title = titleTag['content']\n\n    # Extract authors\n    authorsTag = soup.find_all(\"meta\", {\"name\": \"citation_author\"})\n    authors = []\n    for authorTag in authorsTag:\n        authors.append(authorTag['content'])\n\n    # Extract abstract\n    abstractTag = soup.find(\"meta\", {\"name\": \"twitter:description\"})\n    abstract = abstractTag['content']\n\n    # Print JSON\n    print_json(title, authors, abstract)\n\nif __name__ == '__main__':\n  url = \"https://arxiv.org/abs/2311.01449\"\n  scraper(url)",
+    "test_count": 20,
+    "test_succ_count": 17
+}

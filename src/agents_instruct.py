@@ -495,7 +495,6 @@ def main():
     # Load the dataset
     path_to_dataset = sys.argv[1]
     dataset_name = sys.argv[2]
-    dataset = load_dataset(path_to_dataset)
 
     # Load the dataset
     # specify the actual path to your dataset.json

@@ -1,0 +1,10 @@
+{
+    "dataset": "../output/arxiv_data",
+    "run": "f733290a-ce84-4ff1-8178-865f787baa63",
+    "source": "",
+    "snippets_used": 2,
+    "attempts": 1,
+    "final_scraper_code": "\n# imports\nimport bs4 \nimport json\nimport requests \n\ndef scraper(url: str) -> str: \n    # fetch the page \n    response = requests.get(url) \n\n    # parse the HTML \n    soup = bs4.BeautifulSoup(response.text, 'html.parser') \n\n    # find the paper title \n    paper_title = soup.find('h1', class_='title mathjax').text \n\n    # find the authors \n    authors = soup.find('div', class_='authors').text.replace('Authors:','').split(',') \n\n    # find the abstract \n    abstract = soup.find('blockquote', class_='abstract mathjax').text.replace('Abstract:','').strip() \n\n    # create dictionary \n    paper_info = {'paper_title': paper_title, 'authors': authors, 'abstract': abstract} \n\n    # print as JSON \n    print(json.dumps(paper_info)) \n\nif __name__ == '__main__': \n    url = 'https://arxiv.org/abs/2311.01449' \n    scraper(url)",
+    "test_count": 20,
+    "test_succ_count": 16
+}
