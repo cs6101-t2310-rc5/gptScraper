@@ -137,7 +137,7 @@ def generate_code(
         f"START CONTEXT\n"
         f"This is the debugging info:\n```{debugging_info}```\n"
         f"This is your previous error:\n```{previous_error}```\n"
-        f"This is your previous code:\n```python{previous_code}```\n"
+        f"This is your previous code:\n```python\n{previous_code}```\n"
         f"END CONTEXT\n"
     )
     logger.info(f"Generation Prompt:\n{instruct_prompt}")
@@ -242,6 +242,9 @@ def runner(code: str, url: str) -> Tuple[str, str]:
         error_line_number = last_call.lineno
         # Retrieve the offending line of code using the line number
         # -1 because list indices start at 0
+        # catch if it's out of range!
+        if error_line_number > len(code_lines):
+            error_line_number = len(code_lines)
         error_line_code = code_lines[error_line_number - 1]
         error_message = f"Error on line {error_line_number}: {error_line_code}\n{exc_type.__name__}: {exc_value}"
     finally:
