@@ -368,10 +368,10 @@ def generate_scraper(
             logger.info("Successfully generated a valid scraper.")
             logger.info(f"Generated result (Attempt {i + 1}):\n{result}")
 
-            os.makedirs(output_dir, exist_ok=True)
-            filename = os.path.join(output_dir, "scraper.py")
-            with open(filename, "w+") as f:
-                f.write(code)
+            # os.makedirs(output_dir, exist_ok=True)
+            # filename = os.path.join(output_dir, "scraper.py")
+            # with open(filename, "w+") as f:
+            #     f.write(code)
             return (attempts_taken, True, previous_code)
         else:
             logger.warning(
@@ -399,7 +399,7 @@ def setup_logging(run_id, output_dir):
     os.makedirs(run_folder, exist_ok=True)
 
     # Create a unique filename for the log file inside the run-specific folder
-    filename = os.path.join(run_folder, f"{run_id}.log")
+    filename = os.path.join(run_folder, f"generation_log.log")
 
     # Configure the logging to use the new filename
     logging.basicConfig(
@@ -483,8 +483,12 @@ def main():
         logger.info("Validation Results:", validation_results)
 
         # Save validation results
-        with open(f"{output_dir}/{run_id}/{run_id}_validation_results.json", 'w') as file:
+        with open(f"{output_dir}/{run_id}/validation_results.json", 'w') as file:
             json.dump(validation_results, file, indent=4)
+
+        # Save final scraper
+        with open(f"{output_dir}/{run_id}/scraper.py", 'w') as file:
+            file.write(generated_code)
 
     else:
         logger.error(f'Could not generate a scraper after {n_tries} tries.')
