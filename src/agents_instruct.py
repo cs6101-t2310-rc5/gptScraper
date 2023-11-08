@@ -69,7 +69,7 @@ def get_relevant_snippets(html_source: str, prompt: str, max_snippets: int = 3) 
     # log the clean html source
     # logger.info(f"Clean HTML Source:\n{clean_html_source}")
 
-    while len(relevant_snippets) < max_snippets and attempts < max_snippets * 5:
+    while len(relevant_snippets) <= max_snippets and attempts < max_snippets * 5:
         logger.info(
             f"Attempts: {attempts}, Found snippets: {len(relevant_snippets)}")
         # If the remaining text is shorter than 2000 characters, break
@@ -86,6 +86,8 @@ def get_relevant_snippets(html_source: str, prompt: str, max_snippets: int = 3) 
             relevant_snippets.append(snippet)
 
         attempts += 1
+        if len(relevant_snippets) == max_snippets:
+            break
 
     if not relevant_snippets:
         logger.error("No relevant HTML snippets found after maximum attempts.")
@@ -127,8 +129,8 @@ def generate_code(
     instruct_prompt = (
         f"Please provide Python code to scrape the website and PRINT OUT: {prompt} as JSON.\n"
         f"Based on the following relevant HTML snippet from somewhere in the webpage:\n{relevant_snippet}\n"
-        f"The code should take in this link {website} and PRINT out the requested data."
-        f"Generate only the code, you MUST wrap your answer in a markdown code block.\n"
+        f"The code should take in this link {website} and PRINT out the requested data.\n"
+        f"Generate only the code, not any example usages or output, and you MUST wrap your answer in a markdown code block.\n"
         f"Generate it in this format.\n"
         f"```python\n# imports\nimport bs4 \n\ndef scraper(url: str) -> str:\n  # scraper logic goes here\n  pass\n\nif __name__ == '__main__':\n  url = \"<DUMMY URL, REPLACE WITH ACTUAL URL>\"\n  scraper(url)\n"
         f"START CONTEXT\n"
@@ -139,7 +141,7 @@ def generate_code(
     )
     logger.info(f"Generation Prompt:\n{instruct_prompt}")
     response = openai.Completion.create(
-        model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=2500
+        model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=2000
     )
 
     # Log raw response
@@ -190,7 +192,7 @@ def verifier(output: str, prompt: str) -> Tuple[bool, str]:
     instruct_prompt = (
         f"Please verify if the following output snippet:\n```\n{output[:1000]}\n```\n"
         f"accurately fulfills the requirements based on the prompt:\n```\n{prompt}\n```\n"
-        f"A valid output should be roughly JSON (not including braces is okay), and MUST NOT be an empty list and should have the content described by the prompt!"
+        f"A valid output should be roughly JSON (not including braces is okay), and MUST NOT be an empty list and should have the content described by the prompt!\n"
         f'Respond with a brief explanation of your assessment, and then write either "YES" or "NO" in a markdown code block.'
     )
     # log the prompt
@@ -198,9 +200,11 @@ def verifier(output: str, prompt: str) -> Tuple[bool, str]:
     response = openai.Completion.create(
         model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=1500
     )
+    # log the raw response
+    logger.info(f"Verifier raw response:\n{response}")
     answer_text = response.choices[0].text
     # log the answer text
-    logger.info(f"Verifier response:\n{answer_text}")
+    logger.info(f"Answer text:{answer_text}")
 
     if "YES" in answer_text:
         return True, answer_text
@@ -227,9 +231,23 @@ def runner(code: str, url: str) -> Tuple[str, str]:
     current_stdout = sys.stdout
     sys.stdout = captured_output
 
+   # Add a global dictionary to pass to exec
     try:
-        # Execute the code within the local scope
-        exec(code, globals())
+        global_dict = {
+            '__builtins__': __builtins__,
+            'requests': requests,
+            'BeautifulSoup': BeautifulSoup,
+            'json': json,
+        }
+        # Execute the code within the provided global scope
+        exec(code, global_dict)
+
+        # After executing the code, call the 'scraper' function with the provided URL
+        if 'scraper' in global_dict:
+            global_dict['scraper'](url)
+        else:
+            raise Exception(
+                "The 'scraper' function is not defined in the provided code.")
     except Exception as e:
         # Get the last exception information
         exc_type, exc_value, exc_traceback = sys.exc_info()
@@ -255,11 +273,28 @@ def runner(code: str, url: str) -> Tuple[str, str]:
         captured_output.close()
 
     # Return the output and the error message
-    return output.strip() or "NO OUTPUT GIVEN!!", error_message.strip()
+    logger.info(f"Runner :\n{output}")
+    logger.info(f"Runner error message:\n{error_message}")
+    # if output is empty
+    if not output:
+        output = "No output returned!"
+        error_message = "No output was printed!"
+
+    # if ["[]", "{}", ""] in output:
+    if "[]" in output or "{}" in output:
+        output = "[] or \{\} was printed!"
+        error_message = "[] or \{\} was received. There should be data. Check if you are scraping correctly."
+
+    # log output and error message
+    return output, error_message.strip()
 
 
-def debugger(code: str, error: str) -> str:
-    instruct_prompt = f"Given the code:\n{code}\nIdentify the issues and provide give one best guess for why this error occurs: {error}."
+def debugger(code: str, error: str, html_snippet: str) -> str:
+    instruct_prompt = (
+        f"Identify the issues and provide give one best guess for why this error occurs: {error}."
+        f"Given the code:\n{code}\n"
+        f"Given a HTML snippet:\n{html_snippet}\n"
+    )
     response = openai.Completion.create(
         model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=2000
     )
@@ -276,7 +311,7 @@ def generate_scraper(
     output: str = "json",
     api_key: str = None,
     log: str = None,
-) -> (bool, int):
+) -> (int, bool, str):
     """
     Generates a web scraper using OpenAI's models.
 
@@ -292,12 +327,14 @@ def generate_scraper(
     previous_error = "There is no previous error."
     debugging_info = "There is no debugging info."
     relevant_snippets = get_relevant_snippets(html_source, prompt)
+    attempts_taken = 0
 
     if not relevant_snippets:
         logger.error("No relevant HTML snippets were found.")
-        return "No relevant HTML snippets were found."
+        return (-1, False, previous_code)
 
     for i in range(retry):
+        attempts_taken += 1
         code = generate_code(debugging_info, previous_error, previous_code, prompt,
                              website, relevant_snippets)
         previous_code = code
@@ -310,7 +347,8 @@ def generate_scraper(
         if error:
             previous_error = error
             # Passing the generated code and error to the debugger
-            debugging_info = debugger(code, error)
+            debugging_info = debugger(
+                code, error, random.choice(relevant_snippets))
             logger.error(f"Attempt {i + 1} failed. Error: {error}")
             logger.error(
                 f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
@@ -323,7 +361,7 @@ def generate_scraper(
             #     delay = (i + 1) * 1  # increasing delay with each retry
             #     logger.info(f"Waiting for {delay} seconds before retrying...")
             #     time.sleep(delay)
-            # continue
+            continue
 
         verified, verifier_message = verifier(result, prompt)
         if verified:
@@ -334,8 +372,7 @@ def generate_scraper(
             filename = os.path.join(output_dir, "scraper.py")
             with open(filename, "w+") as f:
                 f.write(code)
-
-            return (True, i+1)
+            return (attempts_taken, True, previous_code)
         else:
             logger.warning(
                 f"Output didn't match the prompt. Verifier Message (Attempt {i + 1}): {verifier_message}"
@@ -349,18 +386,22 @@ def generate_scraper(
             logger.error(
                 f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
     logger.error("Failed to generate a valid scraper after max retries.")
-    return (False, retry)
+    return (-1, False, previous_code)
 
 
 def setup_logging(run_id, output_dir):
-    # Make sure the output directory for logs exists
-    logs_dir = os.path.join(output_dir, "runs")
-    os.makedirs(logs_dir, exist_ok=True)
+    # Create a 'runs' directory within the output directory
+    runs_dir = os.path.join(output_dir, "runs")
+    os.makedirs(runs_dir, exist_ok=True)
 
-    # Create a unique filename for the log file
-    filename = os.path.join(logs_dir, f"{run_id}.log")
+    # Create a run-specific folder within the 'runs' directory
+    run_folder = os.path.join(runs_dir, str(run_id))
+    os.makedirs(run_folder, exist_ok=True)
 
-    # Configure the logging
+    # Create a unique filename for the log file inside the run-specific folder
+    filename = os.path.join(run_folder, f"{run_id}.log")
+
+    # Configure the logging to use the new filename
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
@@ -383,8 +424,12 @@ def validate_scraper_on_websites(scraper_code, websites, prompt):
     """
     Validates the generated scraper on a list of websites.
     """
+    # log the code
+    logger.info(f"VALIDATING scraper:\n{scraper_code}")
+
     validation_results = {}
     for website in websites:
+        logger.info(f"VALIDATING scraper on website: {website}")
         result, error = runner(scraper_code, website)
         if error:
             validation_results[website] = {'success': False, 'error': error}
@@ -421,26 +466,28 @@ def main():
     # Use the first website for scraper generation
     website_to_generate = data_websites[0]
     output_dir = f"output/{dataset_name}"
+    # Ensure the output directory exists
+    os.makedirs(output_dir, exist_ok=True)
     run_id = uuid.uuid4()
     setup_logging(run_id, output_dir)
 
     # Generate the scraper using the first website
-    success, n_tries, generated_code = generate_scraper(
+    n_tries, success, generated_code = generate_scraper(
         prompt, website_to_generate, output_dir, verbose=True, retry=10)
 
     if success:
-        print(f'Successfully generated a scraper in {n_tries} tries.')
+        logger.info(f'Successfully generated a scraper in {n_tries} tries.')
         # Validate the scraper on the rest of the websites
         validation_results = validate_scraper_on_websites(
             generated_code, data_websites[1:], prompt)
-        print("Validation Results:", validation_results)
+        logger.info("Validation Results:", validation_results)
 
         # Save validation results
-        with open(f"{output_dir}/{run_id}_validation_results.json", 'w') as file:
+        with open(f"{output_dir}/{run_id}/{run_id}_validation_results.json", 'w') as file:
             json.dump(validation_results, file, indent=4)
 
     else:
-        print(f'Could not generate a scraper after {n_tries} tries.')
+        logger.error(f'Could not generate a scraper after {n_tries} tries.')
 
 
 if __name__ == "__main__":
