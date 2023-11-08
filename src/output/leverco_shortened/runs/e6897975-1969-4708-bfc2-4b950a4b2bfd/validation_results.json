@@ -1,0 +1,58 @@
+{
+    "https://jobs.lever.co/jupiter": {
+        "success": false,
+        "error": "Error on line 26:         commitment = posting.find(\"span\", class_=\"commitment\").find_next_sibling().text.strip()\nAttributeError: 'NoneType' object has no attribute 'find_next_sibling'",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/DoraHacks": {
+        "success": false,
+        "error": "Error on line 24:         workplace_type = posting.find(\"span\", class_=\"workplaceTypes\").find_next_sibling().text.strip()\nAttributeError: 'NoneType' object has no attribute 'text'",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/Sprinto": {
+        "success": false,
+        "error": "Error on line 24:         workplace_type = posting.find(\"span\", class_=\"workplaceTypes\").find_next_sibling().text.strip()\nAttributeError: 'NoneType' object has no attribute 'text'",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/zenyum": {
+        "success": false,
+        "error": "Error on line 24:         workplace_type = posting.find(\"span\", class_=\"workplaceTypes\").find_next_sibling().text.strip()\nAttributeError: 'NoneType' object has no attribute 'text'",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/HQxyz": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "[\n    {\n        \"title\": \"Senior Software Engineer (Backend & API Services)\",\n        \"tag\": [\n            \"Full-Time\",\n            \"Singapore\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/HQxyz/45c8d96a-a109-4db6-aa06-1f42e05d01a2\"\n    },\n    {\n        \"title\": \"Senior Software Engineer (Frontend)\",\n        \"tag\": [\n            \"Full-Time\",\n            \"Singapore\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/HQxyz/61c4d01f-9f97-425d-af29-594f31a1ac5a\"\n    },\n    {\n        \"title\": \"Senior Software Engineer (Infrastructure & Release Engineering)\",\n        \"tag\": [\n            \"Full-Time\",\n            \"Singapore\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/HQxyz/6fb89170-e469-4612-a046-069abeb1284f\"\n    },\n    {\n        \"title\": \"Growth & Partnerships Intern\",\n        \"tag\": [\n            \"Internship\",\n            \"Singapore\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/HQxyz/8fc73d2c-e3df-4bd5-b261-8fe69958fda8\"\n    },\n    {\n        \"title\": \"Growth/Sales Associate\",\n        \"tag\": [\n            \"Full-Time\",\n            \"Singapore\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/HQxyz/590a5aaf-916c-464a-9889-924ce98a47d4\"\n    },\n    {\n        \"title\": \"Operations Intern\",\n        \"tag\": [\n            \"Internship\",\n            \"Singapore\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/HQxyz/fab0d3d7-aab0-4ffc-a8ff-4d3e10a23d46\"\n    }\n]\n",
+        "verifier_response": "\n\nYES\n\nExplanation: The output snippet accurately follows the format of a JSON, with each job listing being contained within curly braces and separated by a comma. The \"title\", \"tag\", and \"apply_link\" fields are present for each job listing, fulfilling the requirement to extract those elements. There are no irregularities in the output snippet. "
+    },
+    "https://jobs.lever.co/nium": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "[\n    {\n        \"title\": \"Head of Compliance & MLRO\",\n        \"tag\": [\n            \"Full-time\",\n            \"Malta\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/nium/d42864a0-0e21-457c-b524-85aebda156d5\"\n    },\n    {\n        \"title\": \"Head of Compliance, Singapore\",\n        \"tag\": [\n            \"Full-time\",\n            \"Singapore\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/nium/de4f8753-90dc-4f95-a696-bfaa9fe0bc25\"\n    },\n    {\n        \"title\": \"Corporate Counsel\",\n        \"tag\": [\n            \"Full-time\",\n            \"San Francisco\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/nium/b62bc005-70ee-4a59-8e2f-c49f0246187b\"\n    },\n    {\n        \"title\": \"Lead Commercial Counsel (APAC)\",\n        \"tag\": [\n            \"Full-time\",\n            \"Singapore\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/nium/6b7e91fb-488e-4981-bd3c-7ca3c12f618d\"\n    },\n    {\n        \"title\": \"Senior Mobile Software Engineer - ReactNative\",\n        \"tag\": [\n            \"Full-time\",\n            \"Bangalore\",\n            \"N/A\"\n        ],\n        \"apply_link\": \"https://jobs.lever.co/nium/beefde21-f41a-4719-b8ac-b4d7a5cfae6d\"\n    }\n]\n",
+        "verifier_response": "\n\nThis output accurately fulfills the requirements based on the prompt. Each listing contains the job title, tag, and apply link, and the format is consistent for all three listings. The tags are represented as a list, which follows the JSON syntax. Additionally, the listings are not empty and have the content described by the prompt.\n\nYES"
+    },
+    "https://jobs.lever.co/hypebeast": {
+        "success": false,
+        "error": "Error on line 24:         workplace_type = posting.find(\"span\", class_=\"workplaceTypes\").find_next_sibling().text.strip()\nAttributeError: 'NoneType' object has no attribute 'text'",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/paytm": {
+        "success": false,
+        "error": "Error on line 26:         commitment = posting.find(\"span\", class_=\"commitment\").find_next_sibling().text.strip()\nAttributeError: 'NoneType' object has no attribute 'find_next_sibling'",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco",
+    "run": "af3ba526-1985-4121-a10a-7554bc7c9944",
+    "source": "",
+    "max_snippet_length": 3,
+    "attempts": -1,
+    "final_scraper_code": null,
+    "test_count": [],
+    "test_succ_count": []
+}
