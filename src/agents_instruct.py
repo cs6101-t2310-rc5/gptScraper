@@ -8,6 +8,7 @@ import sys
 import time
 import traceback
 from typing import Tuple
+import uuid
 
 import openai
 import requests
@@ -18,21 +19,17 @@ from bs4 import BeautifulSoup
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 OPENAI_MODEL_NAME = "gpt-3.5-turbo-instruct"
 
-# Logging Configuration
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    filename="web_scraper.log",
-    filemode="a",
-)
-console = logging.StreamHandler()
-console.setLevel(logging.INFO)
-formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-console.setFormatter(formatter)
-logging.getLogger("").addHandler(console)
 
-# Define a logger for this script
 logger = logging.getLogger(__name__)
+
+
+class Config:
+    OPENAI_MODEL_NAME = "gp3-5-turbo-instruct"
+    MAX_CODE_GENERATION_RETRY_COUNT = 10
+    MAX_RELEVANT_SNIPPETS = 3
+    MAX_VERIFIER_TOKENS = 1000
+    CODE_FORMAT = """```python\n# imports\nimport bs4 \n\ndef scraper(url: str) -> str:\n  # scraper logic goes here\n  pass\n\nif __name__ == '__main__':\n  url = "<DUMMY URL, REPLACE WITH ACTUAL URL>"\n  scraper(url)\n"""
+    PROMPT = "job listings on this page"
 
 
 def scrape(url: str) -> str:
@@ -194,9 +191,10 @@ def verifier(output: str, prompt: str) -> Tuple[bool, str]:
         f"Please verify if the following output snippet:\n```\n{output[:1000]}\n```\n"
         f"accurately fulfills the requirements based on the prompt:\n```\n{prompt}\n```\n"
         f"A valid output should be roughly JSON (not including braces is okay), and MUST NOT be an empty list and should have the content described by the prompt!"
-        f"It must not be an empty list!"
         f'Respond with a brief explanation of your assessment, and then write either "YES" or "NO" in a markdown code block.'
     )
+    # log the prompt
+    logger.info(f"Verifier prompt:\n{instruct_prompt}")
     response = openai.Completion.create(
         model=OPENAI_MODEL_NAME, prompt=instruct_prompt, max_tokens=1500
     )
@@ -343,22 +341,104 @@ def generate_scraper(
                 f"Output didn't match the prompt. Verifier Message (Attempt {i + 1}): {verifier_message}"
             )
             debugging_info = (
-                f"Output didn't match the prompt. Expected: {prompt}. Got: {result}"
+                verifier_message
             )
+            # debugging_info = (
+            #     f"Output didn't match the prompt. Expected: {prompt}. Got: {result}"
+            # )
             logger.error(
                 f"Debugging info (Attempt {i + 1}):\n{debugging_info}")
     logger.error("Failed to generate a valid scraper after max retries.")
     return (False, retry)
 
 
+def setup_logging(run_id, output_dir):
+    # Make sure the output directory for logs exists
+    logs_dir = os.path.join(output_dir, "runs")
+    os.makedirs(logs_dir, exist_ok=True)
+
+    # Create a unique filename for the log file
+    filename = os.path.join(logs_dir, f"{run_id}.log")
+
+    # Configure the logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        handlers=[
+            logging.FileHandler(filename, mode='a'),
+            logging.StreamHandler()
+        ]
+    )
+
+
+def load_dataset(file_path):
+    """
+    Loads the dataset from a JSON file.
+    """
+    with open(file_path, 'r') as file:
+        return json.load(file)
+
+
+def validate_scraper_on_websites(scraper_code, websites, prompt):
+    """
+    Validates the generated scraper on a list of websites.
+    """
+    validation_results = {}
+    for website in websites:
+        result, error = runner(scraper_code, website)
+        if error:
+            validation_results[website] = {'success': False, 'error': error}
+        else:
+            validated, _ = verifier(result, prompt)
+            validation_results[website] = {'success': validated}
+    return validation_results
+
+
 def main():
-    prompt = "job listings on this page"
-    website = "https://jobs.lever.co/abridge"
-    output_dir = "output/lever"
-    success, n_tries = generate_scraper(
-        prompt, website, output_dir, verbose=True, retry=10)
+    # Check if command line arguments were provided
+    if len(sys.argv) < 3:
+        print("Usage: python script.py <path_to_dataset_json> <dataset_name>")
+        sys.exit(1)
+
+    # Load the dataset
+    path_to_dataset = sys.argv[1]
+    dataset_name = sys.argv[2]
+    dataset = load_dataset(path_to_dataset)
+
+    # Load the dataset
+    # specify the actual path to your dataset.json
+    dataset = load_dataset(path_to_dataset)
+
+    # Extract features and data from the dataset
+    features = dataset['features']
+    item_description = dataset['item_description']
+    data_websites = dataset['data']
+
+    prompt = (
+        f"Extract {', '.join(features)} from the {item_description} this page"
+    )
+
+    # Use the first website for scraper generation
+    website_to_generate = data_websites[0]
+    output_dir = f"output/{dataset_name}"
+    run_id = uuid.uuid4()
+    setup_logging(run_id, output_dir)
+
+    # Generate the scraper using the first website
+    success, n_tries, generated_code = generate_scraper(
+        prompt, website_to_generate, output_dir, verbose=True, retry=10)
+
     if success:
         print(f'Successfully generated a scraper in {n_tries} tries.')
+        # Validate the scraper on the rest of the websites
+        validation_results = validate_scraper_on_websites(
+            generated_code, data_websites[1:], prompt)
+        print("Validation Results:", validation_results)
+
+        # Save validation results
+        with open(f"{output_dir}/{run_id}_validation_results.json", 'w') as file:
+            json.dump(validation_results, file, indent=4)
+
     else:
         print(f'Could not generate a scraper after {n_tries} tries.')
 
