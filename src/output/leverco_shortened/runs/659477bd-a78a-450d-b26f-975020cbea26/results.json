@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco_shortened",
+    "run": "659477bd-a78a-450d-b26f-975020cbea26",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 3,
+    "final_scraper_code": "\n# imports\nimport json\nimport requests\nfrom bs4 import BeautifulSoup\n\ndef scraper(url):\n  # load page\n  page = requests.get(url)\n\n  # parse HTML using BeautifulSoup\n  soup = BeautifulSoup(page.content, 'html.parser')\n\n  # find all job listings\n  listings = soup.find_all('div', class_='posting')\n\n  # loop through listings and extract data\n  data = []\n  for listing in listings:\n    # check if title element exists\n    if listing.find('title') is not None:\n        # get title from <title> tag\n        title = listing.find('title').get_text()\n    else:\n        # assign default value or skip extracting title\n        title = \"\"\n\n    # check if meta tag with property attribute equal to 'og:title' exists\n    if listing.find('meta', {'property': 'og:title'}) is not None:\n        # check if content attribute is not None\n        if listing.find('meta', {'property': 'og:title'})['content'] is not None:\n            # get tag from <meta> tag\n            tag = listing.find('meta', {'property': 'og:title'})['content']\n        else:\n            # assign default value or skip extracting tag\n            tag = \"\"\n    else:\n        # assign default value or skip extracting tag\n        tag = \"\"\n\n    # get apply link from listing <a> tag\n    apply_link = listing.find('a', class_='posting-btn-submit')['href']\n\n    # append data to list\n    data.append({'title': title, 'tag': tag, 'apply_link': apply_link})\n\n  # convert data to JSON and print\n  json_data = json.dumps(data, indent=2)\n  print(json_data)\n\nif __name__ == '__main__':\n  url = \"https://jobs.lever.co/appboxo\"\n  scraper(url)  # call scraper function with provided URL to print out the extracted data as JSON",
+    "test_count": 8,
+    "test_succ_count": 7
+}

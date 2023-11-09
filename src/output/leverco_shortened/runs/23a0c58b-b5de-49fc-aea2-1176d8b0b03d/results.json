@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco_shortened",
+    "run": "23a0c58b-b5de-49fc-aea2-1176d8b0b03d",
+    "source": "",
+    "snippets_used": 1,
+    "attempts": 3,
+    "final_scraper_code": "# imports\nimport requests\nimport bs4\nimport json\n\n# function to scrape job listings for title, tag, and apply_link\ndef scraper(url: str) -> str:\n    # use requests library to get the webpage html\n    response = requests.get(url)\n\n    # use bs4 to parse the html and find the job listings\n    soup = bs4.BeautifulSoup(response.text, 'html.parser')\n    job_listings = soup.find_all('div', class_='posting')\n\n    # initialize empty dictionary to store job data\n    job_data = {}\n\n    # loop through job listings\n    for job in job_listings:\n\n        # find title\n        title = job.find('h5').text.strip()\n\n        # find tag\n        tag = job.find('span', class_='sort-by-commitment posting-category small-category-label commitment').text.strip()\n\n        # find apply link\n        apply_link = job.find('a', class_='posting-btn-submit template-btn-submit black')['href'].strip()\n\n        # add job data to dictionary\n        job_data[title] = {\n            'tag': tag,\n            'apply_link': apply_link\n        }\n\n    # print job data in JSON format\n    print(json.dumps(job_data, indent=4))\n\nif __name__ == '__main__':\n    url = 'https://jobs.lever.co/appboxo'\n    scraper(url)",
+    "test_count": 8,
+    "test_succ_count": 0
+}

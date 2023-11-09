@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco_shortened",
+    "run": "950a45b1-4f38-40d0-a64b-affb9e352559",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 3,
+    "final_scraper_code": "# imports\nimport requests\nfrom bs4 import BeautifulSoup\nimport json\n\ndef scraper(url: str) -> str:\n    # make GET request to URL\n    req = requests.get(url)\n\n    # create BeautifulSoup object to parse HTML\n    soup = BeautifulSoup(req.content, 'html.parser')\n\n    # find all job listings on webpage\n    listings = soup.find_all('div', class_='posting')\n\n    # create empty list to store job listings \n    job_listings = []\n    \n    # loop through each job listing\n    for listing in listings:\n        # extract title from job listing\n        title = listing.find('h5').text.strip()\n\n        # extract tag from job listing if it exists\n        if listing.find('span', class_='sort-by-time sort-by-time-listing') is not None:\n            tag = listing.find('span', class_='sort-by-time sort-by-time-listing').text.strip()\n        else:\n            # if tag does not exist, set it to None\n            tag = None\n\n        # extract apply link from job listing\n        apply_link = listing.find('a', class_='posting-btn-submit')['href']\n\n        # create dictionary for job listing\n        job = {\n            'title': title,\n            'tag': tag,\n            'apply_link': apply_link\n        }\n\n        # append job listing to list\n        job_listings.append(job)\n\n    # convert job_listings list to JSON and print out\n    print(json.dumps(job_listings))\n\nif __name__ == '__main__':\n    # provide URL to scrape\n    url = \"https://jobs.lever.co/appboxo\"\n    scraper(url)",
+    "test_count": 8,
+    "test_succ_count": 7
+}

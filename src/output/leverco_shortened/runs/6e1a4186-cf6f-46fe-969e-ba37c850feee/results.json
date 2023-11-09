@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco_shortened",
+    "run": "6e1a4186-cf6f-46fe-969e-ba37c850feee",
+    "source": "",
+    "snippets_used": 2,
+    "attempts": 6,
+    "final_scraper_code": "# imports\nimport bs4 \nimport requests\nimport json \n\ndef scraper(url):\n  response = requests.get(url)\n  soup = bs4.BeautifulSoup(response.content, 'html.parser')\n  job_listings = soup.findAll('div', class_='posting')\n\n  results = []\n  for job in job_listings:\n    title = job.find('h5', attrs={'data-qa': 'posting-name'}).get_text()\n    tag = job.find('span', class_='sort-by-commitment posting-category small-category-label commitment').get_text()\n    apply_link = job.find('div', class_='posting-apply').find('a').get('href')\n\n    data = {\n      'title': title,\n      'tag': tag,\n      'apply_link': apply_link\n    }\n    results.append(data)\n\n  if len(results) > 0:\n    print(json.dumps(results))\n  else:\n    return \"No job listings found on this page.\"\n\nif __name__ == '__main__':\n  url = \"https://jobs.lever.co/appboxo\"\n  scraper(url)",
+    "test_count": 8,
+    "test_succ_count": 6
+}

@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco_shortened",
+    "run": "f7baa386-3659-4a26-a419-a7ce953e9353",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 5,
+    "final_scraper_code": "# imports\nimport requests\nfrom bs4 import BeautifulSoup\nimport json\n\n# define scraper function\ndef scraper(url: str):\n    # request page\n    response = requests.get(url)\n\n    # create BeautifulSoup object\n    soup = BeautifulSoup(response.content, 'html.parser')\n\n    # find job listings\n    job_listings = soup.find_all('div', class_='posting')\n\n    # loop through job listings and extract relevant data\n    for job in job_listings:\n        # extract title\n        title = job.find('h5').text.strip()\n\n        # extract tag\n        if job.find('a', class_='sort-by-time post-category') is not None:\n            tag = job.find('a', class_='sort-by-time post-category').text.strip()\n        else:\n            tag = ''\n\n        # extract apply_link\n        if job.find('a', class_='apply-link') is not None:\n            apply_link = job.find('a', class_='apply-link')['href'].strip()\n        else:\n            apply_link = ''\n\n        # create dictionary to store data\n        job_dict = {\n            'title': title,\n            'tag': tag,\n            'apply_link': apply_link\n        }\n\n        # print data as JSON\n        print(json.dumps(job_dict))\n\nif __name__ == '__main__':\n    url = \"https://jobs.lever.co/appboxo\"\n    scraper(url) # calling the scraper function with given URL",
+    "test_count": 8,
+    "test_succ_count": 4
+}
