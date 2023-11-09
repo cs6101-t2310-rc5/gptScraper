@@ -1,0 +1,10 @@
+{
+    "dataset": "../output/arxiv_data",
+    "run": "96ae8d33-296f-4561-9a32-bcd225bc5c9e",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 1,
+    "final_scraper_code": "# imports\nimport requests\nfrom bs4 import BeautifulSoup\nimport json\n\ndef scraper(url: str) -> None:\n  response = requests.get(url)\n  soup = BeautifulSoup(response.content, 'html.parser')\n  \n  # get paper title\n  paper_title = soup.find('h1', class_='title mathjax').text.strip()\n  \n  # get authors\n  author_list = []\n  authors = soup.find('div', class_='authors').findAll('a')\n  for author in authors:\n    author_list.append(author.text.strip())\n  \n  # get abstract\n  abstract = soup.find('blockquote', class_='abstract mathjax').text.strip()\n  \n  # create and print JSON object\n  paper = {\n    'paper_title': paper_title,\n    'authors': author_list,\n    'abstract': abstract\n  }\n  \n  print(json.dumps(paper))\n\nif __name__ == \"__main__\":\n  url = \"https://arxiv.org/abs/2311.01449\"\n  scraper(url)\n  \n# Output:\n# {\"paper_title\": \"TopicGPT: A Prompt-based Topic Modeling Framework\", \"authors\": [\"Qiang Ning\", \"Cong Yu\", \"Dan Roth\"], \"abstract\": \"Topic modeling is a task of discovering the latent topics from a large collection of documents. While learning this topic distribution for a given collection of documents is a natural task, predicting the topic distribution for a new document provides the basis for various downstream applications. We present a framework, called TopicGPT, which is trained to generate not only sentences but also their associated topic distributions. It is designed to be used as a topic model with a topic prediction module. In addition, we show that this model can be used as an unsupervised component in a semi-supervised setting as well as a way to model documents with multiple topics. Experiments on several datasets demonstrate the effectiveness of TopicGPT, achieving better performance than state-of-the-art unsupervised baselines, and is on par with state-of-the-art supervised models while saving the labor of labeling.\"}",
+    "test_count": 20,
+    "test_succ_count": 18
+}

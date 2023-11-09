@@ -1,0 +1,10 @@
+{
+    "dataset": "../output/arxiv_data",
+    "run": "19c69483-7c4f-4152-82de-dc90ba2e022e",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 3,
+    "final_scraper_code": "# imports\nimport bs4 \nfrom bs4 import BeautifulSoup\nimport requests\nimport json\n\ndef scraper(url: str) -> str:\n  # Scraping the webpage\n  response = requests.get(url)\n  soup = BeautifulSoup(response.content, 'html.parser')\n\n  # Extracting the necessary data\n  paper_title = soup.find(\"meta\", {\"name\":\"citation_title\"})['content']\n  authors = [author['content'] for author in soup.find_all(\"meta\", {\"name\":\"citation_author\"})]\n  date = soup.find(\"meta\", {\"name\":\"citation_online_date\"})['content']\n  abstract = soup.find(\"meta\", {\"name\":\"twitter:description\"})['content']\n\n  # Creating a dictionary with the data\n  data = {\n      \"paper_title\": paper_title,\n      \"authors\": authors,\n      \"date\": date,\n      \"abstract\": abstract\n  }\n\n  # Printing out the data as JSON\n  print(json.dumps(data))\n\nif __name__ == '__main__':\n  # Inputting the desired URL\n  url = \"https://arxiv.org/abs/2311.01449\"\n  scraper(url)",
+    "test_count": 20,
+    "test_succ_count": 18
+}

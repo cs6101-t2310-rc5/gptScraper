@@ -1,5 +1,6 @@
 {
     "name": "arxiv",
+    "item_description": "research papers",
     "features": [
         "paper_title",
         "authors",

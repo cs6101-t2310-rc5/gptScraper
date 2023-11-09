@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco_shortened",
+    "run": "01c10f81-9fe3-4030-bbe6-10a4dfba9c43",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 1,
+    "final_scraper_code": "# imports\nimport bs4 \n\ndef scraper(url: str) -> str:\n  # get request\n  response = requests.get(url)\n\n  # parse html\n  soup = bs4.BeautifulSoup(response.content, 'html.parser')\n\n  # create empty list\n  job_listings = []\n\n  # loop through all job postings\n  for posting in soup.select('.posting'):\n\n    # title\n    title = posting.select_one('.posting-title h5').text.strip()\n\n    # tag\n    tags = posting.select('.posting-categories span')\n    tag = [t.text.strip() for t in tags]\n\n    # apply link\n    apply_link = posting.select_one('a.posting-btn-submit').get('href')\n\n    # create dictionary\n    job_listing = {\n      'title': title,\n      'tag': tag,\n      'apply_link': apply_link\n    }\n\n    # add dictionary to list\n    job_listings.append(job_listing)\n\n  # print out job listings as JSON\n  print(json.dumps(job_listings))\n  \nif __name__ == '__main__':\n  url = \"https://jobs.lever.co/appboxo\"\n  scraper(url)",
+    "test_count": 8,
+    "test_succ_count": 7
+}

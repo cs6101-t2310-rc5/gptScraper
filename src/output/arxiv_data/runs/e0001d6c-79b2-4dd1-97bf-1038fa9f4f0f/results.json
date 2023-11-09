@@ -1,0 +1,10 @@
+{
+    "dataset": "arxiv_data",
+    "run": "e0001d6c-79b2-4dd1-97bf-1038fa9f4f0f",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 1,
+    "final_scraper_code": "# imports\nimport requests\nimport bs4\nimport json\n\ndef scraper(url: str):\n    \"\"\"\n    A function to scrape a webpage for paper title, authors, and abstract and print them out as JSON.\n    \n    Parameters:\n    url (str): The URL of the webpage to be scraped\n    \n    Returns:\n    None\n    \"\"\"\n    \n    # send a GET request to the URL\n    response = requests.get(url)\n    \n    # check if the request was successful\n    if response.status_code == 200:\n        \n        # use BeautifulSoup to parse the HTML content of the webpage\n        soup = bs4.BeautifulSoup(response.content, 'html.parser')\n        \n        # extract the paper title using the 'citation_title' meta tag\n        paper_title = soup.find('meta', {'name': 'citation_title'})['content']\n        \n        # extract the authors using the 'citation_author' meta tags \n        authors = []\n        for tag in soup.findAll('meta', {'name': 'citation_author'}):\n            authors.append(tag['content'])\n        \n        # extract the abstract using the 'property' meta tag\n        abstract = soup.find('meta', {'property': 'og:description'})['content']\n        \n        # create a dictionary with the extracted data\n        data = {'paper_title': paper_title, 'authors': authors, 'abstract': abstract}\n        \n        # print the dictionary as JSON\n        print(json.dumps(data))\n        \n    else:\n        # handle unsuccessful request\n        print('Request was unsuccessful with status code: {}'.format(response.status_code))\n\n\nif __name__ == '__main__':\n    # specify the URL of the webpage to be scraped\n    url = \"https://arxiv.org/abs/2311.01449\"\n    \n    # call the scraper function\n    scraper(url)",
+    "test_count": 20,
+    "test_succ_count": 14
+}

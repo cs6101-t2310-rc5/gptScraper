@@ -1,0 +1,10 @@
+{
+    "dataset": "arxiv_data",
+    "run": "2822e363-1e18-4b55-8782-060dd1fbbd08",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 3,
+    "final_scraper_code": "# Import necessary libraries\nimport bs4 \nimport requests\nimport json\n\ndef scraper(url: str) -> str:\n  # Make a GET request to the provided URL\n  response = requests.get(url)\n\n  # Parse the content of the response using Beautiful Soup\n  soup = bs4.BeautifulSoup(response.content, 'html.parser')\n\n  # Find the relevant HTML elements containing the desired data and extract the text\n  paper_title = soup.find('h1', class_='title mathjax').text.replace('Title:','').strip()\n  authors = soup.find('div', class_='authors').text.replace('Authors:','').strip()\n  abstract = soup.find('blockquote', class_='abstract mathjax').text.replace('Abstract:','').strip()\n\n  # Create a dictionary with the extracted data\n  data = {\n      'paper_title': paper_title,\n      'authors': authors,\n      'abstract': abstract\n  }\n\n  # Convert the dictionary to JSON format and print it out\n  print(json.dumps(data, indent=4))\n\n\nif __name__ == '__main__':\n  url = \"https://arxiv.org/abs/2311.01449\"\n  scraper(url)",
+    "test_count": 20,
+    "test_succ_count": 16
+}
