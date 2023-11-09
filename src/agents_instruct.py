@@ -19,7 +19,6 @@ from bs4 import BeautifulSoup
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 OPENAI_MODEL_NAME = "gpt-3.5-turbo-instruct"
 
-
 logger = logging.getLogger(__name__)
 
 

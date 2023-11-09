@@ -1,0 +1,58 @@
+{
+    "https://jobs.lever.co/jupiter": {
+        "success": false,
+        "error": "Error on line 23:     apply_link = posting.find('a', class_='posting-btn-submit template-btn-submit black')['href']\nTypeError: 'NoneType' object is not subscriptable",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/DoraHacks": {
+        "success": false,
+        "error": "Error on line 23:     apply_link = posting.find('a', class_='posting-btn-submit template-btn-submit black')['href']\nTypeError: 'NoneType' object is not subscriptable",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/Sprinto": {
+        "success": false,
+        "error": "Error on line 23:     apply_link = posting.find('a', class_='posting-btn-submit template-btn-submit black')['href']\nTypeError: 'NoneType' object is not subscriptable",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/zenyum": {
+        "success": false,
+        "error": "Error on line 23:     apply_link = posting.find('a', class_='posting-btn-submit template-btn-submit black')['href']\nTypeError: 'NoneType' object is not subscriptable",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/HQxyz": {
+        "success": false,
+        "error": "Error on line 23:     apply_link = posting.find('a', class_='posting-btn-submit template-btn-submit black')['href']\nTypeError: 'NoneType' object is not subscriptable",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/nium": {
+        "success": false,
+        "error": "Error on line 23:     apply_link = posting.find('a', class_='posting-btn-submit template-btn-submit black')['href']\nTypeError: 'NoneType' object is not subscriptable",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/hypebeast": {
+        "success": false,
+        "error": "Error on line 23:     apply_link = posting.find('a', class_='posting-btn-submit template-btn-submit black')['href']\nTypeError: 'NoneType' object is not subscriptable",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    },
+    "https://jobs.lever.co/paytm": {
+        "success": false,
+        "error": "Error on line 23:     apply_link = posting.find('a', class_='posting-btn-submit template-btn-submit black')['href']\nTypeError: 'NoneType' object is not subscriptable",
+        "html_source": "redacted",
+        "scraper_output": "",
+        "verifier_response": "N/A"
+    }
+}

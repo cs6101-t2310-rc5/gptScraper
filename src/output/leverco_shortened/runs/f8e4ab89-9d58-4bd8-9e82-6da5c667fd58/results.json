@@ -1,0 +1,10 @@
+{
+    "dataset": "leverco_shortened",
+    "run": "f8e4ab89-9d58-4bd8-9e82-6da5c667fd58",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 3,
+    "final_scraper_code": "# imports\nimport requests\nfrom bs4 import BeautifulSoup\nimport json \n\ndef scraper(url):\n  # send a GET request to the provided URL\n  response = requests.get(url) \n  \n  # parse the HTML content using BeautifulSoup\n  soup = BeautifulSoup(response.content, 'html.parser') \n  \n  # extract all the job postings from the page\n  job_listings = soup.find_all('div', {'class': 'posting'}) \n  \n  # initialize an empty list to store the extracted job data\n  job_data = []\n  \n  # loop through each job listing\n  for job in job_listings:\n    # extract job title\n    title = job.find('h5').text.strip()\n    \n    # extract job tag\n    tag = job.find('div', {'class': 'posting-categories'}).find_all('span')[0].text.strip()\n    \n    # extract apply link\n    if job.find('a', {'class': 'posting-btn-submit black'}):\n      apply_link = job.find('a', {'class': 'posting-btn-submit black'})['href']\n    else:\n      apply_link = None\n    \n    # create a dictionary for the current job listing\n    job_dict = {\n      'title': title,\n      'tag': tag,\n      'apply_link': apply_link\n    }\n    \n    # append the job dictionary to the job_data list\n    job_data.append(job_dict)\n  \n  # convert the job_data list to JSON format\n  job_data_json = json.dumps(job_data)\n  \n  # print the JSON data\n  print(job_data_json)\n\nif __name__ == '__main__':\n  url = \"https://jobs.lever.co/appboxo\"\n  scraper(url)\n  \n  # Output:\n  # [{\"title\": \"Product Marketing Manager\", \"tag\": \"Hybrid\", \"apply_link\": \"https://jobs.lever.co/appboxo/c89e070f-9b60-4d82-a1e3-c565b0a8b29b\"},{\"title\": \"Senior Backend Engineer  (Fully Remote)\", \"tag\": \"Remote\", \"apply_link\": \"https://jobs.lever.co/appboxo/b55d2672-6721-4935-95f3-5053f586561f\"},{\"title\": \"Senior Frontend Developer\", \"tag\": \"Remote\", \"apply_link\": \"https://jobs.lever.co/appboxo/70bf0681-36ed-4523-911d-12d1a69185fd\"}]",
+    "test_count": 8,
+    "test_succ_count": 6
+}
