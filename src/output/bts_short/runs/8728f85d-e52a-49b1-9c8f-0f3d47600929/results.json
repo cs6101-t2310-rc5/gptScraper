@@ -1,0 +1,10 @@
+{
+    "dataset": "bts_short",
+    "run": "8728f85d-e52a-49b1-9c8f-0f3d47600929",
+    "source": "",
+    "snippets_used": 2,
+    "attempts": 4,
+    "final_scraper_code": "\n# imports\nimport bs4 \nimport requests\nimport json\nfrom bs4 import BeautifulSoup\n\ndef scraper(url: str):\n  # scraper logic goes here\n  # request webpage\n  response = requests.get(url)\n  # create soup object\n  soup = BeautifulSoup(response.content, 'html.parser')\n  # find all articles with class product_pod\n  articles = soup.find_all('article', class_=\"product_pod\")\n  # initialize empty list for data\n  data_list = []\n  # loop through articles and extract data\n  for article in articles:\n      # extract title\n      title = article.find('h3').find('a')['title']\n      # extract rating\n      rating = article.find('p', class_=\"star-rating\")['class'][1]\n      # extract price\n      price = article.find('p', class_=\"price_color\").text\n      # extract in_stock\n      try:\n        # extract data from article with class \"instock availability\"\n        in_stock = article.find('p', class_=\"instock availability\").find('i')['class'][1]\n      except:\n        try:\n          # try to extract data from article with class \"availability\"\n          in_stock = article.find('p', class_=\"availability\").find('i')['class'][1]\n        except:\n          # if both fail, set default value of \"in_stock\"\n          in_stock = \"Out of Stock\"\n      # create dictionary for data\n      data = {'title': title,\n              'rating': rating,\n              'price': price,\n              'in_stock': in_stock}\n      # append data to list\n      data_list.append(data)\n  # convert list to json\n  json_data = json.dumps(data_list)\n  # print json data\n  print(json_data)\n\nif __name__ == '__main__':\n  url = \"https://books.toscrape.com/catalogue/category/books/travel_2/index.html\"\n  scraper(url)",
+    "test_count": 15,
+    "test_succ_count": 12
+}

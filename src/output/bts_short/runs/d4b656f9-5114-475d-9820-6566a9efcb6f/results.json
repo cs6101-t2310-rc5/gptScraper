@@ -1,0 +1,10 @@
+{
+    "dataset": "bts_short",
+    "run": "d4b656f9-5114-475d-9820-6566a9efcb6f",
+    "source": "",
+    "snippets_used": 2,
+    "attempts": 1,
+    "final_scraper_code": "# imports\nfrom bs4 import BeautifulSoup\nimport requests\nimport json\n\ndef scraper(url: str) -> str:\n  # function to extract the relevant data from a book article\n  def extract_book_info(book_article):\n    # extract the title\n    title = book_article.h3.a['title']\n\n    # extract the rating\n    rating_classes = book_article.select('p.star-rating')[0]['class']\n    rating = ''.join([x[6:] for x in rating_classes])\n\n    # extract the price\n    price = float(book_article.select('p.price_color')[0].text[1:])\n\n    # extract the in_stock status\n    if 'In stock' in book_article.select('p.instock.availability')[0].text.strip():\n      in_stock = True\n    else:\n      in_stock = False\n\n    # return the extracted data as a dictionary\n    return {'title': title, 'rating': rating, 'price': price, 'in_stock': in_stock}\n\n  # initialize an empty list to store the book data\n  books = []\n\n  # make a get request to the provided url\n  response = requests.get(url)\n\n  # check the status code of the response\n  if response.status_code == 200:\n    # parse the html response using BeautifulSoup\n    soup = BeautifulSoup(response.content, 'html.parser')\n\n    # select all the book articles \n    book_articles = soup.find_all('article', {'class': 'product_pod'})\n\n    # loop through each book article and extract the relevant data\n    for book_article in book_articles:\n      # extract the data using the helper function\n      book_data = extract_book_info(book_article)\n\n      # add the data to the books list\n      books.append(book_data)\n\n    # print the extracted data as a JSON object\n    print(json.dumps(books))\n\n  else:\n    # print a message if the response was not successful\n    print(\"Unable to retrieve book data.\")\n\nif __name__ == '__main__':\n  url = \"https://books.toscrape.com/catalogue/category/books/travel_2/index.html\"\n  scraper(url)",
+    "test_count": 15,
+    "test_succ_count": 8
+}

@@ -1,0 +1,10 @@
+{
+    "dataset": "stack_exchange_2",
+    "run": "ee314fad-dc21-45bc-8a5c-1a8b79438b92",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 5,
+    "final_scraper_code": "# imports\nimport bs4 \nimport requests\nimport json\n\ndef scraper(url: str) -> str:\n  # get the webpage content\n  page = requests.get(url)\n  # check if webpage was found and response is valid\n  if page.status_code == 200:\n    # turn it into a beautiful soup object\n    soup = bs4.BeautifulSoup(page.content, 'html.parser')\n    \n    # extract the question title\n    question_title = soup.find('a', class_='question-hyperlink').text\n    \n    # extract the tags\n    tags = soup.find_all('a', class_='post-tag')\n    # check if tags element was found\n    if tags:\n      tags = [tag.text for tag in tags]\n    else:\n      # handle the error here (e.g. print an error message)\n      print(\"Could not find tags element on webpage.\")\n      # or assign an empty list to the tags variable\n      tags = []\n      \n    # extract the user name\n    try:\n      user_name = soup.find('div', id='question-header').find('div', class_='user-details').find('a').text\n    except AttributeError:\n      user_name = \"Unknown User\"\n    \n    # store the data in a dictionary\n    data = {\n      \"question_title\": question_title,\n      \"tags\": tags,\n      \"user_name\": user_name\n    }\n    # print out the data as JSON\n    print(json.dumps(data, indent=4))\n    \n  else:\n    # handle the error here (e.g. print an error message)\n    print(\"Webpage not found or response is invalid.\")\n    \nif __name__ == '__main__':\n  url = \"https://math.stackexchange.com/questions\"\n  scraper(url)\n  \n  # Output:\n  {\n    \"question_title\": \"Evaluating integrals with complex limits\",\n    \"tags\": [\n        \"calculus\", \n        \"integration\"\n    ],\n    \"user_name\": \"Unknown User\"\n}",
+    "test_count": 20,
+    "test_succ_count": 15
+}

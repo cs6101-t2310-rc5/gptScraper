@@ -1,0 +1,142 @@
+{
+    "https://stackoverflow.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nNO"
+    },
+    "https://superuser.com/questions": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nYES\n\nThe output correctly includes all the required information and follows a standard JSON format. There are no irregularities observed as the output clearly states that there was no data extracted, which is valid for a case where no actual data was available to be extracted from the given page."
+    },
+    "https://meta.stackexchange.com/questions": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nYES\n\nThe output snippet accurately fulfills the requirements of the prompt by retrieving all of the required fields. Additionally, it indicates that no data was extracted, which suggests that the scraping logic may need to be adjusted in order to successfully extract data."
+    },
+    "https://security.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nNO. The prompt asks to extract multiple fields from a webpage, such as question title, tags, user name, etc. However, the provided output snippet does not include any of these fields, and instead only has a string indicating that no data was extracted. Therefore, it does not fulfill the requirements and should be flagged as irregular.\n"
+    },
+    "https://serverfault.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "Invalid response."
+    },
+    "https://photo.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nNO \n\nThe snippet provided does not fulfill the requirements of the prompt. It only mentions that no data was extracted and asks to check the scraping logic, without providing any of the required data. Additionally, it does not follow the expected format of roughly JSON as it does not include braces and only provides a string message. "
+    },
+    "https://english.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\nNO\n\nWhile the output provided in the snippet includes some of the requested information such as question title, tags, user name, votes, answers, views, and timestamp, it does not follow the requested format of JSON and cannot be easily parsed. Additionally, the output is an empty list, which does not fulfill the requirement of not being an empty list. Overall, the snippet does not accurately fulfill the requirements based on the prompt."
+    },
+    "https://askubuntu.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nIn this case, the output snippet does NOT fulfill the requirements of the prompt. It only provides an error message and does not include any of the requested data. Therefore, the output snippet is invalid and does not meet the requirements of the prompt.\n\nNO"
+    },
+    "https://apple.stackexchange.com/questions": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nYES\n\nThe output snippet accurately fulfills the requirements based on the prompt. It includes the required fields of question_title, tags, user_name, votes, answers, views, and timestamp. There are no irregularities. The output snippet appears to be roughly JSON and is not an empty list. "
+    },
+    "https://softwareengineering.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\nI would say that the output satisfies the requirements but it may not be a valid output as it includes an error message, which is not requested in the prompt. Also, it is in sentence form rather than a JSON format as stated in the prompt. So I would say it satisfies the content description but not the format specified in the prompt.\n\nNO"
+    },
+    "https://movies.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\nNO\n\nThis output snippet does not fulfill the requirements as it only includes a single line of text and does not separate out the various fields (question_title, tags, user_name, etc.). Additionally, this output does not contain any of the desired information from the StackExchange main site page."
+    },
+    "https://chemistry.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nNO"
+    },
+    "https://puzzling.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nExplanation: The output snippet does not accurately fulfill the requirements because it only displays a single line which indicates that no data was extracted. Additionally, it does not show any of the requested information from the top questions on the stackexchange main site. Therefore, it does not qualify as valid output.\n\nNO"
+    },
+    "https://codegolf.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nExplanation:\nFrom the output snippet, it does not fulfill all the requirements. It does not include any of the requested data such as question_title, tags, user_name, votes, answers, views, or timestamp. It only contains an error message stating no data was extracted. Thus, the output does not accurately fulfill the requirements. \n\nNO"
+    },
+    "https://quant.stackexchange.com/questions": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nYES\n\nExplanation: The output snippet accurately reflects the requirements given in the prompt. It includes the necessary fields (question_title, tags, user_name, votes, answers, views, timestamp) and indicates that no data was extracted, as would be expected if the scraping logic was incorrect. The snippet is not a JSON object, but since the prompt did not specify a specific format, this is likely acceptable. "
+    },
+    "https://money.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\nNO\n\nThe output snippet only contains one line and does not contain all of the requested information such as question_title, tags, user_name, votes, answers, views, and timestamp. Additionally, the output appears to be a string rather than JSON format and does not accurately represent the requested data. "
+    },
+    "https://physics.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nNO\n\nThe output snippet does not accurately fulfill the requirements based on the prompt. The output does not contain any of the required fields such as question_title, tags, user_name, votes, answers, views, and timestamp. Additionally, it does not contain any data, instead it outputs an error message."
+    },
+    "https://bicycles.stackexchange.com/questions": {
+        "success": true,
+        "error": null,
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nThe ouput snippet accurately fulfills the requirements based on the prompt. The output consists of question_title, tags, user_name, votes, answers, views, and timestamp, along with a descriptive message stating that no data was extracted and prompting to check the scraping logic. The data extracted in the output snippet is not an empty list and follows the same order as specified in the prompt. Each data element is separated by a comma, making it structured data. Therefore, the output snippet verifies to be a rough JSON format. This output fulfills the requirements of the prompt.\n```\nYES"
+    },
+    "https://tex.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nThis output snippet does not fulfill the requirements as it does not contain any of the specified information. It only includes a generic error message. \n\n```\nNO"
+    },
+    "https://gis.stackexchange.com/questions": {
+        "success": false,
+        "error": "Output did not match the prompt",
+        "html_source": "redacted",
+        "scraper_output": "No data was extracted. Please check the scraping logic.\n",
+        "verifier_response": "\n\nNO\n\nThe output only includes a single message and does not include any of the required information such as question title, tags, user name, votes, answers, views, and timestamp. Therefore, it does not accurately fulfill the requirements."
+    }
+}

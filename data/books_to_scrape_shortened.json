@@ -1,0 +1,23 @@
+{
+  "name": "books_to_scrape",
+  "item_description": "books",
+  "features": ["title", "rating", "rating", "price", "in_stock"],
+  "data": [
+    "https://books.toscrape.com/catalogue/category/books/travel_2/index.html",
+    "https://books.toscrape.com/catalogue/category/books/mystery_3/index.html",
+    "https://books.toscrape.com/catalogue/category/books/historical-fiction_4/index.html",
+    "https://books.toscrape.com/catalogue/category/books/sequential-art_5/index.html",
+    "https://books.toscrape.com/catalogue/category/books/classics_6/index.html",
+    "https://books.toscrape.com/catalogue/category/books/philosophy_7/index.html",
+    "https://books.toscrape.com/catalogue/category/books/romance_8/index.html",
+    "https://books.toscrape.com/catalogue/category/books/womens-fiction_9/index.html",
+    "https://books.toscrape.com/catalogue/category/books/fiction_10/index.html",
+    "https://books.toscrape.com/catalogue/category/books/childrens_11/index.html",
+    "https://books.toscrape.com/catalogue/category/books/religion_12/index.html",
+    "https://books.toscrape.com/catalogue/category/books/nonfiction_13/index.html",
+    "https://books.toscrape.com/catalogue/category/books/music_14/index.html",
+    "https://books.toscrape.com/catalogue/category/books/default_15/index.html",
+    "https://books.toscrape.com/catalogue/category/books/science-fiction_16/index.html",
+    "https://books.toscrape.com/catalogue/category/books/sports-and-games_17/index.html"
+  ]
+}

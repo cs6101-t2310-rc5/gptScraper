@@ -1,0 +1,10 @@
+{
+    "dataset": "bts_short",
+    "run": "9bb1058e-cf83-4c17-9997-5b70cb9b2a5a",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 1,
+    "final_scraper_code": "\n# imports\nimport requests\nfrom bs4 import BeautifulSoup\n\ndef scraper(url: str):\n    # make a GET request to the specified URL\n    response = requests.get(url)\n\n    # create a BeautifulSoup object to parse the HTML\n    soup = BeautifulSoup(response.content, 'html.parser')\n\n    # find all the articles with class 'product_pod'\n    articles = soup.find_all('article', class_='product_pod')\n\n    # create a dictionary to store the extracted data\n    data = {}\n\n    # loop through the articles\n    for article in articles:\n        # extract the title\n        title = article.find('h3').find('a')['title']\n\n        # extract the rating\n        rating = article.find('p', class_='star-rating')['class'][1]\n\n        # extract the price\n        price = article.find('p', class_='price_color').text.strip()[1:]\n\n        # check if the book is in stock or not\n        in_stock = article.find('p', class_='instock availability').find('i')['class'][0] == 'icon-ok'\n        \n        # add the extracted data to the dictionary\n        data[title] = {\n            'rating': rating,\n            'price': price,\n            'in_stock': in_stock\n        }\n\n    # print out the data in JSON format\n    print(json.dumps(data, indent=4))\n    \nif __name__ == '__main__':\n    url = \"https://books.toscrape.com/catalogue/category/books/travel_2/index.html\"\n    scraper(url)",
+    "test_count": 15,
+    "test_succ_count": 12
+}

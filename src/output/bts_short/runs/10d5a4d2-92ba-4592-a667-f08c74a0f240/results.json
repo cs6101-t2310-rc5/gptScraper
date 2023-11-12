@@ -1,0 +1,10 @@
+{
+    "dataset": "bts_short",
+    "run": "10d5a4d2-92ba-4592-a667-f08c74a0f240",
+    "source": "",
+    "snippets_used": 2,
+    "attempts": 3,
+    "final_scraper_code": "\n# imports\nimport requests\nimport json\nfrom bs4 import BeautifulSoup\n\ndef scraper(url: str) -> str:\n  response = requests.get(url)\n  soup = BeautifulSoup(response.text, 'html.parser')\n  book_list = []\n  try:\n    for book in soup.find_all('li', class_='col-xs-6 col-sm-4 col-md-3 col-lg-3'):\n      title = book.find('h3').find('a')['title']\n      rating = book.find('p', class_='star-rating')['class'][1]\n      price = book.find('p', class_='price_color').get_text()[1:]\n      if book.find('p', class_='instock availability').find('i')['class'][0] == 'icon-ok':\n        in_stock = True\n      else:\n        in_stock = False\n      book_data = {\n        'title': title,\n        'rating': rating,\n        'price': price,\n        'in_stock': in_stock\n      }\n      book_list.append(book_data)\n\n    print(json.dumps(book_list, indent=2))\n  except Exception as e:\n    print(\"Exception: \" + str(e))\n\nif __name__ == '__main__':\n  url = \"https://books.toscrape.com/catalogue/category/books/travel_2/index.html\"\n  scraper(url)",
+    "test_count": 15,
+    "test_succ_count": 12
+}

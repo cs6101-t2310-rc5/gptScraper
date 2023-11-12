@@ -1,0 +1,10 @@
+{
+    "dataset": "bts_short",
+    "run": "1c5488b5-7c62-40c9-b9e9-dcbf26329bff",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 4,
+    "final_scraper_code": "import bs4 \nimport json \n\ndef scraper(url: str) -> str:\n  # use the bs4 library to parse the HTML from the url\n  response = requests.get(url)\n  soup = bs4.BeautifulSoup(response.text, 'html.parser')\n\n  # create an empty list to store the extracted data\n  books = []\n\n  # find all the products in the HTML snippet\n  products = soup.find_all('article', class_='product_pod')\n\n  # loop through each product and extract the relevant data\n  for product in products:\n    # extract title, rating, price, and in_stock from the HTML elements\n    title = product.h3.a['title']\n\n    # extract rating as a string and convert to integer\n    rating = product.find('p', class_='star-rating')['class'][1]\n    try:\n      rating = int(rating)\n    except ValueError:\n      rating = 0 # default value in case rating cannot be converted\n\n    price = product.find('p', class_='price_color').text\n\n    # extract in_stock status by checking for the presence of the 'icon-ok' class\n    in_stock = 'In stock' if product.find('p', class_='instock availability').find('i', class_='icon-ok') else 'Out of stock'\n\n    # create a dictionary to store the extracted data for each book\n    book = {\n        'title': title,\n        'rating': rating,\n        'price': price,\n        'in_stock': in_stock\n    }\n\n    # append the book dictionary to the list of books\n    books.append(book)\n\n  # print out the list of books as a JSON string\n  print(json.dumps(books, indent=2))\n\n  # return 'Success' if the scraper function successfully runs\n  return 'Success'\n\nif __name__ == '__main__':\n  url = \"https://books.toscrape.com/catalogue/category/books/travel_2/index.html\"\n  scraper(url)",
+    "test_count": 15,
+    "test_succ_count": 12
+}

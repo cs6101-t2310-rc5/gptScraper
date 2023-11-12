@@ -1,0 +1,10 @@
+{
+    "dataset": "bts_short",
+    "run": "e33de5e0-532f-48ee-a409-310e77cbebd2",
+    "source": "",
+    "snippets_used": 1,
+    "attempts": 8,
+    "final_scraper_code": "\n\n# imports\nimport bs4 \nimport json\nimport requests\n\ndef scraper(url: str):\n  # get webpage content\n  res = requests.get(url)\n  res.raise_for_status()\n  # parse webpage content\n  soup = bs4.BeautifulSoup(res.text, \"html.parser\")\n  # create list to store book information\n  books = []\n  # iterate through each book on the page\n  for book in soup.find_all(\"article\", class_=\"product_pod\"):\n    # extract title\n    title = book.h3.a.get(\"title\")\n    # extract rating\n    rating = book.p.get(\"class\")[1]\n    # extract price\n    price = None \n    try:\n      price = float(book.find(\"p\", class_=\"price_color\").text.strip(\"\u00a3\").replace(\"\u00c2\",\"\"))\n    except ValueError:\n      print(\"Unable to convert price to float for book\", title)\n    # check if book is in stock\n    in_stock = book.find(\"p\", class_=\"instock availability\").text.strip() != \"In stock\"\n    # create a dictionary for each book and append to books list\n    book = {\n      \"title\": title,\n      \"rating\": rating,\n      \"price\": price, \n      \"in_stock\": in_stock\n    }\n    books.append(book)\n  # print out list of books in JSON format\n  print(json.dumps(books))\n\nif __name__ == '__main__':\n  url = \"https://books.toscrape.com/catalogue/category/books/travel_2/index.html\"\n  scraper(url)",
+    "test_count": 15,
+    "test_succ_count": 1
+}

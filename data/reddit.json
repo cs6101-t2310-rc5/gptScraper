@@ -1,0 +1,26 @@
+{
+  "name": "reddit",
+  "item_description": "front page reddit posts",
+  "features": [
+    "title",
+    "user",
+    "upvotes",
+    "link",
+    "comments_link",
+    "comments_no"
+  ],
+  "data": [
+    "https://www.reddit.com/r/nus/",
+    "https://www.reddit.com/r/singapore/",
+    "https://www.reddit.com/r/ntu/",
+    "https://www.reddit.com/r/victoria3/",
+    "https://www.reddit.com/r/askhistorians/",
+    "https://www.reddit.com/r/math/",
+    "https://www.reddit.com/r/imaginarymaps/",
+    "https://www.reddit.com/r/LocalLLaMA/",
+    "https://www.reddit.com/r/linux/",
+    "https://www.reddit.com/r/PuyoPuyoTetris/",
+    "https://www.reddit.com/r/dwarffortress/",
+    "https://www.reddit.com/r/slatestarcodex/"
+  ]
+}
