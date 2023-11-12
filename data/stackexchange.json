@@ -1,14 +1,7 @@
 {
   "name": "stackexchange_main_sites",
-  "features": [
-    "question_title",
-    "tags",
-    "user_name",
-    "votes",
-    "answers",
-    "views",
-    "timestamp"
-  ],
+  "item_description": "top questions from stackexchange site",
+  "features": ["question_title", "tags", "question_excerpt"],
   "data": [
     "https://math.stackexchange.com/questions",
     "https://stackoverflow.com/questions",

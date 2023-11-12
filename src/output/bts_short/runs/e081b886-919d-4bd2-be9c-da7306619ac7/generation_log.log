@@ -1,0 +1,4704 @@
+2023-11-12 14:41:12,655 - INFO - Original HTML Source:
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en-us" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en-us" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en-us" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-us" class="no-js"> <!--<![endif]-->
+    <head>
+        <title>
+    Travel | 
+     Books to Scrape - Sandbox
+
+</title>
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="created" content="24th Jun 2016 09:29" />
+        <meta name="description" content="
+    
+" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="robots" content="NOARCHIVE,NOCACHE" />
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        
+            <link rel="shortcut icon" href="../../../../static/oscar/favicon.ico" />
+        
+
+        
+        
+    
+    
+        <link rel="stylesheet" type="text/css" href="../../../../static/oscar/css/styles.css" />
+    
+    <link rel="stylesheet" href="../../../../static/oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../static/oscar/css/datetimepicker.css" />
+
+
+        
+        
+
+        
+
+        
+            
+            
+
+        
+    </head>
+
+    <body id="default" class="default">
+        
+        
+    
+    
+    <header class="header container-fluid">
+        <div class="page_inner">
+            <div class="row">
+                <div class="col-sm-8 h1"><a href="../../../../index.html">Books to Scrape</a><small> We love being scraped!</small>
+</div>
+
+                
+            </div>
+        </div>
+    </header>
+
+    
+    
+<div class="container-fluid page">
+    <div class="page_inner">
+        
+    <ul class="breadcrumb">
+        <li>
+            <a href="../../../../index.html">Home</a>
+        </li>
+        
+            <li>
+                <a href="../../books_1/index.html">Books</a>
+            </li>
+        
+        <li class="active">Travel</li>
+    </ul>
+
+        <div class="row">
+
+            <aside class="sidebar col-sm-4 col-md-3">
+                
+                <div id="promotions_left">
+                    
+                </div>
+                
+    
+    
+        
+        <div class="side_categories">
+            <ul class="nav nav-list">
+                
+                    <li>
+                        <a href="../../books_1/index.html">
+                            
+                                Books
+                            
+                        </a>
+
+                        <ul>
+                        
+                
+                    <li>
+                        <a href="index.html">
+                            
+                                <strong>Travel</strong>
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../mystery_3/index.html">
+                            
+                                Mystery
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../historical-fiction_4/index.html">
+                            
+                                Historical Fiction
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../sequential-art_5/index.html">
+                            
+                                Sequential Art
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../classics_6/index.html">
+                            
+                                Classics
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../philosophy_7/index.html">
+                            
+                                Philosophy
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../romance_8/index.html">
+                            
+                                Romance
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../womens-fiction_9/index.html">
+                            
+                                Womens Fiction
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../fiction_10/index.html">
+                            
+                                Fiction
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../childrens_11/index.html">
+                            
+                                Childrens
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../religion_12/index.html">
+                            
+                                Religion
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../nonfiction_13/index.html">
+                            
+                                Nonfiction
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../music_14/index.html">
+                            
+                                Music
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../default_15/index.html">
+                            
+                                Default
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../science-fiction_16/index.html">
+                            
+                                Science Fiction
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../sports-and-games_17/index.html">
+                            
+                                Sports and Games
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../add-a-comment_18/index.html">
+                            
+                                Add a comment
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../fantasy_19/index.html">
+                            
+                                Fantasy
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../new-adult_20/index.html">
+                            
+                                New Adult
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../young-adult_21/index.html">
+                            
+                                Young Adult
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../science_22/index.html">
+                            
+                                Science
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../poetry_23/index.html">
+                            
+                                Poetry
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../paranormal_24/index.html">
+                            
+                                Paranormal
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../art_25/index.html">
+                            
+                                Art
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../psychology_26/index.html">
+                            
+                                Psychology
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../autobiography_27/index.html">
+                            
+                                Autobiography
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../parenting_28/index.html">
+                            
+                                Parenting
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../adult-fiction_29/index.html">
+                            
+                                Adult Fiction
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../humor_30/index.html">
+                            
+                                Humor
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../horror_31/index.html">
+                            
+                                Horror
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../history_32/index.html">
+                            
+                                History
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../food-and-drink_33/index.html">
+                            
+                                Food and Drink
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../christian-fiction_34/index.html">
+                            
+                                Christian Fiction
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../business_35/index.html">
+                            
+                                Business
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../biography_36/index.html">
+                            
+                                Biography
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../thriller_37/index.html">
+                            
+                                Thriller
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../contemporary_38/index.html">
+                            
+                                Contemporary
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../spirituality_39/index.html">
+                            
+                                Spirituality
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../academic_40/index.html">
+                            
+                                Academic
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../self-help_41/index.html">
+                            
+                                Self Help
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../historical_42/index.html">
+                            
+                                Historical
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../christian_43/index.html">
+                            
+                                Christian
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../suspense_44/index.html">
+                            
+                                Suspense
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../short-stories_45/index.html">
+                            
+                                Short Stories
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../novels_46/index.html">
+                            
+                                Novels
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../health_47/index.html">
+                            
+                                Health
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../politics_48/index.html">
+                            
+                                Politics
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../cultural_49/index.html">
+                            
+                                Cultural
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../erotica_50/index.html">
+                            
+                                Erotica
+                            
+                        </a>
+
+                        </li>
+                        
+                
+                    <li>
+                        <a href="../crime_51/index.html">
+                            
+                                Crime
+                            
+                        </a>
+
+                        </li>
+                        
+                            </ul></li>
+                        
+                
+            </ul>
+        </div>
+    
+    
+
+            </aside>
+
+            <div class="col-sm-8 col-md-9">
+                
+                <div class="page-header action">
+                    <h1>Travel</h1>
+                </div>
+                
+
+                
+
+
+
+<div id="messages">
+
+</div>
+
+
+                <div id="promotions">
+                    
+                </div>
+
+                
+    
+    
+    <form method="get" class="form-horizontal">
+        
+        <div style="display:none">
+            
+            
+        </div>
+
+        
+            
+                
+                    <strong>11</strong> results.
+                
+            
+            
+        
+    </form>
+    
+        <section>
+            <div class="alert alert-warning" role="alert"><strong>Warning!</strong> This is a demo website for web scraping purposes. Prices and ratings here were randomly assigned and have no real meaning.</div>
+
+            <div>
+                <ol class="row">
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../its-only-the-himalayas_981/index.html"><img src="../../../../media/cache/27/a5/27a53d0bb95bdd88288eaf66c9230d7e.jpg" alt="It&#39;s Only the Himalayas" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating Two">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../its-only-the-himalayas_981/index.html" title="It&#39;s Only the Himalayas">It&#39;s Only the Himalayas</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£45.17</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../full-moon-over-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html"><img src="../../../../media/cache/57/77/57770cac1628f4407636635f4b85e88c.jpg" alt="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating Four">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../full-moon-over-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html" title="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond">Full Moon over Noahâs ...</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£49.43</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_732/index.html"><img src="../../../../media/cache/9a/7e/9a7e63f12829df4b43b31d110bf3dc2e.jpg" alt="See America: A Celebration of Our National Parks &amp; Treasured Sites" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating Three">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_732/index.html" title="See America: A Celebration of Our National Parks &amp; Treasured Sites">See America: A Celebration ...</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£48.87</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../vagabonding-an-uncommon-guide-to-the-art-of-long-term-world-travel_552/index.html"><img src="../../../../media/cache/d5/bf/d5bf0090470b0b8ea46d9c166f7895aa.jpg" alt="Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating Two">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../vagabonding-an-uncommon-guide-to-the-art-of-long-term-world-travel_552/index.html" title="Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel">Vagabonding: An Uncommon Guide ...</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£36.94</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../under-the-tuscan-sun_504/index.html"><img src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg" alt="Under the Tuscan Sun" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating Three">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£37.33</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../a-summer-in-europe_458/index.html"><img src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg" alt="A Summer In Europe" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating Two">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£44.34</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../the-great-railway-bazaar_446/index.html"><img src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg" alt="The Great Railway Bazaar" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating One">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../the-great-railway-bazaar_446/index.html" title="The Great Railway Bazaar">The Great Railway Bazaar</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£30.54</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../a-year-in-provence-provence-1_421/index.html"><img src="../../../../media/cache/db/46/db46159b05faa5d95262112bf9c29ddd.jpg" alt="A Year in Provence (Provence #1)" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating Four">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../a-year-in-provence-provence-1_421/index.html" title="A Year in Provence (Provence #1)">A Year in Provence ...</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£56.88</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../the-road-to-little-dribbling-adventures-of-an-american-in-britain-notes-from-a-small-island-2_277/index.html"><img src="../../../../media/cache/e0/4f/e04f8eda2a2fa947aec17640202d9ab0.jpg" alt="The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating One">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../the-road-to-little-dribbling-adventures-of-an-american-in-britain-notes-from-a-small-island-2_277/index.html" title="The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)">The Road to Little ...</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£23.21</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../neither-here-nor-there-travels-in-europe_198/index.html"><img src="../../../../media/cache/06/81/0681530a7bc301caf5c3257e1b0f0750.jpg" alt="Neither Here nor There: Travels in Europe" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating Three">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../neither-here-nor-there-travels-in-europe_198/index.html" title="Neither Here nor There: Travels in Europe">Neither Here nor There: ...</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£38.95</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+
+
+
+
+    <article class="product_pod">
+        
+            <div class="image_container">
+                
+                    
+                    <a href="../../../1000-places-to-see-before-you-die_1/index.html"><img src="../../../../media/cache/d7/0f/d70f7edd92705c45a82118c3ff6c299d.jpg" alt="1,000 Places to See Before You Die" class="thumbnail"></a>
+                    
+                
+            </div>
+        
+
+        
+            
+                <p class="star-rating Five">
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                    <i class="icon-star"></i>
+                </p>
+            
+        
+
+        
+            <h3><a href="../../../1000-places-to-see-before-you-die_1/index.html" title="1,000 Places to See Before You Die">1,000 Places to See ...</a></h3>
+        
+
+        
+            <div class="product_price">
+                
+
+
+
+
+
+
+    
+        <p class="price_color">Â£26.08</p>
+    
+
+<p class="instock availability">
+    <i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+
+                
+                    
+
+
+
+
+
+
+    
+    <form>
+        <button type="submit" class="btn btn-primary btn-block" data-loading-text="Adding...">Add to basket</button>
+    </form>
+
+
+                
+            </div>
+        
+    </article>
+
+</li>
+                    
+                </ol>
+                
+
+
+
+
+            </div>
+        </section>
+    
+
+
+
+            </div>
+
+        </div><!-- /row -->
+    </div><!-- /page_inner -->
+</div><!-- /container-fluid -->
+
+
+    
+<footer class="footer container-fluid">
+    
+        
+    
+</footer>
+
+
+        
+        
+  
+            <!-- jQuery -->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script>window.jQuery || document.write('<script src="../../../../static/oscar/js/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+        
+  
+
+
+        
+        
+    
+        
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="../../../../static/oscar/js/bootstrap3/bootstrap.min.js"></script>
+    <!-- Oscar -->
+    <script src="../../../../static/oscar/js/oscar/ui.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="../../../../static/oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../../static/oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js" type="text/javascript" charset="utf-8"></script>
+
+
+        
+        
+    
+
+    
+
+
+        
+        <script type="text/javascript">
+            $(function() {
+                
+    
+    
+    oscar.init();
+
+    oscar.search.init();
+
+            });
+        </script>
+
+        
+        <!-- Version: N/A -->
+        
+    </body>
+</html>
+
+2023-11-12 14:41:12,684 - INFO - Cleaned HTML Source:
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html lang="en-us" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en-us" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en-us" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-us"> <!--<![endif]-->
+<head>
+<title>
+    Travel | 
+     Books to Scrape - Sandbox
+
+</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="24th Jun 2016 09:29" name="created"/>
+<meta content="
+    
+" name="description"/>
+<meta content="width=device-width" name="viewport"/>
+<meta content="NOARCHIVE,NOCACHE" name="robots"/>
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+<link href="../../../../static/oscar/favicon.ico" rel="shortcut icon"/>
+<link href="../../../../static/oscar/css/styles.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../static/oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet"/>
+<link href="../../../../static/oscar/css/datetimepicker.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="default" id="default">
+<header class="header container-fluid">
+<div class="page_inner">
+<div class="row">
+<div class="col-sm-8 h1"><a href="../../../../index.html">Books to Scrape</a><small> We love being scraped!</small>
+</div>
+</div>
+</div>
+</header>
+<div class="container-fluid page">
+<div class="page_inner">
+<ul class="breadcrumb">
+<li>
+<a href="../../../../index.html">Home</a>
+</li>
+<li>
+<a href="../../books_1/index.html">Books</a>
+</li>
+<li class="active">Travel</li>
+</ul>
+<div class="row">
+<aside class="sidebar col-sm-4 col-md-3">
+<div id="promotions_left">
+</div>
+<div class="side_categories">
+<ul class="nav nav-list">
+<li>
+<a href="../../books_1/index.html">
+                            
+                                Books
+                            
+                        </a>
+<ul>
+<li>
+<a href="index.html">
+<strong>Travel</strong>
+</a>
+</li>
+<li>
+<a href="../mystery_3/index.html">
+                            
+                                Mystery
+                            
+                        </a>
+</li>
+<li>
+<a href="../historical-fiction_4/index.html">
+                            
+                                Historical Fiction
+                            
+                        </a>
+</li>
+<li>
+<a href="../sequential-art_5/index.html">
+                            
+                                Sequential Art
+                            
+                        </a>
+</li>
+<li>
+<a href="../classics_6/index.html">
+                            
+                                Classics
+                            
+                        </a>
+</li>
+<li>
+<a href="../philosophy_7/index.html">
+                            
+                                Philosophy
+                            
+                        </a>
+</li>
+<li>
+<a href="../romance_8/index.html">
+                            
+                                Romance
+                            
+                        </a>
+</li>
+<li>
+<a href="../womens-fiction_9/index.html">
+                            
+                                Womens Fiction
+                            
+                        </a>
+</li>
+<li>
+<a href="../fiction_10/index.html">
+                            
+                                Fiction
+                            
+                        </a>
+</li>
+<li>
+<a href="../childrens_11/index.html">
+                            
+                                Childrens
+                            
+                        </a>
+</li>
+<li>
+<a href="../religion_12/index.html">
+                            
+                                Religion
+                            
+                        </a>
+</li>
+<li>
+<a href="../nonfiction_13/index.html">
+                            
+                                Nonfiction
+                            
+                        </a>
+</li>
+<li>
+<a href="../music_14/index.html">
+                            
+                                Music
+                            
+                        </a>
+</li>
+<li>
+<a href="../default_15/index.html">
+                            
+                                Default
+                            
+                        </a>
+</li>
+<li>
+<a href="../science-fiction_16/index.html">
+                            
+                                Science Fiction
+                            
+                        </a>
+</li>
+<li>
+<a href="../sports-and-games_17/index.html">
+                            
+                                Sports and Games
+                            
+                        </a>
+</li>
+<li>
+<a href="../add-a-comment_18/index.html">
+                            
+                                Add a comment
+                            
+                        </a>
+</li>
+<li>
+<a href="../fantasy_19/index.html">
+                            
+                                Fantasy
+                            
+                        </a>
+</li>
+<li>
+<a href="../new-adult_20/index.html">
+                            
+                                New Adult
+                            
+                        </a>
+</li>
+<li>
+<a href="../young-adult_21/index.html">
+                            
+                                Young Adult
+                            
+                        </a>
+</li>
+<li>
+<a href="../science_22/index.html">
+                            
+                                Science
+                            
+                        </a>
+</li>
+<li>
+<a href="../poetry_23/index.html">
+                            
+                                Poetry
+                            
+                        </a>
+</li>
+<li>
+<a href="../paranormal_24/index.html">
+                            
+                                Paranormal
+                            
+                        </a>
+</li>
+<li>
+<a href="../art_25/index.html">
+                            
+                                Art
+                            
+                        </a>
+</li>
+<li>
+<a href="../psychology_26/index.html">
+                            
+                                Psychology
+                            
+                        </a>
+</li>
+<li>
+<a href="../autobiography_27/index.html">
+                            
+                                Autobiography
+                            
+                        </a>
+</li>
+<li>
+<a href="../parenting_28/index.html">
+                            
+                                Parenting
+                            
+                        </a>
+</li>
+<li>
+<a href="../adult-fiction_29/index.html">
+                            
+                                Adult Fiction
+                            
+                        </a>
+</li>
+<li>
+<a href="../humor_30/index.html">
+                            
+                                Humor
+                            
+                        </a>
+</li>
+<li>
+<a href="../horror_31/index.html">
+                            
+                                Horror
+                            
+                        </a>
+</li>
+<li>
+<a href="../history_32/index.html">
+                            
+                                History
+                            
+                        </a>
+</li>
+<li>
+<a href="../food-and-drink_33/index.html">
+                            
+                                Food and Drink
+                            
+                        </a>
+</li>
+<li>
+<a href="../christian-fiction_34/index.html">
+                            
+                                Christian Fiction
+                            
+                        </a>
+</li>
+<li>
+<a href="../business_35/index.html">
+                            
+                                Business
+                            
+                        </a>
+</li>
+<li>
+<a href="../biography_36/index.html">
+                            
+                                Biography
+                            
+                        </a>
+</li>
+<li>
+<a href="../thriller_37/index.html">
+                            
+                                Thriller
+                            
+                        </a>
+</li>
+<li>
+<a href="../contemporary_38/index.html">
+                            
+                                Contemporary
+                            
+                        </a>
+</li>
+<li>
+<a href="../spirituality_39/index.html">
+                            
+                                Spirituality
+                            
+                        </a>
+</li>
+<li>
+<a href="../academic_40/index.html">
+                            
+                                Academic
+                            
+                        </a>
+</li>
+<li>
+<a href="../self-help_41/index.html">
+                            
+                                Self Help
+                            
+                        </a>
+</li>
+<li>
+<a href="../historical_42/index.html">
+                            
+                                Historical
+                            
+                        </a>
+</li>
+<li>
+<a href="../christian_43/index.html">
+                            
+                                Christian
+                            
+                        </a>
+</li>
+<li>
+<a href="../suspense_44/index.html">
+                            
+                                Suspense
+                            
+                        </a>
+</li>
+<li>
+<a href="../short-stories_45/index.html">
+                            
+                                Short Stories
+                            
+                        </a>
+</li>
+<li>
+<a href="../novels_46/index.html">
+                            
+                                Novels
+                            
+                        </a>
+</li>
+<li>
+<a href="../health_47/index.html">
+                            
+                                Health
+                            
+                        </a>
+</li>
+<li>
+<a href="../politics_48/index.html">
+                            
+                                Politics
+                            
+                        </a>
+</li>
+<li>
+<a href="../cultural_49/index.html">
+                            
+                                Cultural
+                            
+                        </a>
+</li>
+<li>
+<a href="../erotica_50/index.html">
+                            
+                                Erotica
+                            
+                        </a>
+</li>
+<li>
+<a href="../crime_51/index.html">
+                            
+                                Crime
+                            
+                        </a>
+</li>
+</ul></li>
+</ul>
+</div>
+</aside>
+<div class="col-sm-8 col-md-9">
+<div class="page-header action">
+<h1>Travel</h1>
+</div>
+<div id="messages">
+</div>
+<div id="promotions">
+</div>
+<form class="form-horizontal" method="get">
+<div style="display:none">
+</div>
+<strong>11</strong> results.
+                
+            
+            
+        
+    </form>
+<section>
+<div class="alert alert-warning" role="alert"><strong>Warning!</strong> This is a demo website for web scraping purposes. Prices and ratings here were randomly assigned and have no real meaning.</div>
+<div>
+<ol class="row">
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../its-only-the-himalayas_981/index.html"><img alt="It's Only the Himalayas" class="thumbnail" src="../../../../media/cache/27/a5/27a53d0bb95bdd88288eaf66c9230d7e.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../its-only-the-himalayas_981/index.html" title="It's Only the Himalayas">It's Only the Himalayas</a></h3>
+<div class="product_price">
+<p class="price_color">Â£45.17</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../full-moon-over-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html"><img alt="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond" class="thumbnail" src="../../../../media/cache/57/77/57770cac1628f4407636635f4b85e88c.jpg"/></a>
+</div>
+<p class="star-rating Four">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../full-moon-over-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html" title="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond">Full Moon over Noahâs ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£49.43</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_732/index.html"><img alt="See America: A Celebration of Our National Parks &amp; Treasured Sites" class="thumbnail" src="../../../../media/cache/9a/7e/9a7e63f12829df4b43b31d110bf3dc2e.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_732/index.html" title="See America: A Celebration of Our National Parks &amp; Treasured Sites">See America: A Celebration ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£48.87</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../vagabonding-an-uncommon-guide-to-the-art-of-long-term-world-travel_552/index.html"><img alt="Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel" class="thumbnail" src="../../../../media/cache/d5/bf/d5bf0090470b0b8ea46d9c166f7895aa.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../vagabonding-an-uncommon-guide-to-the-art-of-long-term-world-travel_552/index.html" title="Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel">Vagabonding: An Uncommon Guide ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£36.94</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../the-great-railway-bazaar_446/index.html" title="The Great Railway Bazaar">The Great Railway Bazaar</a></h3>
+<div class="product_price">
+<p class="price_color">Â£30.54</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-year-in-provence-provence-1_421/index.html"><img alt="A Year in Provence (Provence #1)" class="thumbnail" src="../../../../media/cache/db/46/db46159b05faa5d95262112bf9c29ddd.jpg"/></a>
+</div>
+<p class="star-rating Four">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-year-in-provence-provence-1_421/index.html" title="A Year in Provence (Provence #1)">A Year in Provence ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£56.88</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-road-to-little-dribbling-adventures-of-an-american-in-britain-notes-from-a-small-island-2_277/index.html"><img alt="The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)" class="thumbnail" src="../../../../media/cache/e0/4f/e04f8eda2a2fa947aec17640202d9ab0.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../the-road-to-little-dribbling-adventures-of-an-american-in-britain-notes-from-a-small-island-2_277/index.html" title="The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)">The Road to Little ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£23.21</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../neither-here-nor-there-travels-in-europe_198/index.html"><img alt="Neither Here nor There: Travels in Europe" class="thumbnail" src="../../../../media/cache/06/81/0681530a7bc301caf5c3257e1b0f0750.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../neither-here-nor-there-travels-in-europe_198/index.html" title="Neither Here nor There: Travels in Europe">Neither Here nor There: ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£38.95</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../1000-places-to-see-before-you-die_1/index.html"><img alt="1,000 Places to See Before You Die" class="thumbnail" src="../../../../media/cache/d7/0f/d70f7edd92705c45a82118c3ff6c299d.jpg"/></a>
+</div>
+<p class="star-rating Five">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../1000-places-to-see-before-you-die_1/index.html" title="1,000 Places to See Before You Die">1,000 Places to See ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£26.08</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+</ol>
+</div>
+</section>
+</div>
+</div><!-- /row -->
+</div><!-- /page_inner -->
+</div><!-- /container-fluid -->
+<footer class="footer container-fluid">
+</footer>
+<!-- jQuery -->
+
+
+<!-- Twitter Bootstrap -->
+
+<!-- Oscar -->
+
+
+
+
+<!-- Version: N/A -->
+</body>
+</html>
+
+
+2023-11-12 14:41:12,689 - INFO - Attempts: 0, Found snippets: 0
+2023-11-12 14:41:12,689 - INFO - Snippet (Attempt 1):
+oetry
+                            
+                        </a>
+</li>
+<li>
+<a href="../paranormal_24/index.html">
+                            
+                                Paranormal
+                            
+                        </a>
+</li>
+<li>
+<a href="../art_25/index.html">
+                            
+                                Art
+                            
+                        </a>
+</li>
+<li>
+<a href="../psychology_26/index.html">
+                            
+                                Psychology
+                            
+                        </a>
+</li>
+<li>
+<a href="../autobiography_27/index.html">
+                            
+                                Autobiography
+                            
+                        </a>
+</li>
+<li>
+<a href="../parenting_28/index.html">
+                            
+                                Parenting
+                            
+                        </a>
+</li>
+<li>
+<a href="../adult-fiction_29/index.html">
+                            
+                                Adult Fiction
+                            
+                        </a>
+</li>
+<li>
+<a href="../humor_30/index.html">
+                            
+                                Humor
+                            
+                        </a>
+</li>
+<li>
+<a href="../horror_31/index.html">
+                            
+                                Horror
+                            
+                        </a>
+</li>
+<li>
+<a href="../history_32/index.html">
+                            
+                                History
+                            
+                        </a>
+</li>
+<li>
+<a href="../food-and-drink_33/index.html">
+                            
+                                Food and Drink
+                            
+                        </a>
+</li>
+<li>
+<a href="../christian-fiction_34/index.html">
+                            
+                                Christian Fiction
+                    
+2023-11-12 14:41:13,897 - INFO - Relevance check response:
+NO
+
+This HTML snippet does not contain any information about books, their titles, ratings, prices or stock availability. It is a list of genres/categories and their corresponding links. It may be relevant to the prompt in the sense that it shows the different genres of books available on the page, but it does not provide any specific information about the books themselves. Therefore, the answer is "NO".
+2023-11-12 14:41:13,897 - INFO - Attempts: 1, Found snippets: 0
+2023-11-12 14:41:13,898 - INFO - Snippet (Attempt 2):
+     Christian Fiction
+                            
+                        </a>
+</li>
+<li>
+<a href="../business_35/index.html">
+                            
+                                Business
+                            
+                        </a>
+</li>
+<li>
+<a href="../biography_36/index.html">
+                            
+                                Biography
+                            
+                        </a>
+</li>
+<li>
+<a href="../thriller_37/index.html">
+                            
+                                Thriller
+                            
+                        </a>
+</li>
+<li>
+<a href="../contemporary_38/index.html">
+                            
+                                Contemporary
+                            
+                        </a>
+</li>
+<li>
+<a href="../spirituality_39/index.html">
+                            
+                                Spirituality
+                            
+                        </a>
+</li>
+<li>
+<a href="../academic_40/index.html">
+                            
+                                Academic
+                            
+                        </a>
+</li>
+<li>
+<a href="../self-help_41/index.html">
+                            
+                                Self Help
+                            
+                        </a>
+</li>
+<li>
+<a href="../historical_42/index.html">
+                            
+                                Historical
+                            
+                        </a>
+</li>
+<li>
+<a href="../christian_43/index.html">
+                            
+                                Christian
+                            
+                        </a>
+</li>
+<li>
+<a href="../suspense_44/index.html">
+                            
+                                Suspense
+                            
+                        </a>
+</li>
+<li>
+<a href="../short-stories_45/index.html">
+                            
+                                Short Stories
+     
+2023-11-12 14:41:14,751 - INFO - Relevance check response:
+NO
+
+This HTML snippet does not contain any information about titles, ratings, prices, or stock for books. It only includes links to different genres of books, which do not provide the requested information.
+2023-11-12 14:41:14,751 - INFO - Attempts: 2, Found snippets: 0
+2023-11-12 14:41:14,752 - INFO - Snippet (Attempt 3):
+html">
+                            
+                                Thriller
+                            
+                        </a>
+</li>
+<li>
+<a href="../contemporary_38/index.html">
+                            
+                                Contemporary
+                            
+                        </a>
+</li>
+<li>
+<a href="../spirituality_39/index.html">
+                            
+                                Spirituality
+                            
+                        </a>
+</li>
+<li>
+<a href="../academic_40/index.html">
+                            
+                                Academic
+                            
+                        </a>
+</li>
+<li>
+<a href="../self-help_41/index.html">
+                            
+                                Self Help
+                            
+                        </a>
+</li>
+<li>
+<a href="../historical_42/index.html">
+                            
+                                Historical
+                            
+                        </a>
+</li>
+<li>
+<a href="../christian_43/index.html">
+                            
+                                Christian
+                            
+                        </a>
+</li>
+<li>
+<a href="../suspense_44/index.html">
+                            
+                                Suspense
+                            
+                        </a>
+</li>
+<li>
+<a href="../short-stories_45/index.html">
+                            
+                                Short Stories
+                            
+                        </a>
+</li>
+<li>
+<a href="../novels_46/index.html">
+                            
+                                Novels
+                            
+                        </a>
+</li>
+<li>
+<a href="../health_47/index.html">
+                            
+                                Health
+                            
+                        </a>
+</li>
+<li>
+<a href="../politics_48/index.html">
+                            
+  
+2023-11-12 14:41:15,578 - INFO - Relevance check response:
+Politics
+                            
+                        </a>
+</li>
+
+NO
+
+This HTML snippet does not contain any information related to titles, ratings, price, or availability of books. It only lists different genres of books, which is not relevant to the prompt. Therefore, the correct answer is "NO".
+2023-11-12 14:41:15,578 - INFO - Attempts: 3, Found snippets: 0
+2023-11-12 14:41:15,578 - INFO - Snippet (Attempt 4):
+sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323
+2023-11-12 14:41:16,595 - INFO - Relevance check response:
+d30b72114b5cf36fe5a.jpg"/></a>
+</div>
+
+NO. This HTML snippet does not contain information about the titles, ratings, prices, and availability of books on the page. It only contains information about the layout and formatting of the webpage. Relevant information would need to be extracted from the actual book entries on the page.
+2023-11-12 14:41:16,595 - INFO - Attempts: 4, Found snippets: 0
+2023-11-12 14:41:16,595 - INFO - Snippet (Attempt 5):
+="product_price">
+<p class="price_color">Â£45.17</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../full-moon-over-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html"><img alt="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond" class="thumbnail" src="../../../../media/cache/57/77/57770cac1628f4407636635f4b85e88c.jpg"/></a>
+</div>
+<p class="star-rating Four">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../full-moon-over-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html" title="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond">Full Moon over Noahâs ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£49.43</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_732/index.html"><img alt="See America: A Celebration of Our National Parks &amp; Treasured Sites" class="thumbnail" src="../../../../media/cache/9a/7e/9a7e63f12829df4b43b31d110bf3dc2e.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_7
+2023-11-12 14:41:17,635 - INFO - Relevance check response:
+32/index.html" title="See America: A Celebration of Our National Parks &amp; Treasured Sites">See America: A Celebrati"
+
+NO. This HTML snippet does not contain any information about the title, rating, price, or in stock availability of books. It only includes information about the product prices, ratings, and in stock availability for unrelated products.
+2023-11-12 14:41:17,635 - INFO - Attempts: 5, Found snippets: 0
+2023-11-12 14:41:17,635 - INFO - Snippet (Attempt 6):
+              </a>
+</li>
+<li>
+<a href="../erotica_50/index.html">
+                            
+                                Erotica
+                            
+                        </a>
+</li>
+<li>
+<a href="../crime_51/index.html">
+                            
+                                Crime
+                            
+                        </a>
+</li>
+</ul></li>
+</ul>
+</div>
+</aside>
+<div class="col-sm-8 col-md-9">
+<div class="page-header action">
+<h1>Travel</h1>
+</div>
+<div id="messages">
+</div>
+<div id="promotions">
+</div>
+<form class="form-horizontal" method="get">
+<div style="display:none">
+</div>
+<strong>11</strong> results.
+                
+            
+            
+        
+    </form>
+<section>
+<div class="alert alert-warning" role="alert"><strong>Warning!</strong> This is a demo website for web scraping purposes. Prices and ratings here were randomly assigned and have no real meaning.</div>
+<div>
+<ol class="row">
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../its-only-the-himalayas_981/index.html"><img alt="It's Only the Himalayas" class="thumbnail" src="../../../../media/cache/27/a5/27a53d0bb95bdd88288eaf66c9230d7e.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../its-only-the-himalayas_981/index.html" title="It's Only the Himalayas">It's Only the Himalayas</a></h3>
+<div class="product_price">
+<p class="price_color">Â£45.17</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../full-moon-over-noahs-ark-an-
+2023-11-12 14:41:19,052 - INFO - Relevance check response:
+odyssey-to-mount-ararat-and-beyo_811/index.html"><img alt="Full Moon over Noahâ?s Ark: An Odyssey to Mount Ararat and beyond" class="thumbnail" src="../../../../media/cache/01/72/0172c175cce6adac1f2a1c4a53d6ba3c.jpg"/></a>
+</div>
+<p class="star-rating Four">
+<i class="icon-star"></i>
+<i class="icon-star
+2023-11-12 14:41:19,052 - INFO - Attempts: 6, Found snippets: 0
+2023-11-12 14:41:19,053 - INFO - Snippet (Attempt 7):
+er-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html" title="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond">Full Moon over Noahâs ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£49.43</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_732/index.html"><img alt="See America: A Celebration of Our National Parks &amp; Treasured Sites" class="thumbnail" src="../../../../media/cache/9a/7e/9a7e63f12829df4b43b31d110bf3dc2e.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_732/index.html" title="See America: A Celebration of Our National Parks &amp; Treasured Sites">See America: A Celebration ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£48.87</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../vagabonding-an-uncommon-guide-to-the-art-of-long-term-world-travel_552/index.html"><img alt="Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel" class="thumbnail" src="../../../../media/cache/d5/bf/d5bf0090470b0b8ea46d9c166f7895aa.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star">
+2023-11-12 14:41:19,975 - INFO - Relevance check response:
+NO
+
+NO. This HTML snippet does not contain information about the title, rating, price, or in-stock status of a book. It includes information about the book's title and rating in the first article, but the information for the second and third articles is not relevant to the prompt.
+2023-11-12 14:41:19,975 - INFO - Attempts: 7, Found snippets: 0
+2023-11-12 14:41:19,975 - INFO - Snippet (Attempt 8):
+</i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../full-moon-over-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html"><img alt="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond" class="thumbnail" src="../../../../media/cache/57/77/57770cac1628f4407636635f4b85e88c.jpg"/></a>
+</div>
+<p class="star-rating Four">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../full-moon-over-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html" title="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond">Full Moon over Noahâs ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£49.43</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_732/index.html"><img alt="See America: A Celebration of Our National Parks &amp; Treasured Sites" class="thumbnail" src="../../../../media/cache/9a/7e/9a7e63f12829df4b43b31d110bf3dc2e.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_732/index.html" title="See America: A Celebration of Our National Parks &amp; Treasured Sites">See America
+2023-11-12 14:41:21,101 - INFO - Relevance check response:
+: A Celebration ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£48.87</p>
+<p class="format">Paperback</p>
+
+NO
+
+This HTML snippet does not provide information about the book's title, rating, price, or in_stock status. It only shows a product's price, format, and availability, but not the specific book's information.
+2023-11-12 14:41:21,101 - INFO - Attempts: 8, Found snippets: 0
+2023-11-12 14:41:21,101 - INFO - Snippet (Attempt 9):
+ss="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../the-great-railway-bazaar_446/index.html" title="The Great Railway Bazaar">The Great Railway Bazaar</a></h3>
+<div class="product_price">
+<p cl
+2023-11-12 14:41:21,575 - INFO - Relevance check response:
+ss="pricon-star"></i>
+<i class="icon
+2023-11-12 14:41:21,576 - INFO - Attempts: 9, Found snippets: 0
+2023-11-12 14:41:21,576 - INFO - Snippet (Attempt 10):
+k availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-s
+2023-11-12 14:41:22,840 - INFO - Relevance check response:
+NO columd
+ Reply "NO"
+
+This HTML snippet is not relevant to the prompt because it does not contain the necessary information of title, rating, price, and in_stock for the books on the page. It contains information about the availability and price for individual books, but it does not specify which books are being described. Therefore, it is not relevant to the prompt.
+2023-11-12 14:41:22,840 - INFO - Attempts: 10, Found snippets: 0
+2023-11-12 14:41:22,840 - INFO - Snippet (Attempt 11):
+>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../its-only-the-himalayas_981/index.html" title="It's Only the Himalayas">It's Only the Himalayas</a></h3>
+<div class="product_price">
+<p class="price_color">Â£45.17</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../full-moon-over-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html"><img alt="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond" class="thumbnail" src="../../../../media/cache/57/77/57770cac1628f4407636635f4b85e88c.jpg"/></a>
+</div>
+<p class="star-rating Four">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../full-moon-over-noahs-ark-an-odyssey-to-mount-ararat-and-beyond_811/index.html" title="Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond">Full Moon over Noahâs ...</a></h3>
+<div class="product_price">
+<p class="price_color">Â£49.43</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../see-america-a-celebration-of-our-national-parks-treasured-sites_732/index.html"><img alt="See America: A Celebration of Our National Parks &amp; Treasured Sites" class="thumbnail" src="../../../../media/cache/9a/7e/9a7e63f12829df4b43b31d110bf3dc2e.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<
+2023-11-12 14:41:23,186 - INFO - Relevance check response:
+
+2023-11-12 14:41:23,186 - INFO - Attempts: 11, Found snippets: 0
+2023-11-12 14:41:23,187 - INFO - Snippet (Attempt 12):
+                        Health
+                            
+                        </a>
+</li>
+<li>
+<a href="../politics_48/index.html">
+                            
+                                Politics
+                            
+                        </a>
+</li>
+<li>
+<a href="../cultural_49/index.html">
+                            
+                                Cultural
+                            
+                        </a>
+</li>
+<li>
+<a href="../erotica_50/index.html">
+                            
+                                Erotica
+                            
+                        </a>
+</li>
+<li>
+<a href="../crime_51/index.html">
+                            
+                                Crime
+                            
+                        </a>
+</li>
+</ul></li>
+</ul>
+</div>
+</aside>
+<div class="col-sm-8 col-md-9">
+<div class="page-header action">
+<h1>Travel</h1>
+</div>
+<div id="messages">
+</div>
+<div id="promotions">
+</div>
+<form class="form-horizontal" method="get">
+<div style="display:none">
+</div>
+<strong>11</strong> results.
+                
+            
+            
+        
+    </form>
+<section>
+<div class="alert alert-warning" role="alert"><strong>Warning!</strong> This is a demo website for web scraping purposes. Prices and ratings here were randomly assigned and have no real meaning.</div>
+<div>
+<ol class="row">
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../its-only-the-himalayas_981/index.html"><img alt="It's Only the Himalayas" class="thumbnail" src="../../../../media/cache/27/a5/27a53d0bb95bdd88288eaf66c9230d7e.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../its-only-the-himalayas_981/index.html" title="It's Only the Himalayas">It's Only the Himalayas</a></h3>
+<div class="product_price">
+<p cl
+2023-11-12 14:41:23,550 - INFO - Relevance check response:
+
+2023-11-12 14:41:23,550 - INFO - Attempts: 12, Found snippets: 0
+2023-11-12 14:41:23,550 - INFO - Snippet (Attempt 13):
+ody class="default" id="default">
+<header class="header container-fluid">
+<div class="page_inner">
+<div class="row">
+<div class="col-sm-8 h1"><a href="../../../../index.html">Books to Scrape</a><small> We love being scraped!</small>
+</div>
+</div>
+</div>
+</header>
+<div class="container-fluid page">
+<div class="page_inner">
+<ul class="breadcrumb">
+<li>
+<a href="../../../../index.html">Home</a>
+</li>
+<li>
+<a href="../../books_1/index.html">Books</a>
+</li>
+<li class="active">Travel</li>
+</ul>
+<div class="row">
+<aside class="sidebar col-sm-4 col-md-3">
+<div id="promotions_left">
+</div>
+<div class="side_categories">
+<ul class="nav nav-list">
+<li>
+<a href="../../books_1/index.html">
+                            
+                                Books
+                            
+                        </a>
+<ul>
+<li>
+<a href="index.html">
+<strong>Travel</strong>
+</a>
+</li>
+<li>
+<a href="../mystery_3/index.html">
+                            
+                                Mystery
+                            
+                        </a>
+</li>
+<li>
+<a href="../historical-fiction_4/index.html">
+                            
+                                Historical Fiction
+                            
+                        </a>
+</li>
+<li>
+<a href="../sequential-art_5/index.html">
+                            
+                                Sequential Art
+                            
+                        </a>
+</li>
+<li>
+<a href="../classics_6/index.html">
+                            
+                                Classics
+                            
+                        </a>
+</li>
+<li>
+<a href="../philosophy_7/index.html">
+                            
+                                Philosophy
+                            
+                        </a>
+</li>
+<li>
+<a href="../romance_8/index.html">
+                            
+                                Romance
+                            
+                        </a>
+</li>
+<li>
+<a href="../womens-fiction_9/index.h
+2023-11-12 14:41:24,691 - INFO - Relevance check response:
+tml">
+                            
+                                Women's Fiction
+                            
+                        </a>
+</li>
+</ul>
+</li>
+</ul>
+div>
+
+NO. This HTML snippet does not provide the relevant information needed to extract the title, rating, rating, price, and in_stock from the books on the page. The snippet only contains information about the website's layout and navigation, not the actual books themselves.
+2023-11-12 14:41:24,691 - INFO - Attempts: 13, Found snippets: 0
+2023-11-12 14:41:24,691 - INFO - Snippet (Attempt 14):
+or">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../the-great-railway-bazaar_446/index.html" title="The Great Railway Bazaar">The Great Railway Bazaar</a></h3>
+<div class="product_price">
+<p class="price_color">Â£30.54</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+2023-11-12 14:41:25,599 - INFO - Relevance check response:
+NO
+
+This HTML snippet contains information about three books on the page, but it does not specifically provide the requested information of title, rating, price, and in_stock. It includes elements such as links, images, and buttons, but not the specific information requested. Therefore, it is not relevant to the prompt.
+2023-11-12 14:41:25,599 - INFO - Attempts: 14, Found snippets: 0
+2023-11-12 14:41:25,599 - INFO - Snippet (Attempt 15):
+ontainer">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class
+2023-11-12 14:41:26,759 - INFO - Relevance check response:
+="icon-star"></i>
+</p>
+Title: Yes
+Rating: Yes
+Price: Yes
+In_stock: Yes
+
+Explanation: 
+The HTML snippet includes all the necessary information to extract the title, rating, price, and in-stock status from the books on the page. It includes a title element, a rating element, a price element, and a in-stock element. Therefore, it is relevant to the prompt and the answer is "YES".
+2023-11-12 14:41:26,760 - INFO - Using Relevant Snippet:
+ontainer">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class
+2023-11-12 14:41:26,760 - INFO - Generation Prompt:
+Please provide Python code to scrape the website and PRINT OUT: Extract title, rating, rating, price, in_stock from the books this page as JSON.
+Based on the following relevant HTML snippet from somewhere in the webpage:
+```ontainer">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class```
+The code should take in this link `https://books.toscrape.com/catalogue/category/books/travel_2/index.html` and PRINT out the requested data.
+Generate only the code, not any example usages or output, and you MUST wrap your answer in a markdown code block.
+Generate it in this format.
+```python
+# imports
+import bs4 
+
+def scraper(url: str) -> str:
+  # scraper logic goes here
+  pass
+
+if __name__ == '__main__':
+  url = "<DUMMY URL, REPLACE WITH ACTUAL URL>"
+  scraper(url)
+START CONTEXT
+This is the debugging info:
+```There is no debugging info.```
+This is your previous error:
+```There is no previous error.```
+This is your previous code:
+```python
+There is no previous code.```
+END CONTEXT
+
+2023-11-12 14:41:29,878 - INFO - Raw response:
+{
+  "id": "cmpl-8JyRqJkCLN02HjK0mAObVSYaEh6Wr",
+  "object": "text_completion",
+  "created": 1699771286,
+  "model": "gpt-3.5-turbo-instruct",
+  "choices": [
+    {
+      "text": "\n```python\nimport requests\nfrom bs4 import BeautifulSoup\nimport json\n\nurl = \"https://books.toscrape.com/catalogue/category/books/travel_2/index.html\"\n\n# function to get book data\ndef get_data(url):\n  # get page\n  response = requests.get(url)\n  # parse html\n  soup = BeautifulSoup(response.content, 'html.parser')\n  # find all book listings\n  books = soup.find_all(class_=\"product_pod\")\n  results = []\n  # iterate through books\n  for book in books:\n    # get title\n    title = book.find('h3').find('a')['title']\n    # get rating\n    rating = book.find(class_=\"star-rating\")['class'][1]\n    # get price\n    price = book.find(class_=\"price_color\").text\n    # get availability\n    availability = book.find(class_=\"instock availability\").text.strip()\n    # add data to results\n    results.append({\n        'title': title,\n        'rating': rating,\n        'price': price,\n        'in_stock': availability\n    })\n  # return results as JSON format\n  return json.dumps(results)\n\nif __name__ == '__main__':\n  scraper(url)\n  # print results\n  print(get_data(url))\n```",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 823,
+    "completion_tokens": 267,
+    "total_tokens": 1090
+  }
+}
+2023-11-12 14:41:29,879 - INFO - Extracted Code:
+import requests
+from bs4 import BeautifulSoup
+import json
+
+url = "https://books.toscrape.com/catalogue/category/books/travel_2/index.html"
+
+# function to get book data
+def get_data(url):
+  # get page
+  response = requests.get(url)
+  # parse html
+  soup = BeautifulSoup(response.content, 'html.parser')
+  # find all book listings
+  books = soup.find_all(class_="product_pod")
+  results = []
+  # iterate through books
+  for book in books:
+    # get title
+    title = book.find('h3').find('a')['title']
+    # get rating
+    rating = book.find(class_="star-rating")['class'][1]
+    # get price
+    price = book.find(class_="price_color").text
+    # get availability
+    availability = book.find(class_="instock availability").text.strip()
+    # add data to results
+    results.append({
+        'title': title,
+        'rating': rating,
+        'price': price,
+        'in_stock': availability
+    })
+  # return results as JSON format
+  return json.dumps(results)
+
+if __name__ == '__main__':
+  scraper(url)
+  # print results
+  print(get_data(url))
+2023-11-12 14:41:29,879 - INFO - Generated code (Attempt 1):
+import requests
+from bs4 import BeautifulSoup
+import json
+
+url = "https://books.toscrape.com/catalogue/category/books/travel_2/index.html"
+
+# function to get book data
+def get_data(url):
+  # get page
+  response = requests.get(url)
+  # parse html
+  soup = BeautifulSoup(response.content, 'html.parser')
+  # find all book listings
+  books = soup.find_all(class_="product_pod")
+  results = []
+  # iterate through books
+  for book in books:
+    # get title
+    title = book.find('h3').find('a')['title']
+    # get rating
+    rating = book.find(class_="star-rating")['class'][1]
+    # get price
+    price = book.find(class_="price_color").text
+    # get availability
+    availability = book.find(class_="instock availability").text.strip()
+    # add data to results
+    results.append({
+        'title': title,
+        'rating': rating,
+        'price': price,
+        'in_stock': availability
+    })
+  # return results as JSON format
+  return json.dumps(results)
+
+if __name__ == '__main__':
+  scraper(url)
+  # print results
+  print(get_data(url))
+2023-11-12 14:41:29,881 - INFO - Runner :
+
+2023-11-12 14:41:29,881 - INFO - Runner error message:
+Error on line 39:   print(get_data(url))
+Exception: The 'scraper' function is not defined in the provided code.
+2023-11-12 14:41:29,881 - INFO - Result (Attempt 1):
+
+2023-11-12 14:41:29,881 - INFO - Error (Attempt 1):
+Error on line 39:   print(get_data(url))
+Exception: The 'scraper' function is not defined in the provided code.
+2023-11-12 14:41:29,881 - INFO - Debugger prompt:
+Provide give one best guess for how to fix this error: Error on line 39:   print(get_data(url))
+Exception: The 'scraper' function is not defined in the provided code..
+Given the code:
+```import requests
+from bs4 import BeautifulSoup
+import json
+
+url = "https://books.toscrape.com/catalogue/category/books/travel_2/index.html"
+
+# function to get book data
+def get_data(url):
+  # get page
+  response = requests.get(url)
+  # parse html
+  soup = BeautifulSoup(response.content, 'html.parser')
+  # find all book listings
+  books = soup.find_all(class_="product_pod")
+  results = []
+  # iterate through books
+  for book in books:
+    # get title
+    title = book.find('h3').find('a')['title']
+    # get rating
+    rating = book.find(class_="star-rating")['class'][1]
+    # get price
+    price = book.find(class_="price_color").text
+    # get availability
+    availability = book.find(class_="instock availability").text.strip()
+    # add data to results
+    results.append({
+        'title': title,
+        'rating': rating,
+        'price': price,
+        'in_stock': availability
+    })
+  # return results as JSON format
+  return json.dumps(results)
+
+if __name__ == '__main__':
+  scraper(url)
+  # print results
+  print(get_data(url))```
+Given a HTML snippet:
+```ontainer">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class```
+
+2023-11-12 14:41:33,389 - INFO - Debugger raw response:
+{
+  "id": "cmpl-8JyRuz6O2ErKKqpvnr847xytrY6Hy",
+  "object": "text_completion",
+  "created": 1699771290,
+  "model": "gpt-3.5-turbo-instruct",
+  "choices": [
+    {
+      "text": "Possible solution:\n\nThe Error on line 39 is likely because the scraper function is not defined anywhere in the code provided. To fix this error, you could define the scraper function within the code, or you could change line 39 to call the get_data function instead. This would require removing the 'scraper' part of the function call, and simply calling get_data(url). This would also require updating the print statement on line 41 to just call the get_data function. The fixed code would look like this:\n\nimport requests\nfrom bs4 import BeautifulSoup\nimport json\n\nurl = \"https://books.toscrape.com/catalogue/category/books/travel_2/index.html\"\n\n# function to get book data\ndef get_data(url):\n  # get page\n  response = requests.get(url)\n  # parse html\n  soup = BeautifulSoup(response.content, 'html.parser')\n  # find all book listings\n  books = soup.find_all(class_=\"product_pod\")\n  results = []\n  # iterate through books\n  for book in books:\n    # get title\n    title = book.find('h3').find('a')['title']\n    # get rating\n    rating = book.find(class_=\"star-rating\")['class'][1]\n    # get price\n    price = book.find(class_=\"price_color\").text\n    # get availability\n    availability = book.find(class_=\"instock availability\").text.strip()\n    # add data to results\n    results.append({\n        'title': title,\n        'rating': rating,\n        'price': price,\n        'in_stock': availability\n    })\n  # return results as JSON format\n  return json.dumps(results)\n\nif __name__ == '__main__':\n  # call get_data function\n  print(get_data(url))",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 921,
+    "completion_tokens": 364,
+    "total_tokens": 1285
+  }
+}
+2023-11-12 14:41:33,389 - ERROR - Attempt 1 failed. Error: Error on line 39:   print(get_data(url))
+Exception: The 'scraper' function is not defined in the provided code.
+2023-11-12 14:41:33,389 - ERROR - Debugging info (Attempt 1):
+Possible solution:
+
+The Error on line 39 is likely because the scraper function is not defined anywhere in the code provided. To fix this error, you could define the scraper function within the code, or you could change line 39 to call the get_data function instead. This would require removing the 'scraper' part of the function call, and simply calling get_data(url). This would also require updating the print statement on line 41 to just call the get_data function. The fixed code would look like this:
+
+import requests
+from bs4 import BeautifulSoup
+import json
+
+url = "https://books.toscrape.com/catalogue/category/books/travel_2/index.html"
+
+# function to get book data
+def get_data(url):
+  # get page
+  response = requests.get(url)
+  # parse html
+  soup = BeautifulSoup(response.content, 'html.parser')
+  # find all book listings
+  books = soup.find_all(class_="product_pod")
+  results = []
+  # iterate through books
+  for book in books:
+    # get title
+    title = book.find('h3').find('a')['title']
+    # get rating
+    rating = book.find(class_="star-rating")['class'][1]
+    # get price
+    price = book.find(class_="price_color").text
+    # get availability
+    availability = book.find(class_="instock availability").text.strip()
+    # add data to results
+    results.append({
+        'title': title,
+        'rating': rating,
+        'price': price,
+        'in_stock': availability
+    })
+  # return results as JSON format
+  return json.dumps(results)
+
+if __name__ == '__main__':
+  # call get_data function
+  print(get_data(url))
+2023-11-12 14:41:33,390 - INFO - Using Relevant Snippet:
+ontainer">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class
+2023-11-12 14:41:33,390 - INFO - Generation Prompt:
+Please provide Python code to scrape the website and PRINT OUT: Extract title, rating, rating, price, in_stock from the books this page as JSON.
+Based on the following relevant HTML snippet from somewhere in the webpage:
+```ontainer">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class```
+The code should take in this link `https://books.toscrape.com/catalogue/category/books/travel_2/index.html` and PRINT out the requested data.
+Generate only the code, not any example usages or output, and you MUST wrap your answer in a markdown code block.
+Generate it in this format.
+```python
+# imports
+import bs4 
+
+def scraper(url: str) -> str:
+  # scraper logic goes here
+  pass
+
+if __name__ == '__main__':
+  url = "<DUMMY URL, REPLACE WITH ACTUAL URL>"
+  scraper(url)
+START CONTEXT
+This is the debugging info:
+```Possible solution:
+
+The Error on line 39 is likely because the scraper function is not defined anywhere in the code provided. To fix this error, you could define the scraper function within the code, or you could change line 39 to call the get_data function instead. This would require removing the 'scraper' part of the function call, and simply calling get_data(url). This would also require updating the print statement on line 41 to just call the get_data function. The fixed code would look like this:
+
+import requests
+from bs4 import BeautifulSoup
+import json
+
+url = "https://books.toscrape.com/catalogue/category/books/travel_2/index.html"
+
+# function to get book data
+def get_data(url):
+  # get page
+  response = requests.get(url)
+  # parse html
+  soup = BeautifulSoup(response.content, 'html.parser')
+  # find all book listings
+  books = soup.find_all(class_="product_pod")
+  results = []
+  # iterate through books
+  for book in books:
+    # get title
+    title = book.find('h3').find('a')['title']
+    # get rating
+    rating = book.find(class_="star-rating")['class'][1]
+    # get price
+    price = book.find(class_="price_color").text
+    # get availability
+    availability = book.find(class_="instock availability").text.strip()
+    # add data to results
+    results.append({
+        'title': title,
+        'rating': rating,
+        'price': price,
+        'in_stock': availability
+    })
+  # return results as JSON format
+  return json.dumps(results)
+
+if __name__ == '__main__':
+  # call get_data function
+  print(get_data(url))```
+This is your previous error:
+```Error on line 39:   print(get_data(url))
+Exception: The 'scraper' function is not defined in the provided code.```
+This is your previous code:
+```python
+import requests
+from bs4 import BeautifulSoup
+import json
+
+url = "https://books.toscrape.com/catalogue/category/books/travel_2/index.html"
+
+# function to get book data
+def get_data(url):
+  # get page
+  response = requests.get(url)
+  # parse html
+  soup = BeautifulSoup(response.content, 'html.parser')
+  # find all book listings
+  books = soup.find_all(class_="product_pod")
+  results = []
+  # iterate through books
+  for book in books:
+    # get title
+    title = book.find('h3').find('a')['title']
+    # get rating
+    rating = book.find(class_="star-rating")['class'][1]
+    # get price
+    price = book.find(class_="price_color").text
+    # get availability
+    availability = book.find(class_="instock availability").text.strip()
+    # add data to results
+    results.append({
+        'title': title,
+        'rating': rating,
+        'price': price,
+        'in_stock': availability
+    })
+  # return results as JSON format
+  return json.dumps(results)
+
+if __name__ == '__main__':
+  scraper(url)
+  # print results
+  print(get_data(url))```
+END CONTEXT
+
+2023-11-12 14:41:37,065 - INFO - Raw response:
+{
+  "id": "cmpl-8JyRxQ0fQ8GW65Pu25Riu4VjLiYBV",
+  "object": "text_completion",
+  "created": 1699771293,
+  "model": "gpt-3.5-turbo-instruct",
+  "choices": [
+    {
+      "text": "Possible solution:\n\nOne error in this code is that there is a typo on line 41. The function should be called 'scraper' instead of 'scaper'. This causes an error when trying to call the function on line 43. The fixed code would look like this:\n\nimport requests\nfrom bs4 import BeautifulSoup\nimport json\n\nurl = \"https://books.toscrape.com/catalogue/category/books/travel_2/index.html\"\n\n# function to get book data\ndef scraper(url):\n  # get page\n  response = requests.get(url)\n  # parse html\n  soup = BeautifulSoup(response.content, 'html.parser')\n  # find all book listings\n  books = soup.find_all(class_=\"product_pod\")\n  results = []\n  # iterate through books\n  for book in books:\n    # get title\n    title = book.find('h3').find('a')['title']\n    # get rating\n    rating = book.find(class_=\"star-rating\")['class'][1]\n    # get price\n    price = book.find(class_=\"price_color\").text\n    # get availability\n    availability = book.find(class_=\"instock availability\").text.strip()\n    # add data to results\n    results.append({\n        'title': title,\n        'rating': rating,\n        'price': price,\n        'in_stock': availability\n    })\n  # return results as JSON format\n  return json.dumps(results)\n\nif __name__ == '__main__':\n  # call scraper function\n  print(scraper(url))",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1459,
+    "completion_tokens": 315,
+    "total_tokens": 1774
+  }
+}
+2023-11-12 14:41:37,066 - INFO - Code block not found. Trying without python syntax.
+2023-11-12 14:41:37,066 - INFO - Code block not found. Trying without python syntax.
+2023-11-12 14:41:37,066 - INFO - Code block not found. Trying without both ended backticks.
+2023-11-12 14:41:37,067 - INFO - Code block not found. Giving raw response.
+2023-11-12 14:41:37,067 - INFO - Extracted Code:
+Possible solution:
+
+One error in this code is that there is a typo on line 41. The function should be called 'scraper' instead of 'scaper'. This causes an error when trying to call the function on line 43. The fixed code would look like this:
+
+import requests
+from bs4 import BeautifulSoup
+import json
+
+url = "https://books.toscrape.com/catalogue/category/books/travel_2/index.html"
+
+# function to get book data
+def scraper(url):
+  # get page
+  response = requests.get(url)
+  # parse html
+  soup = BeautifulSoup(response.content, 'html.parser')
+  # find all book listings
+  books = soup.find_all(class_="product_pod")
+  results = []
+  # iterate through books
+  for book in books:
+    # get title
+    title = book.find('h3').find('a')['title']
+    # get rating
+    rating = book.find(class_="star-rating")['class'][1]
+    # get price
+    price = book.find(class_="price_color").text
+    # get availability
+    availability = book.find(class_="instock availability").text.strip()
+    # add data to results
+    results.append({
+        'title': title,
+        'rating': rating,
+        'price': price,
+        'in_stock': availability
+    })
+  # return results as JSON format
+  return json.dumps(results)
+
+if __name__ == '__main__':
+  # call scraper function
+  print(scraper(url))
+2023-11-12 14:41:37,067 - INFO - Generated code (Attempt 2):
+Possible solution:
+
+One error in this code is that there is a typo on line 41. The function should be called 'scraper' instead of 'scaper'. This causes an error when trying to call the function on line 43. The fixed code would look like this:
+
+import requests
+from bs4 import BeautifulSoup
+import json
+
+url = "https://books.toscrape.com/catalogue/category/books/travel_2/index.html"
+
+# function to get book data
+def scraper(url):
+  # get page
+  response = requests.get(url)
+  # parse html
+  soup = BeautifulSoup(response.content, 'html.parser')
+  # find all book listings
+  books = soup.find_all(class_="product_pod")
+  results = []
+  # iterate through books
+  for book in books:
+    # get title
+    title = book.find('h3').find('a')['title']
+    # get rating
+    rating = book.find(class_="star-rating")['class'][1]
+    # get price
+    price = book.find(class_="price_color").text
+    # get availability
+    availability = book.find(class_="instock availability").text.strip()
+    # add data to results
+    results.append({
+        'title': title,
+        'rating': rating,
+        'price': price,
+        'in_stock': availability
+    })
+  # return results as JSON format
+  return json.dumps(results)
+
+if __name__ == '__main__':
+  # call scraper function
+  print(scraper(url))
+2023-11-12 14:41:37,067 - INFO - Runner :
+
+2023-11-12 14:41:37,067 - INFO - Runner error message:
+Error on line 42:   print(scraper(url))
+SyntaxError: invalid syntax (<string>, line 1)
+2023-11-12 14:41:37,067 - INFO - Result (Attempt 2):
+
+2023-11-12 14:41:37,067 - INFO - Error (Attempt 2):
+Error on line 42:   print(scraper(url))
+SyntaxError: invalid syntax (<string>, line 1)
+2023-11-12 14:41:37,068 - INFO - Debugger prompt:
+Provide give one best guess for how to fix this error: Error on line 42:   print(scraper(url))
+SyntaxError: invalid syntax (<string>, line 1).
+Given the code:
+```Possible solution:
+
+One error in this code is that there is a typo on line 41. The function should be called 'scraper' instead of 'scaper'. This causes an error when trying to call the function on line 43. The fixed code would look like this:
+
+import requests
+from bs4 import BeautifulSoup
+import json
+
+url = "https://books.toscrape.com/catalogue/category/books/travel_2/index.html"
+
+# function to get book data
+def scraper(url):
+  # get page
+  response = requests.get(url)
+  # parse html
+  soup = BeautifulSoup(response.content, 'html.parser')
+  # find all book listings
+  books = soup.find_all(class_="product_pod")
+  results = []
+  # iterate through books
+  for book in books:
+    # get title
+    title = book.find('h3').find('a')['title']
+    # get rating
+    rating = book.find(class_="star-rating")['class'][1]
+    # get price
+    price = book.find(class_="price_color").text
+    # get availability
+    availability = book.find(class_="instock availability").text.strip()
+    # add data to results
+    results.append({
+        'title': title,
+        'rating': rating,
+        'price': price,
+        'in_stock': availability
+    })
+  # return results as JSON format
+  return json.dumps(results)
+
+if __name__ == '__main__':
+  # call scraper function
+  print(scraper(url))```
+Given a HTML snippet:
+```ontainer">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class```
+
+2023-11-12 14:41:45,729 - INFO - Debugger raw response:
+{
+  "id": "cmpl-8JyS11lGMzZan8dK7tafi5hNfSbbe",
+  "object": "text_completion",
+  "created": 1699771297,
+  "model": "gpt-3.5-turbo-instruct",
+  "choices": [
+    {
+      "text": "\nPossible solution:\n\nOne error in the HTML snippet is that there are unclosed i tags in the star-rating elements. This could cause issues in parsing the data if the code expects valid HTML. The fixed code would look like this:\n\n```<article class=\"product_pod\">\n    <div class=\"image_container\">\n        <a href=\"../../../under-the-tuscan-sun_504/index.html\">\n            <img alt=\"Under the Tuscan Sun\" class=\"thumbnail\" src=\"../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg\"/>\n        </a>\n    </div>\n    <p class=\"star-rating Three\">\n        <i class=\"icon-star\"></i>\n        <i class=\"icon-star\"></i>\n        <i class=\"icon-star\"></i>\n        <i class=\"icon-star\"></i>\n        <i class=\"icon-star\"></i>\n    </p>\n    <h3>\n        <a href=\"../../../under-the-tuscan-sun_504/index.html\" title=\"Under the Tuscan Sun\">\n            Under the Tuscan Sun\n        </a>\n    </h3>\n    <div class=\"product_price\">\n        <p class=\"price_color\">\u00c2\u00a337.33</p>\n        <p class=\"instock availability\">\n            <i class=\"icon-ok\"></i>\n        \n            In stock\n        \n        </p>\n        <form>\n            <button class=\"btn btn-primary btn-block\" data-loading-text=\"Adding...\" type=\"submit\">Add to basket</button>\n        </form>\n    </div>\n</article>\n<li class=\"col-xs-6 col-sm-4 col-md-3 col-lg-3\">\n    <article class=\"product_pod\">\n        <div class=\"image_container\">\n            <a href=\"../../../a-summer-in-europe_458/index.html\">\n                <img alt=\"A Summer In Europe\" class=\"thumbnail\" src=\"../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg\"/>\n            </a>\n        </div>\n        <p class=\"star-rating Two\">\n            <i class=\"icon-star\"></i>\n            <i class=\"icon-star\"></i>\n            <i class=\"icon-star\"></i>\n            <i class=\"icon-star\"></i>\n            <i class=\"icon-star\"></i>\n        </p>\n        <h3>\n            <a href=\"../../../a-summer-in-europe_458/index.html\" title=\"A Summer In Europe\">\n                A Summer In Europe\n            </a>\n        </h3>\n        <div class=\"product_price\">\n            <p class=\"price_color\">\u00c2\u00a344.34</p>\n            <p class=\"instock availability\">\n                <i class=\"icon-ok\"></i>\n        \n                In stock\n        \n            </p>\n            <form>\n                <button class=\"btn btn-primary btn-block\" data-loading-text=\"Adding...\" type=\"submit\">Add to basket</button>\n            </form>\n        </div>\n    </article>\n</li>\n<li class=\"col-xs-6 col-sm-4 col-md-3 col-lg-3\">\n    <article class=\"product_pod\">\n        <div class=\"image_container\">\n            <a href=\"../../../the-great-railway-bazaar_446/index.html\">\n                <img alt=\"The Great Railway Bazaar\" class=\"thumbnail\" src=\"../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg\"/>\n            </a>\n        </div>\n        <p class=\"star-rating One\">\n            <i class=\"icon-star\"></i>\n            <i class=\"icon-star\"></i>\n            <i class=\"icon-star\"></i>\n            <i class=\"icon-star\"></i>\n        </p>\n    </article>\n</li>\n```",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 970,
+    "completion_tokens": 817,
+    "total_tokens": 1787
+  }
+}
+2023-11-12 14:41:45,729 - ERROR - Attempt 2 failed. Error: Error on line 42:   print(scraper(url))
+SyntaxError: invalid syntax (<string>, line 1)
+2023-11-12 14:41:45,729 - ERROR - Debugging info (Attempt 2):
+
+Possible solution:
+
+One error in the HTML snippet is that there are unclosed i tags in the star-rating elements. This could cause issues in parsing the data if the code expects valid HTML. The fixed code would look like this:
+
+```<article class="product_pod">
+    <div class="image_container">
+        <a href="../../../under-the-tuscan-sun_504/index.html">
+            <img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/>
+        </a>
+    </div>
+    <p class="star-rating Three">
+        <i class="icon-star"></i>
+        <i class="icon-star"></i>
+        <i class="icon-star"></i>
+        <i class="icon-star"></i>
+        <i class="icon-star"></i>
+    </p>
+    <h3>
+        <a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">
+            Under the Tuscan Sun
+        </a>
+    </h3>
+    <div class="product_price">
+        <p class="price_color">Â£37.33</p>
+        <p class="instock availability">
+            <i class="icon-ok"></i>
+        
+            In stock
+        
+        </p>
+        <form>
+            <button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+        </form>
+    </div>
+</article>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+    <article class="product_pod">
+        <div class="image_container">
+            <a href="../../../a-summer-in-europe_458/index.html">
+                <img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/>
+            </a>
+        </div>
+        <p class="star-rating Two">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+        </p>
+        <h3>
+            <a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">
+                A Summer In Europe
+            </a>
+        </h3>
+        <div class="product_price">
+            <p class="price_color">Â£44.34</p>
+            <p class="instock availability">
+                <i class="icon-ok"></i>
+        
+                In stock
+        
+            </p>
+            <form>
+                <button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+            </form>
+        </div>
+    </article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+    <article class="product_pod">
+        <div class="image_container">
+            <a href="../../../the-great-railway-bazaar_446/index.html">
+                <img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/>
+            </a>
+        </div>
+        <p class="star-rating One">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+        </p>
+    </article>
+</li>
+```
+2023-11-12 14:41:45,730 - INFO - Using Relevant Snippet:
+ontainer">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class
+2023-11-12 14:41:45,730 - INFO - Generation Prompt:
+Please provide Python code to scrape the website and PRINT OUT: Extract title, rating, rating, price, in_stock from the books this page as JSON.
+Based on the following relevant HTML snippet from somewhere in the webpage:
+```ontainer">
+<a href="../../../under-the-tuscan-sun_504/index.html"><img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/></a>
+</div>
+<p class="star-rating Three">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">Under the Tuscan Sun</a></h3>
+<div class="product_price">
+<p class="price_color">Â£37.33</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../a-summer-in-europe_458/index.html"><img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/></a>
+</div>
+<p class="star-rating Two">
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+<i class="icon-star"></i>
+</p>
+<h3><a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">A Summer In Europe</a></h3>
+<div class="product_price">
+<p class="price_color">Â£44.34</p>
+<p class="instock availability">
+<i class="icon-ok"></i>
+    
+        In stock
+    
+</p>
+<form>
+<button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+</form>
+</div>
+</article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+<article class="product_pod">
+<div class="image_container">
+<a href="../../../the-great-railway-bazaar_446/index.html"><img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/></a>
+</div>
+<p class="star-rating One">
+<i class```
+The code should take in this link `https://books.toscrape.com/catalogue/category/books/travel_2/index.html` and PRINT out the requested data.
+Generate only the code, not any example usages or output, and you MUST wrap your answer in a markdown code block.
+Generate it in this format.
+```python
+# imports
+import bs4 
+
+def scraper(url: str) -> str:
+  # scraper logic goes here
+  pass
+
+if __name__ == '__main__':
+  url = "<DUMMY URL, REPLACE WITH ACTUAL URL>"
+  scraper(url)
+START CONTEXT
+This is the debugging info:
+```
+Possible solution:
+
+One error in the HTML snippet is that there are unclosed i tags in the star-rating elements. This could cause issues in parsing the data if the code expects valid HTML. The fixed code would look like this:
+
+```<article class="product_pod">
+    <div class="image_container">
+        <a href="../../../under-the-tuscan-sun_504/index.html">
+            <img alt="Under the Tuscan Sun" class="thumbnail" src="../../../../media/cache/98/c2/98c2e95c5fd1a4e7cd5f2b63c52826cb.jpg"/>
+        </a>
+    </div>
+    <p class="star-rating Three">
+        <i class="icon-star"></i>
+        <i class="icon-star"></i>
+        <i class="icon-star"></i>
+        <i class="icon-star"></i>
+        <i class="icon-star"></i>
+    </p>
+    <h3>
+        <a href="../../../under-the-tuscan-sun_504/index.html" title="Under the Tuscan Sun">
+            Under the Tuscan Sun
+        </a>
+    </h3>
+    <div class="product_price">
+        <p class="price_color">Â£37.33</p>
+        <p class="instock availability">
+            <i class="icon-ok"></i>
+        
+            In stock
+        
+        </p>
+        <form>
+            <button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+        </form>
+    </div>
+</article>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+    <article class="product_pod">
+        <div class="image_container">
+            <a href="../../../a-summer-in-europe_458/index.html">
+                <img alt="A Summer In Europe" class="thumbnail" src="../../../../media/cache/4e/15/4e15150388702ebca2c5a523ac270539.jpg"/>
+            </a>
+        </div>
+        <p class="star-rating Two">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+        </p>
+        <h3>
+            <a href="../../../a-summer-in-europe_458/index.html" title="A Summer In Europe">
+                A Summer In Europe
+            </a>
+        </h3>
+        <div class="product_price">
+            <p class="price_color">Â£44.34</p>
+            <p class="instock availability">
+                <i class="icon-ok"></i>
+        
+                In stock
+        
+            </p>
+            <form>
+                <button class="btn btn-primary btn-block" data-loading-text="Adding..." type="submit">Add to basket</button>
+            </form>
+        </div>
+    </article>
+</li>
+<li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+    <article class="product_pod">
+        <div class="image_container">
+            <a href="../../../the-great-railway-bazaar_446/index.html">
+                <img alt="The Great Railway Bazaar" class="thumbnail" src="../../../../media/cache/76/de/76de41867f323d7f1f4fbe2fdfc1b2ba.jpg"/>
+            </a>
+        </div>
+        <p class="star-rating One">
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+        </p>
+    </article>
+</li>
+``````
+This is your previous error:
+```Error on line 42:   print(scraper(url))
+SyntaxError: invalid syntax (<string>, line 1)```
+This is your previous code:
+```python
+Possible solution:
+
+One error in this code is that there is a typo on line 41. The function should be called 'scraper' instead of 'scaper'. This causes an error when trying to call the function on line 43. The fixed code would look like this:
+
+import requests
+from bs4 import BeautifulSoup
+import json
+
+url = "https://books.toscrape.com/catalogue/category/books/travel_2/index.html"
+
+# function to get book data
+def scraper(url):
+  # get page
+  response = requests.get(url)
+  # parse html
+  soup = BeautifulSoup(response.content, 'html.parser')
+  # find all book listings
+  books = soup.find_all(class_="product_pod")
+  results = []
+  # iterate through books
+  for book in books:
+    # get title
+    title = book.find('h3').find('a')['title']
+    # get rating
+    rating = book.find(class_="star-rating")['class'][1]
+    # get price
+    price = book.find(class_="price_color").text
+    # get availability
+    availability = book.find(class_="instock availability").text.strip()
+    # add data to results
+    results.append({
+        'title': title,
+        'rating': rating,
+        'price': price,
+        'in_stock': availability
+    })
+  # return results as JSON format
+  return json.dumps(results)
+
+if __name__ == '__main__':
+  # call scraper function
+  print(scraper(url))```
+END CONTEXT
+
+2023-11-12 14:41:46,178 - INFO - Raw response:
+{
+  "id": "cmpl-8JyS9OMfOFc4ROiU3pBTUTsxICmAh",
+  "object": "text_completion",
+  "created": 1699771305,
+  "model": "gpt-3.5-turbo-instruct",
+  "choices": [
+    {
+      "text": "",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1961,
+    "total_tokens": 1961
+  }
+}
+2023-11-12 14:41:46,178 - INFO - Code block not found. Trying without python syntax.
+2023-11-12 14:41:46,178 - INFO - Code block not found. Trying without python syntax.
+2023-11-12 14:41:46,178 - INFO - Code block not found. Trying without both ended backticks.
+2023-11-12 14:41:46,178 - INFO - Code block not found. Giving raw response.
+2023-11-12 14:41:46,178 - INFO - Extracted Code:
+
+2023-11-12 14:41:46,179 - INFO - Generated code (Attempt 3):
+

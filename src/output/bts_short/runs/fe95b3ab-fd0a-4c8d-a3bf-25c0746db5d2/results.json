@@ -1,0 +1,10 @@
+{
+    "dataset": "bts_short",
+    "run": "fe95b3ab-fd0a-4c8d-a3bf-25c0746db5d2",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 2,
+    "final_scraper_code": "# imports\nimport bs4 \n\ndef scraper(url: str) -> str:\n  # get html response from url\n  response = requests.get(url)\n\n  # use BeautifulSoup to parse the html response\n  soup = BeautifulSoup(response.text, 'html.parser')\n\n  # find all the necessary book elements\n  books = soup.find_all('article', class_='product_pod')\n\n  # initialize empty list to store book data\n  book_data = []\n\n  # loop through each book and extract the necessary data\n  for book in books:\n    # extract title\n    title = book.find('h3').find('a').get('title')\n\n    # extract rating\n    rating = book.find('p', class_='star-rating').get('class')[-1]\n\n    # extract price\n    price = book.find('p', class_='price_color').text[2:]\n\n    # extract in_stock\n    if book.find('p', class_='instock availability').text.strip() == 'In stock':\n      in_stock = True\n    else:\n      in_stock = False\n\n    # add extracted data to book_data list as a dictionary\n    book_data.append({\n      'title': title,\n      'rating': rating,\n      'price': price,\n      'in_stock': in_stock\n    })\n\n  # convert book_data list to JSON format\n  book_data_json = json.dumps(book_data)\n\n  # print JSON data\n  print(book_data_json)\n\nif __name__ == '__main__':\n  url = \"https://books.toscrape.com/catalogue/category/books/travel_2/index.html\"\n  scraper(url)",
+    "test_count": 15,
+    "test_succ_count": 10
+}

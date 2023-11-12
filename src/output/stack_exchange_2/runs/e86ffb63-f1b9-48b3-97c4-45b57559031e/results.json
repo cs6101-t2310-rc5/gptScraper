@@ -1,0 +1,10 @@
+{
+    "dataset": "stack_exchange_2",
+    "run": "e86ffb63-f1b9-48b3-97c4-45b57559031e",
+    "source": "",
+    "snippets_used": 2,
+    "attempts": 1,
+    "final_scraper_code": "def scraper(url):\n  # import necessary libraries\n  import requests\n  from bs4 import BeautifulSoup\n  import json\n  \n  # make request to the url and get the HTML content\n  r = requests.get(url)\n  soup = BeautifulSoup(r.content, 'html.parser')\n  \n  # find all the divs with class dno js-hidden and loop through them\n  results = []\n  for div in soup.find_all('div', {'class': 'dno js-hidden'}):\n    # extract question title from the previous sibling of the div\n    question_title = div.previous_sibling.text\n    \n    # find the a tag inside the div with class post-tag and get the tag name\n    tags = div.find('a', {'class': 'post-tag'}).text\n    \n    # extract the user name from the previous sibling of the a tag\n    user_name = div.find_previous_sibling().text\n    \n    # add the extracted data to the results list as a dictionary\n    results.append({\n        'question_title': question_title,\n        'tags': tags,\n        'user_name': user_name\n    })\n  \n  # print the results in JSON format\n  print(json.dumps(results, indent=2))\n  \nif __name__ == '__main__':\n  url = \"https://math.stackexchange.com/questions\"\n  scraper(url)",
+    "test_count": 20,
+    "test_succ_count": 13
+}

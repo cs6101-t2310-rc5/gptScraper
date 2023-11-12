@@ -1,0 +1,10 @@
+{
+    "dataset": "bts_short",
+    "run": "8ffd1e96-ffbf-4acf-985b-b342c3741de7",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 1,
+    "final_scraper_code": "import bs4\n\ndef scraper(url):\n    response = requests.get(url) #get html from url\n    soup = bs4.BeautifulSoup(response.content, 'html.parser') #create soup object\n    results = [] #list to store scraped data\n    books = soup.find_all('article', class_='product_pod') #find all articles with class=\"product_pod\"\n    \n    for book in books:\n        title = book.h3.a.text #get title\n        rating = book.p['class'][1] #get rating\n        price = book.find('div', class_='product_price').find('p', class_='price_color').text #get price\n        availability = book.find('div', class_='product_price').find('p', class_='instock availability').text.strip() #get availability\n        \n        #clean up scraped data\n        availability = availability.replace('In stock (', '').replace(' available)', '')\n        \n        #add data to results list\n        results.append({\n            'title': title,\n            'rating': rating,\n            'price': price,\n            'in_stock': availability\n        })\n    \n    #print data as JSON\n    print(json.dumps(results, indent=4))\n\nif __name__ == '__main__':\n    url = 'https://books.toscrape.com/catalogue/category/books/travel_2/index.html'\n    scraper(url)\n",
+    "test_count": 15,
+    "test_succ_count": 12
+}

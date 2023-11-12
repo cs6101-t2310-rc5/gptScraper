@@ -1,0 +1,10 @@
+{
+    "dataset": "stack_exchange_2",
+    "run": "a3b326f5-909f-4aa5-b113-951159c9ac15",
+    "source": "",
+    "snippets_used": 3,
+    "attempts": 6,
+    "final_scraper_code": "# imports\nimport requests\nfrom bs4 import BeautifulSoup\nimport json\n\ndef scraper(url: str) -> str:\n    # send request to the provided url\n    res = requests.get(url)\n    # parse the html content using BeautifulSoup\n    soup = BeautifulSoup(res.content, 'html.parser')\n    # find all div tags with class 's-post-summary'\n    posts = soup.find_all('div', class_='s-post-summary')\n    # initialize lists to store the extracted data\n    question_titles = []\n    tags = []\n    user_names = []\n    # iterate through each post\n    for post in posts:\n        # extract question title\n        question_title = post.find('h3', class_='s-post-summary--content-title').text.strip()\n        # extract tags\n        tags_list = []\n        tags_container = post.find('ul', class_='js-post-tag-list-wrapper')\n        for tag in tags_container.find_all('a', class_='post-tag'):\n            tags_list.append(tag.text.strip())\n        # extract user name\n        meta_user = post.find('div', class_='s-post-summary--meta-user')\n        if meta_user:\n            link = meta_user.find('a', class_='s-link')\n            if link:\n                user_name = link.text.strip()\n        else:\n            user_name = ''\n\n        # add the extracted data to respective lists\n        question_titles.append(question_title)\n        tags.append(tags_list)\n        user_names.append(user_name)\n\n    # combine the lists of data into a dictionary\n    data = {\n        \"question_title\": question_titles,\n        \"tags\": tags,\n        \"user_name\": user_names\n    }\n\n    # convert the dictionary to JSON\n    json_data = json.dumps(data)\n\n    # print out the JSON data for the top questions\n    print(json_data)\n\nif __name__ == '__main__':\n    url = \"https://math.stackexchange.com/questions\"\n    scraper(url)",
+    "test_count": 20,
+    "test_succ_count": 12
+}
