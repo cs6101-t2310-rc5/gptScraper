@@ -7,7 +7,7 @@
 
   <p>
     By: <b>SOON</b> Kang Le, Conrad,
-        <b>PHANG</b> Filbert, <b>WEE</b> Yen Zhe, Alson <b>JIANG</b>, Arnav <b>AGGARWAL</b>
+        Filbert <b>PHANG</b>, <b>WEE</b> Yen Zhe, Alson <b>JIANG</b>, Arnav <b>AGGARWAL</b>
   </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -33,13 +33,13 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project 
+## About The Project
 [Poster](https://docs.google.com/presentation/d/1tmIHLBZLKQUIQimMbzAJl9XoxlcPHSVDGLLvd_nynSU/edit#slide=id.g25df3f774b_0_170).
 
-The adoption of Large Language Models (LLMs) has significantly accelerated the coding process, although it still requires 
-significant human involvement for running, verifying, and debugging. This project explores the potential of LLMs to 
-autonomously supervise the code generation process, particularly for creating website scrapers. The successful 
-proof-of-concept demonstrates that LLMs can independently oversee the development of web scrapers, suggesting their 
+The adoption of Large Language Models (LLMs) has significantly accelerated the coding process, although it still requires
+significant human involvement for running, verifying, and debugging. This project explores the potential of LLMs to
+autonomously supervise the code generation process, particularly for creating website scrapers. The successful
+proof-of-concept demonstrates that LLMs can independently oversee the development of web scrapers, suggesting their
 capability as a fully automated tool for generalized scraping.
 
 
@@ -94,7 +94,7 @@ project currently include
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Model is able to generates code 
+- [x] Model is able to generates code
 - [x] Model is able to generate code to scrape from static websites
 - [ ] Model is able to generate code to scrape from dynamic websites
 - [ ] Front-end wrapper (through Huggingface Spaces) for this project
